@@ -1,0 +1,3 @@
+trans_id	trans_coord	target_seq	probe_id	probe_seq	num_mismatch	strand
+SL1344_0243	3	ACAACATGCG	SL1344_0243 3	ACAACATGCG	0	+
+SL1344_P2_0089	3	ACAACATGCG	SL1344_0243 3	ACAACATGCG	0	+

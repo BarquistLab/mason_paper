@@ -1,0 +1,3 @@
+trans_id	trans_coord	target_seq	probe_id	probe_seq	num_mismatch	strand
+SL1344_0134	5	ACGATGATCA	SL1344_0134 5	ACGATGATCA	0	+
+SL1344_3676	9	ACGATGATCA	SL1344_0134 5	ACGATGATCA	0	-

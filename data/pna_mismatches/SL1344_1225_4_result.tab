@@ -1,0 +1,3 @@
+trans_id	trans_coord	target_seq	probe_id	probe_seq	num_mismatch	strand
+SL1344_1225	4	ATATATGACT	SL1344_1225 4	ATATATGACT	0	+
+SL1344_4134	4	ATATATGACT	SL1344_1225 4	ATATATGACT	0	+

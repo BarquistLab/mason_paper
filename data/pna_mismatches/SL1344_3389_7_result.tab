@@ -1,0 +1,3 @@
+trans_id	trans_coord	target_seq	probe_id	probe_seq	num_mismatch	strand
+SL1344_0678	1	CATGGCAAAG	SL1344_3389 7	CATGGCAAAG	0	-
+SL1344_3389	7	CATGGCAAAG	SL1344_3389 7	CATGGCAAAG	0	+

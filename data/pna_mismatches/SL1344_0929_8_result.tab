@@ -1,0 +1,3 @@
+trans_id	trans_coord	target_seq	probe_id	probe_seq	num_mismatch	strand
+SL1344_0929	8	ATGAGTGAAT	SL1344_0929 8	ATGAGTGAAT	0	+
+SL1344_P1_0092	8	ATGAGTGAAT	SL1344_0929 8	ATGAGTGAAT	0	+

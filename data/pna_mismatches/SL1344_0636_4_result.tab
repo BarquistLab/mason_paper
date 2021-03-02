@@ -1,0 +1,3 @@
+trans_id	trans_coord	target_seq	probe_id	probe_seq	num_mismatch	strand
+SL1344_0636	4	TGCCATGCAA	SL1344_0636 4	TGCCATGCAA	0	+
+SL1344_2794	4	TGCCATGCAA	SL1344_0636 4	TGCCATGCAA	0	-
