@@ -18,7 +18,7 @@ for i in ESSENTIAL_GENES['s_typhi']:
 length_region = 10
 
 # create gff with only essential salmonella genes:
-with open("../data/FQ312003.1.gff") as origin_file:
+with open("../data/reference_sequences/FQ312003.1.gff") as origin_file:
     f = open("../data/essentialgenes.gff", "w")
     headers = re.compile(r"##")
     lt = re.compile(r".*;locus_tag=(SL1344_(P\d_)?\d{4})")
