@@ -3,3 +3,5 @@
 *.fastq
 *.sam
 *.bam
+*.fastq.gz
+*.fastqc.zip
