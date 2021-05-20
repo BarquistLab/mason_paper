@@ -5,3 +5,4 @@
 *.bam
 *.fastq.gz
 *fastqc.zip
+*.fq.gz
