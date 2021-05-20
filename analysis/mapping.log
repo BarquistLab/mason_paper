@@ -1,0 +1,3209 @@
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash1_1_Jvpna21.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash1_1_Jvpna21.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash1_1_Jvpna21.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash1_1_Jvpna21.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.015 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.070 seconds.
+Memory: max=1073m, total=1073m, free=1038m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.102 seconds.
+Processing time:   		24.669 seconds.
+
+Input:                  	12265502 reads 		932178152 bases.
+QTrimmed:               	121 reads (0.00%) 	990 bases (0.00%)
+FTrimmed:               	12265502 reads (100.00%) 	147186024 bases (15.79%)
+KTrimmed:               	1595215 reads (13.01%) 	51526207 bases (5.53%)
+Total Removed:          	94558 reads (0.77%) 	198713221 bases (21.32%)
+Result:                 	12170944 reads (99.23%) 	733464931 bases (78.68%)
+
+Time:                         	24.845 seconds.
+Reads Processed:      12265k 	493.67k reads/sec
+Bases Processed:        932m 	37.52m bases/sec
+Started analysis of hash1_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash1_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash1_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash1_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash1_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash1_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash1_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash1_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash1_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash1_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash1_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash1_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash1_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash1_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash1_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash1_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash1_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash1_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash1_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash1_1_Jvpna21.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash1_1_Jvpna22.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash1_1_Jvpna22.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash1_1_Jvpna22.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash1_1_Jvpna22.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.033 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.128 seconds.
+Memory: max=1073m, total=1073m, free=1039m, used=34m
+
+Input is being processed as unpaired
+Started output streams:	0.142 seconds.
+Processing time:   		23.608 seconds.
+
+Input:                  	11233051 reads 		853711876 bases.
+QTrimmed:               	128 reads (0.00%) 	1065 bases (0.00%)
+FTrimmed:               	11233051 reads (100.00%) 	134796612 bases (15.79%)
+KTrimmed:               	918943 reads (8.18%) 	28405049 bases (3.33%)
+Total Removed:          	44002 reads (0.39%) 	163202726 bases (19.12%)
+Result:                 	11189049 reads (99.61%) 	690509150 bases (80.88%)
+
+Time:                         	23.882 seconds.
+Reads Processed:      11233k 	470.37k reads/sec
+Bases Processed:        853m 	35.75m bases/sec
+Started analysis of hash1_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash1_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash1_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash1_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash1_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash1_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash1_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash1_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash1_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash1_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash1_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash1_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash1_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash1_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash1_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash1_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash1_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash1_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash1_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash1_1_Jvpna22.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash1_1_Jvpna30.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash1_1_Jvpna30.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash1_1_Jvpna30.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash1_1_Jvpna30.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.025 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.099 seconds.
+Memory: max=1073m, total=1073m, free=1039m, used=34m
+
+Input is being processed as unpaired
+Started output streams:	0.118 seconds.
+Processing time:   		24.604 seconds.
+
+Input:                  	12392834 reads 		941855384 bases.
+QTrimmed:               	135 reads (0.00%) 	1187 bases (0.00%)
+FTrimmed:               	12392834 reads (100.00%) 	148714008 bases (15.79%)
+KTrimmed:               	2481568 reads (20.02%) 	81353633 bases (8.64%)
+Total Removed:          	112662 reads (0.91%) 	230068828 bases (24.43%)
+Result:                 	12280172 reads (99.09%) 	711786556 bases (75.57%)
+
+Time:                         	24.825 seconds.
+Reads Processed:      12392k 	499.20k reads/sec
+Bases Processed:        941m 	37.94m bases/sec
+Started analysis of hash1_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash1_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash1_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash1_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash1_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash1_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash1_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash1_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash1_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash1_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash1_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash1_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash1_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash1_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash1_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash1_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash1_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash1_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash1_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash1_1_Jvpna30.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash1_1_Jvpna31.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash1_1_Jvpna31.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash1_1_Jvpna31.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash1_1_Jvpna31.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.024 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.122 seconds.
+Memory: max=1073m, total=1073m, free=1038m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.112 seconds.
+Processing time:   		24.497 seconds.
+
+Input:                  	12386039 reads 		941338964 bases.
+QTrimmed:               	136 reads (0.00%) 	1166 bases (0.00%)
+FTrimmed:               	12386039 reads (100.00%) 	148632468 bases (15.79%)
+KTrimmed:               	1582110 reads (12.77%) 	53778222 bases (5.71%)
+Total Removed:          	144055 reads (1.16%) 	202411856 bases (21.50%)
+Result:                 	12241984 reads (98.84%) 	738927108 bases (78.50%)
+
+Time:                         	24.736 seconds.
+Reads Processed:      12386k 	500.73k reads/sec
+Bases Processed:        941m 	38.06m bases/sec
+Started analysis of hash1_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash1_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash1_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash1_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash1_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash1_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash1_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash1_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash1_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash1_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash1_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash1_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash1_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash1_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash1_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash1_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash1_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash1_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash1_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash1_1_Jvpna31.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash1_1_Jvpna32.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash1_1_Jvpna32.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash1_1_Jvpna32.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash1_1_Jvpna32.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.025 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.127 seconds.
+Memory: max=1073m, total=1073m, free=1038m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.089 seconds.
+Processing time:   		22.344 seconds.
+
+Input:                  	10702591 reads 		813396916 bases.
+QTrimmed:               	133 reads (0.00%) 	1093 bases (0.00%)
+FTrimmed:               	10702591 reads (100.00%) 	128431092 bases (15.79%)
+KTrimmed:               	1036449 reads (9.68%) 	34817658 bases (4.28%)
+Total Removed:          	88668 reads (0.83%) 	163249843 bases (20.07%)
+Result:                 	10613923 reads (99.17%) 	650147073 bases (79.93%)
+
+Time:                         	22.563 seconds.
+Reads Processed:      10702k 	474.34k reads/sec
+Bases Processed:        813m 	36.05m bases/sec
+Started analysis of hash1_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash1_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash1_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash1_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash1_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash1_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash1_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash1_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash1_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash1_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash1_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash1_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash1_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash1_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash1_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash1_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash1_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash1_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash1_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash1_1_Jvpna32.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash1_1_Jvpna33.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash1_1_Jvpna33.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash1_1_Jvpna33.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash1_1_Jvpna33.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.026 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.118 seconds.
+Memory: max=1073m, total=1073m, free=1039m, used=34m
+
+Input is being processed as unpaired
+Started output streams:	0.097 seconds.
+Processing time:   		22.201 seconds.
+
+Input:                  	10766929 reads 		818286604 bases.
+QTrimmed:               	113 reads (0.00%) 	962 bases (0.00%)
+FTrimmed:               	10766929 reads (100.00%) 	129203148 bases (15.79%)
+KTrimmed:               	1086692 reads (10.09%) 	35604664 bases (4.35%)
+Total Removed:          	75958 reads (0.71%) 	164808774 bases (20.14%)
+Result:                 	10690971 reads (99.29%) 	653477830 bases (79.86%)
+
+Time:                         	22.420 seconds.
+Reads Processed:      10766k 	480.24k reads/sec
+Bases Processed:        818m 	36.50m bases/sec
+Started analysis of hash1_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash1_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash1_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash1_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash1_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash1_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash1_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash1_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash1_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash1_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash1_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash1_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash1_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash1_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash1_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash1_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash1_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash1_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash1_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash1_1_Jvpna33.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash1_1_Jvpna34.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash1_1_Jvpna34.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash1_1_Jvpna34.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash1_1_Jvpna34.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.025 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.108 seconds.
+Memory: max=1073m, total=1073m, free=1039m, used=34m
+
+Input is being processed as unpaired
+Started output streams:	0.091 seconds.
+Processing time:   		20.301 seconds.
+
+Input:                  	9842435 reads 		748025060 bases.
+QTrimmed:               	80 reads (0.00%) 	626 bases (0.00%)
+FTrimmed:               	9842435 reads (100.00%) 	118109220 bases (15.79%)
+KTrimmed:               	1023871 reads (10.40%) 	33814505 bases (4.52%)
+Total Removed:          	72584 reads (0.74%) 	151924351 bases (20.31%)
+Result:                 	9769851 reads (99.26%) 	596100709 bases (79.69%)
+
+Time:                         	20.504 seconds.
+Reads Processed:       9842k 	480.02k reads/sec
+Bases Processed:        748m 	36.48m bases/sec
+Started analysis of hash1_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash1_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash1_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash1_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash1_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash1_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash1_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash1_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash1_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash1_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash1_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash1_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash1_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash1_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash1_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash1_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash1_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash1_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash1_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash1_1_Jvpna34.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash1_1_Jvpna36.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash1_1_Jvpna36.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash1_1_Jvpna36.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash1_1_Jvpna36.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.018 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.117 seconds.
+Memory: max=1073m, total=1073m, free=1039m, used=34m
+
+Input is being processed as unpaired
+Started output streams:	0.110 seconds.
+Processing time:   		21.421 seconds.
+
+Input:                  	10684323 reads 		812008548 bases.
+QTrimmed:               	99 reads (0.00%) 	867 bases (0.00%)
+FTrimmed:               	10684323 reads (100.00%) 	128211876 bases (15.79%)
+KTrimmed:               	1185873 reads (11.10%) 	37532173 bases (4.62%)
+Total Removed:          	57709 reads (0.54%) 	165744916 bases (20.41%)
+Result:                 	10626614 reads (99.46%) 	646263632 bases (79.59%)
+
+Time:                         	21.652 seconds.
+Reads Processed:      10684k 	493.46k reads/sec
+Bases Processed:        812m 	37.50m bases/sec
+Started analysis of hash1_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash1_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash1_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash1_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash1_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash1_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash1_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash1_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash1_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash1_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash1_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash1_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash1_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash1_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash1_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash1_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash1_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash1_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash1_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash1_1_Jvpna36.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash1_1_Jvpna37.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash1_1_Jvpna37.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash1_1_Jvpna37.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash1_1_Jvpna37.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.029 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.097 seconds.
+Memory: max=1073m, total=1073m, free=1038m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.109 seconds.
+Processing time:   		24.681 seconds.
+
+Input:                  	12220887 reads 		928787412 bases.
+QTrimmed:               	124 reads (0.00%) 	1089 bases (0.00%)
+FTrimmed:               	12220887 reads (100.00%) 	146650644 bases (15.79%)
+KTrimmed:               	1280991 reads (10.48%) 	41450977 bases (4.46%)
+Total Removed:          	63375 reads (0.52%) 	188102710 bases (20.25%)
+Result:                 	12157512 reads (99.48%) 	740684702 bases (79.75%)
+
+Time:                         	24.891 seconds.
+Reads Processed:      12220k 	490.97k reads/sec
+Bases Processed:        928m 	37.31m bases/sec
+Started analysis of hash1_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash1_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash1_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash1_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash1_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash1_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash1_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash1_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash1_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash1_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash1_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash1_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash1_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash1_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash1_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash1_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash1_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash1_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash1_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash1_1_Jvpna37.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash1_1_w_o_control.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash1_1_w_o_control.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash1_1_w_o_control.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash1_1_w_o_control.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.018 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.107 seconds.
+Memory: max=1073m, total=1073m, free=1038m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.111 seconds.
+Processing time:   		24.937 seconds.
+
+Input:                  	12495929 reads 		949690604 bases.
+QTrimmed:               	142 reads (0.00%) 	1203 bases (0.00%)
+FTrimmed:               	12495929 reads (100.00%) 	149951148 bases (15.79%)
+KTrimmed:               	1369993 reads (10.96%) 	45569403 bases (4.80%)
+Total Removed:          	107712 reads (0.86%) 	195521754 bases (20.59%)
+Result:                 	12388217 reads (99.14%) 	754168850 bases (79.41%)
+
+Time:                         	25.158 seconds.
+Reads Processed:      12495k 	496.70k reads/sec
+Bases Processed:        949m 	37.75m bases/sec
+Started analysis of hash1_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash1_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash1_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash1_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash1_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash1_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash1_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash1_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash1_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash1_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash1_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash1_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash1_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash1_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash1_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash1_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash1_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash1_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash1_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash1_1_w_o_control.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash1_2_JVpna100.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash1_2_JVpna100.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash1_2_JVpna100.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash1_2_JVpna100.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.017 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.115 seconds.
+Memory: max=1073m, total=1073m, free=1038m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.121 seconds.
+Processing time:   		24.832 seconds.
+
+Input:                  	12514723 reads 		951118948 bases.
+QTrimmed:               	160 reads (0.00%) 	1302 bases (0.00%)
+FTrimmed:               	12514723 reads (100.00%) 	150176676 bases (15.79%)
+KTrimmed:               	3008841 reads (24.04%) 	103757814 bases (10.91%)
+Total Removed:          	156835 reads (1.25%) 	253935792 bases (26.70%)
+Result:                 	12357888 reads (98.75%) 	697183156 bases (73.30%)
+
+Time:                         	25.072 seconds.
+Reads Processed:      12514k 	499.15k reads/sec
+Bases Processed:        951m 	37.94m bases/sec
+Started analysis of hash1_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash1_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash1_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash1_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash1_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash1_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash1_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash1_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash1_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash1_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash1_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash1_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash1_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash1_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash1_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash1_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash1_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash1_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash1_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash1_2_JVpna100.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash1_2_JVpna101.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash1_2_JVpna101.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash1_2_JVpna101.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash1_2_JVpna101.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.019 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.113 seconds.
+Memory: max=1073m, total=1073m, free=1038m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.097 seconds.
+Processing time:   		19.154 seconds.
+
+Input:                  	9730454 reads 		739514504 bases.
+QTrimmed:               	93 reads (0.00%) 	764 bases (0.00%)
+FTrimmed:               	9730454 reads (100.00%) 	116765448 bases (15.79%)
+KTrimmed:               	2143441 reads (22.03%) 	69668347 bases (9.42%)
+Total Removed:          	90193 reads (0.93%) 	186434559 bases (25.21%)
+Result:                 	9640261 reads (99.07%) 	553079945 bases (74.79%)
+
+Time:                         	19.368 seconds.
+Reads Processed:       9730k 	502.39k reads/sec
+Bases Processed:        739m 	38.18m bases/sec
+Started analysis of hash1_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash1_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash1_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash1_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash1_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash1_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash1_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash1_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash1_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash1_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash1_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash1_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash1_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash1_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash1_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash1_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash1_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash1_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash1_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash1_2_JVpna101.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash1_2_JVpna102.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash1_2_JVpna102.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash1_2_JVpna102.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash1_2_JVpna102.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.018 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.113 seconds.
+Memory: max=1073m, total=1073m, free=1038m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.098 seconds.
+Processing time:   		22.526 seconds.
+
+Input:                  	11800100 reads 		896807600 bases.
+QTrimmed:               	134 reads (0.00%) 	1162 bases (0.00%)
+FTrimmed:               	11800100 reads (100.00%) 	141601200 bases (15.79%)
+KTrimmed:               	2052618 reads (17.39%) 	65452671 bases (7.30%)
+Total Removed:          	81476 reads (0.69%) 	207055033 bases (23.09%)
+Result:                 	11718624 reads (99.31%) 	689752567 bases (76.91%)
+
+Time:                         	22.740 seconds.
+Reads Processed:      11800k 	518.91k reads/sec
+Bases Processed:        896m 	39.44m bases/sec
+Started analysis of hash1_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash1_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash1_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash1_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash1_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash1_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash1_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash1_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash1_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash1_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash1_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash1_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash1_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash1_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash1_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash1_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash1_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash1_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash1_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash1_2_JVpna102.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash1_2_JVpna29.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash1_2_JVpna29.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash1_2_JVpna29.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash1_2_JVpna29.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.017 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.111 seconds.
+Memory: max=1073m, total=1073m, free=1038m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.023 seconds.
+Processing time:   		22.453 seconds.
+
+Input:                  	11457635 reads 		870780260 bases.
+QTrimmed:               	131 reads (0.00%) 	1107 bases (0.00%)
+FTrimmed:               	11457635 reads (100.00%) 	137491620 bases (15.79%)
+KTrimmed:               	1582062 reads (13.81%) 	53171824 bases (6.11%)
+Total Removed:          	101760 reads (0.89%) 	190664551 bases (21.90%)
+Result:                 	11355875 reads (99.11%) 	680115709 bases (78.10%)
+
+Time:                         	22.590 seconds.
+Reads Processed:      11457k 	507.19k reads/sec
+Bases Processed:        870m 	38.55m bases/sec
+Started analysis of hash1_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash1_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash1_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash1_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash1_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash1_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash1_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash1_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash1_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash1_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash1_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash1_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash1_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash1_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash1_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash1_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash1_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash1_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash1_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash1_2_JVpna29.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash1_2_JVpna35.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash1_2_JVpna35.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash1_2_JVpna35.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash1_2_JVpna35.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.020 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.106 seconds.
+Memory: max=1073m, total=1073m, free=1038m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.026 seconds.
+Processing time:   		25.012 seconds.
+
+Input:                  	12430885 reads 		944747260 bases.
+QTrimmed:               	152 reads (0.00%) 	1301 bases (0.00%)
+FTrimmed:               	12430885 reads (100.00%) 	149170620 bases (15.79%)
+KTrimmed:               	1579634 reads (12.71%) 	52720602 bases (5.58%)
+Total Removed:          	108107 reads (0.87%) 	201892523 bases (21.37%)
+Result:                 	12322778 reads (99.13%) 	742854737 bases (78.63%)
+
+Time:                         	25.148 seconds.
+Reads Processed:      12430k 	494.32k reads/sec
+Bases Processed:        944m 	37.57m bases/sec
+Started analysis of hash1_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash1_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash1_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash1_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash1_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash1_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash1_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash1_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash1_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash1_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash1_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash1_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash1_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash1_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash1_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash1_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash1_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash1_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash1_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash1_2_JVpna35.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash1_2_JVpna99.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash1_2_JVpna99.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash1_2_JVpna99.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash1_2_JVpna99.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.024 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.100 seconds.
+Memory: max=1073m, total=1073m, free=1039m, used=34m
+
+Input is being processed as unpaired
+Started output streams:	0.027 seconds.
+Processing time:   		22.211 seconds.
+
+Input:                  	11157071 reads 		847937396 bases.
+QTrimmed:               	110 reads (0.00%) 	918 bases (0.00%)
+FTrimmed:               	11157071 reads (100.00%) 	133884852 bases (15.79%)
+KTrimmed:               	1618160 reads (14.50%) 	55335065 bases (6.53%)
+Total Removed:          	101393 reads (0.91%) 	189220835 bases (22.32%)
+Result:                 	11055678 reads (99.09%) 	658716561 bases (77.68%)
+
+Time:                         	22.341 seconds.
+Reads Processed:      11157k 	499.40k reads/sec
+Bases Processed:        847m 	37.95m bases/sec
+Started analysis of hash1_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash1_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash1_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash1_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash1_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash1_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash1_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash1_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash1_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash1_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash1_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash1_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash1_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash1_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash1_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash1_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash1_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash1_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash1_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash1_2_JVpna99.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash1_2_w_o_control.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash1_2_w_o_control.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash1_2_w_o_control.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash1_2_w_o_control.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.018 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.086 seconds.
+Memory: max=1073m, total=1073m, free=1038m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.026 seconds.
+Processing time:   		20.612 seconds.
+
+Input:                  	10273759 reads 		780805684 bases.
+QTrimmed:               	135 reads (0.00%) 	1132 bases (0.00%)
+FTrimmed:               	10273759 reads (100.00%) 	123285108 bases (15.79%)
+KTrimmed:               	1369191 reads (13.33%) 	46356291 bases (5.94%)
+Total Removed:          	117033 reads (1.14%) 	169642531 bases (21.73%)
+Result:                 	10156726 reads (98.86%) 	611163153 bases (78.27%)
+
+Time:                         	20.728 seconds.
+Reads Processed:      10273k 	495.65k reads/sec
+Bases Processed:        780m 	37.67m bases/sec
+Started analysis of hash1_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash1_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash1_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash1_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash1_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash1_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash1_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash1_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash1_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash1_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash1_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash1_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash1_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash1_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash1_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash1_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash1_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash1_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash1_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash1_2_w_o_control.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash2_1_Jvpna21.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash2_1_Jvpna21.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash2_1_Jvpna21.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash2_1_Jvpna21.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.027 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.118 seconds.
+Memory: max=1073m, total=1073m, free=1038m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.025 seconds.
+Processing time:   		24.145 seconds.
+
+Input:                  	12084141 reads 		918394716 bases.
+QTrimmed:               	134 reads (0.00%) 	1140 bases (0.00%)
+FTrimmed:               	12084141 reads (100.00%) 	145009692 bases (15.79%)
+KTrimmed:               	1804178 reads (14.93%) 	60787581 bases (6.62%)
+Total Removed:          	141668 reads (1.17%) 	205798413 bases (22.41%)
+Result:                 	11942473 reads (98.83%) 	712596303 bases (77.59%)
+
+Time:                         	24.292 seconds.
+Reads Processed:      12084k 	497.45k reads/sec
+Bases Processed:        918m 	37.81m bases/sec
+Started analysis of hash2_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash2_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash2_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash2_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash2_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash2_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash2_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash2_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash2_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash2_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash2_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash2_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash2_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash2_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash2_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash2_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash2_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash2_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash2_1_Jvpna21.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash2_1_Jvpna21.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash2_1_Jvpna22.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash2_1_Jvpna22.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash2_1_Jvpna22.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash2_1_Jvpna22.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.022 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.114 seconds.
+Memory: max=1073m, total=1073m, free=1039m, used=34m
+
+Input is being processed as unpaired
+Started output streams:	0.025 seconds.
+Processing time:   		25.467 seconds.
+
+Input:                  	12611430 reads 		958468680 bases.
+QTrimmed:               	133 reads (0.00%) 	1165 bases (0.00%)
+FTrimmed:               	12611430 reads (100.00%) 	151337160 bases (15.79%)
+KTrimmed:               	1784436 reads (14.15%) 	57081998 bases (5.96%)
+Total Removed:          	99542 reads (0.79%) 	208420323 bases (21.75%)
+Result:                 	12511888 reads (99.21%) 	750048357 bases (78.25%)
+
+Time:                         	25.611 seconds.
+Reads Processed:      12611k 	492.43k reads/sec
+Bases Processed:        958m 	37.42m bases/sec
+Started analysis of hash2_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash2_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash2_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash2_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash2_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash2_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash2_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash2_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash2_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash2_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash2_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash2_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash2_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash2_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash2_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash2_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash2_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash2_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash2_1_Jvpna22.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash2_1_Jvpna22.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash2_1_Jvpna30.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash2_1_Jvpna30.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash2_1_Jvpna30.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash2_1_Jvpna30.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.019 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.098 seconds.
+Memory: max=1073m, total=1073m, free=1038m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.030 seconds.
+Processing time:   		22.793 seconds.
+
+Input:                  	11763108 reads 		893996208 bases.
+QTrimmed:               	126 reads (0.00%) 	997 bases (0.00%)
+FTrimmed:               	11763108 reads (100.00%) 	141157296 bases (15.79%)
+KTrimmed:               	2193954 reads (18.65%) 	71896164 bases (8.04%)
+Total Removed:          	103338 reads (0.88%) 	213054457 bases (23.83%)
+Result:                 	11659770 reads (99.12%) 	680941751 bases (76.17%)
+
+Time:                         	22.924 seconds.
+Reads Processed:      11763k 	513.13k reads/sec
+Bases Processed:        893m 	39.00m bases/sec
+Started analysis of hash2_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash2_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash2_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash2_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash2_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash2_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash2_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash2_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash2_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash2_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash2_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash2_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash2_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash2_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash2_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash2_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash2_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash2_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash2_1_Jvpna30.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash2_1_Jvpna30.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash2_1_Jvpna31.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash2_1_Jvpna31.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash2_1_Jvpna31.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash2_1_Jvpna31.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.022 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.117 seconds.
+Memory: max=1073m, total=1073m, free=1038m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.026 seconds.
+Processing time:   		23.123 seconds.
+
+Input:                  	11891758 reads 		903773608 bases.
+QTrimmed:               	151 reads (0.00%) 	1239 bases (0.00%)
+FTrimmed:               	11891758 reads (100.00%) 	142701096 bases (15.79%)
+KTrimmed:               	2150039 reads (18.08%) 	69174606 bases (7.65%)
+Total Removed:          	101463 reads (0.85%) 	211876941 bases (23.44%)
+Result:                 	11790295 reads (99.15%) 	691896667 bases (76.56%)
+
+Time:                         	23.270 seconds.
+Reads Processed:      11891k 	511.03k reads/sec
+Bases Processed:        903m 	38.84m bases/sec
+Started analysis of hash2_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash2_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash2_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash2_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash2_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash2_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash2_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash2_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash2_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash2_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash2_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash2_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash2_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash2_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash2_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash2_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash2_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash2_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash2_1_Jvpna31.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash2_1_Jvpna31.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash2_1_Jvpna32.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash2_1_Jvpna32.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash2_1_Jvpna32.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash2_1_Jvpna32.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.021 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.133 seconds.
+Memory: max=1073m, total=1073m, free=1038m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.024 seconds.
+Processing time:   		25.797 seconds.
+
+Input:                  	12750052 reads 		969003952 bases.
+QTrimmed:               	140 reads (0.00%) 	1204 bases (0.00%)
+FTrimmed:               	12750052 reads (100.00%) 	153000624 bases (15.79%)
+KTrimmed:               	2431454 reads (19.07%) 	77178424 bases (7.96%)
+Total Removed:          	117671 reads (0.92%) 	230180252 bases (23.75%)
+Result:                 	12632381 reads (99.08%) 	738823700 bases (76.25%)
+
+Time:                         	25.959 seconds.
+Reads Processed:      12750k 	491.16k reads/sec
+Bases Processed:        969m 	37.33m bases/sec
+Started analysis of hash2_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash2_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash2_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash2_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash2_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash2_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash2_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash2_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash2_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash2_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash2_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash2_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash2_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash2_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash2_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash2_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash2_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash2_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash2_1_Jvpna32.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash2_1_Jvpna32.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash2_1_Jvpna33.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash2_1_Jvpna33.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash2_1_Jvpna33.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash2_1_Jvpna33.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.023 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.103 seconds.
+Memory: max=1073m, total=1073m, free=1038m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.027 seconds.
+Processing time:   		22.878 seconds.
+
+Input:                  	10971450 reads 		833830200 bases.
+QTrimmed:               	121 reads (0.00%) 	1091 bases (0.00%)
+FTrimmed:               	10971450 reads (100.00%) 	131657400 bases (15.79%)
+KTrimmed:               	1822022 reads (16.61%) 	57395792 bases (6.88%)
+Total Removed:          	85162 reads (0.78%) 	189054283 bases (22.67%)
+Result:                 	10886288 reads (99.22%) 	644775917 bases (77.33%)
+
+Time:                         	23.012 seconds.
+Reads Processed:      10971k 	476.77k reads/sec
+Bases Processed:        833m 	36.23m bases/sec
+Started analysis of hash2_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash2_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash2_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash2_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash2_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash2_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash2_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash2_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash2_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash2_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash2_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash2_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash2_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash2_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash2_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash2_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash2_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash2_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash2_1_Jvpna33.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash2_1_Jvpna33.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash2_1_Jvpna34.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash2_1_Jvpna34.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash2_1_Jvpna34.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash2_1_Jvpna34.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.028 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.124 seconds.
+Memory: max=1073m, total=1073m, free=1038m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.027 seconds.
+Processing time:   		21.600 seconds.
+
+Input:                  	10716029 reads 		814418204 bases.
+QTrimmed:               	103 reads (0.00%) 	875 bases (0.00%)
+FTrimmed:               	10716029 reads (100.00%) 	128592348 bases (15.79%)
+KTrimmed:               	1256490 reads (11.73%) 	38527164 bases (4.73%)
+Total Removed:          	53432 reads (0.50%) 	167120387 bases (20.52%)
+Result:                 	10662597 reads (99.50%) 	647297817 bases (79.48%)
+
+Time:                         	21.756 seconds.
+Reads Processed:      10716k 	492.55k reads/sec
+Bases Processed:        814m 	37.43m bases/sec
+Started analysis of hash2_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash2_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash2_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash2_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash2_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash2_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash2_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash2_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash2_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash2_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash2_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash2_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash2_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash2_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash2_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash2_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash2_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash2_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash2_1_Jvpna34.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash2_1_Jvpna34.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash2_1_Jvpna36.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash2_1_Jvpna36.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash2_1_Jvpna36.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash2_1_Jvpna36.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.016 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.113 seconds.
+Memory: max=1073m, total=1073m, free=1038m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.027 seconds.
+Processing time:   		20.637 seconds.
+
+Input:                  	10869410 reads 		826075160 bases.
+QTrimmed:               	121 reads (0.00%) 	1040 bases (0.00%)
+FTrimmed:               	10869410 reads (100.00%) 	130432920 bases (15.79%)
+KTrimmed:               	1562581 reads (14.38%) 	50556603 bases (6.12%)
+Total Removed:          	80289 reads (0.74%) 	180990563 bases (21.91%)
+Result:                 	10789121 reads (99.26%) 	645084597 bases (78.09%)
+
+Time:                         	20.780 seconds.
+Reads Processed:      10869k 	523.06k reads/sec
+Bases Processed:        826m 	39.75m bases/sec
+Started analysis of hash2_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash2_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash2_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash2_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash2_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash2_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash2_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash2_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash2_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash2_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash2_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash2_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash2_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash2_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash2_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash2_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash2_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash2_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash2_1_Jvpna36.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash2_1_Jvpna36.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash2_1_Jvpna37.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash2_1_Jvpna37.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash2_1_Jvpna37.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash2_1_Jvpna37.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.024 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.122 seconds.
+Memory: max=1073m, total=1073m, free=1038m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.028 seconds.
+Processing time:   		24.112 seconds.
+
+Input:                  	11678803 reads 		887589028 bases.
+QTrimmed:               	118 reads (0.00%) 	1023 bases (0.00%)
+FTrimmed:               	11678803 reads (100.00%) 	140145636 bases (15.79%)
+KTrimmed:               	1603482 reads (13.73%) 	52251009 bases (5.89%)
+Total Removed:          	87305 reads (0.75%) 	192397668 bases (21.68%)
+Result:                 	11591498 reads (99.25%) 	695191360 bases (78.32%)
+
+Time:                         	24.267 seconds.
+Reads Processed:      11678k 	481.27k reads/sec
+Bases Processed:        887m 	36.58m bases/sec
+Started analysis of hash2_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash2_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash2_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash2_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash2_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash2_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash2_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash2_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash2_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash2_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash2_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash2_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash2_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash2_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash2_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash2_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash2_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash2_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash2_1_Jvpna37.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash2_1_Jvpna37.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash2_1_w_o_control.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash2_1_w_o_control.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash2_1_w_o_control.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash2_1_w_o_control.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.023 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.090 seconds.
+Memory: max=1073m, total=1073m, free=1038m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.024 seconds.
+Processing time:   		25.197 seconds.
+
+Input:                  	12451404 reads 		946306704 bases.
+QTrimmed:               	137 reads (0.00%) 	1128 bases (0.00%)
+FTrimmed:               	12451404 reads (100.00%) 	149416848 bases (15.79%)
+KTrimmed:               	1333671 reads (10.71%) 	42218294 bases (4.46%)
+Total Removed:          	77624 reads (0.62%) 	191636270 bases (20.25%)
+Result:                 	12373780 reads (99.38%) 	754670434 bases (79.75%)
+
+Time:                         	25.315 seconds.
+Reads Processed:      12451k 	491.86k reads/sec
+Bases Processed:        946m 	37.38m bases/sec
+Started analysis of hash2_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash2_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash2_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash2_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash2_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash2_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash2_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash2_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash2_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash2_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash2_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash2_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash2_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash2_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash2_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash2_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash2_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash2_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash2_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash2_1_w_o_control.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash2_2_JVpna100.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash2_2_JVpna100.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash2_2_JVpna100.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash2_2_JVpna100.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.020 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.117 seconds.
+Memory: max=1073m, total=1073m, free=1038m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.027 seconds.
+Processing time:   		25.069 seconds.
+
+Input:                  	12192640 reads 		926640640 bases.
+QTrimmed:               	131 reads (0.00%) 	1149 bases (0.00%)
+FTrimmed:               	12192640 reads (100.00%) 	146311680 bases (15.79%)
+KTrimmed:               	2298425 reads (18.85%) 	72329266 bases (7.81%)
+Total Removed:          	66978 reads (0.55%) 	218642095 bases (23.60%)
+Result:                 	12125662 reads (99.45%) 	707998545 bases (76.40%)
+
+Time:                         	25.217 seconds.
+Reads Processed:      12192k 	483.52k reads/sec
+Bases Processed:        926m 	36.75m bases/sec
+Started analysis of hash2_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash2_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash2_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash2_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash2_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash2_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash2_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash2_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash2_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash2_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash2_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash2_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash2_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash2_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash2_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash2_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash2_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash2_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash2_2_JVpna100.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash2_2_JVpna100.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash2_2_JVpna101.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash2_2_JVpna101.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash2_2_JVpna101.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash2_2_JVpna101.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.019 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.083 seconds.
+Memory: max=1073m, total=1073m, free=1038m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.027 seconds.
+Processing time:   		24.439 seconds.
+
+Input:                  	12302517 reads 		934991292 bases.
+QTrimmed:               	150 reads (0.00%) 	1266 bases (0.00%)
+FTrimmed:               	12302517 reads (100.00%) 	147630204 bases (15.79%)
+KTrimmed:               	1904163 reads (15.48%) 	60223479 bases (6.44%)
+Total Removed:          	55692 reads (0.45%) 	207854949 bases (22.23%)
+Result:                 	12246825 reads (99.55%) 	727136343 bases (77.77%)
+
+Time:                         	24.555 seconds.
+Reads Processed:      12302k 	501.03k reads/sec
+Bases Processed:        934m 	38.08m bases/sec
+Started analysis of hash2_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash2_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash2_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash2_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash2_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash2_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash2_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash2_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash2_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash2_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash2_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash2_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash2_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash2_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash2_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash2_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash2_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash2_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash2_2_JVpna101.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash2_2_JVpna101.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash2_2_JVpna102.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash2_2_JVpna102.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash2_2_JVpna102.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash2_2_JVpna102.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.023 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.122 seconds.
+Memory: max=1073m, total=1073m, free=1038m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.028 seconds.
+Processing time:   		21.763 seconds.
+
+Input:                  	10910318 reads 		829184168 bases.
+QTrimmed:               	119 reads (0.00%) 	985 bases (0.00%)
+FTrimmed:               	10910318 reads (100.00%) 	130923816 bases (15.79%)
+KTrimmed:               	1682375 reads (15.42%) 	51857158 bases (6.25%)
+Total Removed:          	55090 reads (0.50%) 	182781959 bases (22.04%)
+Result:                 	10855228 reads (99.50%) 	646402209 bases (77.96%)
+
+Time:                         	21.917 seconds.
+Reads Processed:      10910k 	497.81k reads/sec
+Bases Processed:        829m 	37.83m bases/sec
+Started analysis of hash2_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash2_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash2_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash2_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash2_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash2_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash2_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash2_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash2_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash2_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash2_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash2_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash2_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash2_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash2_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash2_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash2_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash2_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash2_2_JVpna102.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash2_2_JVpna102.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash2_2_JVpna29.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash2_2_JVpna29.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash2_2_JVpna29.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash2_2_JVpna29.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.022 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.107 seconds.
+Memory: max=1073m, total=1073m, free=1038m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.027 seconds.
+Processing time:   		24.815 seconds.
+
+Input:                  	12290998 reads 		934115848 bases.
+QTrimmed:               	127 reads (0.00%) 	1109 bases (0.00%)
+FTrimmed:               	12290998 reads (100.00%) 	147491976 bases (15.79%)
+KTrimmed:               	2160875 reads (17.58%) 	68552090 bases (7.34%)
+Total Removed:          	96023 reads (0.78%) 	216045175 bases (23.13%)
+Result:                 	12194975 reads (99.22%) 	718070673 bases (76.87%)
+
+Time:                         	24.953 seconds.
+Reads Processed:      12290k 	492.56k reads/sec
+Bases Processed:        934m 	37.43m bases/sec
+Started analysis of hash2_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash2_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash2_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash2_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash2_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash2_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash2_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash2_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash2_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash2_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash2_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash2_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash2_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash2_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash2_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash2_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash2_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash2_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash2_2_JVpna29.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash2_2_JVpna29.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash2_2_JVpna35.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash2_2_JVpna35.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash2_2_JVpna35.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash2_2_JVpna35.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.021 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.096 seconds.
+Memory: max=1073m, total=1073m, free=1038m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.030 seconds.
+Processing time:   		20.749 seconds.
+
+Input:                  	10485513 reads 		796898988 bases.
+QTrimmed:               	108 reads (0.00%) 	931 bases (0.00%)
+FTrimmed:               	10485513 reads (100.00%) 	125826156 bases (15.79%)
+KTrimmed:               	2014449 reads (19.21%) 	63385711 bases (7.95%)
+Total Removed:          	88324 reads (0.84%) 	189212798 bases (23.74%)
+Result:                 	10397189 reads (99.16%) 	607686190 bases (76.26%)
+
+Time:                         	20.880 seconds.
+Reads Processed:      10485k 	502.19k reads/sec
+Bases Processed:        796m 	38.17m bases/sec
+Started analysis of hash2_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash2_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash2_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash2_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash2_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash2_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash2_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash2_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash2_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash2_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash2_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash2_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash2_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash2_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash2_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash2_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash2_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash2_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash2_2_JVpna35.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash2_2_JVpna35.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash2_2_JVpna99.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash2_2_JVpna99.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash2_2_JVpna99.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash2_2_JVpna99.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.015 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.115 seconds.
+Memory: max=1073m, total=1073m, free=1038m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.026 seconds.
+Processing time:   		22.847 seconds.
+
+Input:                  	11160209 reads 		848175884 bases.
+QTrimmed:               	117 reads (0.00%) 	934 bases (0.00%)
+FTrimmed:               	11160209 reads (100.00%) 	133922508 bases (15.79%)
+KTrimmed:               	1961178 reads (17.57%) 	61888550 bases (7.30%)
+Total Removed:          	73120 reads (0.66%) 	195811992 bases (23.09%)
+Result:                 	11087089 reads (99.34%) 	652363892 bases (76.91%)
+
+Time:                         	22.992 seconds.
+Reads Processed:      11160k 	485.40k reads/sec
+Bases Processed:        848m 	36.89m bases/sec
+Started analysis of hash2_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash2_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash2_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash2_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash2_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash2_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash2_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash2_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash2_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash2_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash2_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash2_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash2_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash2_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash2_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash2_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash2_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash2_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash2_2_JVpna99.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash2_2_JVpna99.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash2_2_w_o_control.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash2_2_w_o_control.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash2_2_w_o_control.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash2_2_w_o_control.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.021 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.102 seconds.
+Memory: max=1073m, total=1073m, free=1038m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.025 seconds.
+Processing time:   		22.783 seconds.
+
+Input:                  	11198729 reads 		851103404 bases.
+QTrimmed:               	147 reads (0.00%) 	1279 bases (0.00%)
+FTrimmed:               	11198729 reads (100.00%) 	134384748 bases (15.79%)
+KTrimmed:               	1512404 reads (13.51%) 	47914456 bases (5.63%)
+Total Removed:          	85359 reads (0.76%) 	182300483 bases (21.42%)
+Result:                 	11113370 reads (99.24%) 	668802921 bases (78.58%)
+
+Time:                         	22.913 seconds.
+Reads Processed:      11198k 	488.74k reads/sec
+Bases Processed:        851m 	37.14m bases/sec
+Started analysis of hash2_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash2_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash2_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash2_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash2_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash2_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash2_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash2_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash2_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash2_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash2_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash2_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash2_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash2_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash2_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash2_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash2_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash2_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash2_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash2_2_w_o_control.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash3_1_JVpna103.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash3_1_JVpna103.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash3_1_JVpna103.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash3_1_JVpna103.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.027 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.094 seconds.
+Memory: max=1073m, total=1073m, free=1038m, used=35m
+
+Input is being processed as unpaired
+Started output streams:	0.027 seconds.
+Processing time:   		23.287 seconds.
+
+Input:                  	11148664 reads 		847298464 bases.
+QTrimmed:               	159 reads (0.00%) 	1445 bases (0.00%)
+FTrimmed:               	11148664 reads (100.00%) 	133783968 bases (15.79%)
+KTrimmed:               	1600043 reads (14.35%) 	56150716 bases (6.63%)
+Total Removed:          	60249 reads (0.54%) 	189936129 bases (22.42%)
+Result:                 	11088415 reads (99.46%) 	657362335 bases (77.58%)
+
+Time:                         	23.412 seconds.
+Reads Processed:      11148k 	476.19k reads/sec
+Bases Processed:        847m 	36.19m bases/sec
+Started analysis of hash3_1_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash3_1_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash3_1_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash3_1_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash3_1_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash3_1_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash3_1_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash3_1_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash3_1_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash3_1_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash3_1_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash3_1_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash3_1_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash3_1_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash3_1_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash3_1_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash3_1_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash3_1_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash3_1_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash3_1_JVpna103.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash3_1_w_o_control.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash3_1_w_o_control.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash3_1_w_o_control.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash3_1_w_o_control.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.018 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.120 seconds.
+Memory: max=1073m, total=1073m, free=1039m, used=34m
+
+Input is being processed as unpaired
+Started output streams:	0.031 seconds.
+Processing time:   		24.371 seconds.
+
+Input:                  	11390479 reads 		865676404 bases.
+QTrimmed:               	139 reads (0.00%) 	1152 bases (0.00%)
+FTrimmed:               	11390479 reads (100.00%) 	136685748 bases (15.79%)
+KTrimmed:               	819951 reads (7.20%) 	26216489 bases (3.03%)
+Total Removed:          	52799 reads (0.46%) 	162903389 bases (18.82%)
+Result:                 	11337680 reads (99.54%) 	702773015 bases (81.18%)
+
+Time:                         	24.526 seconds.
+Reads Processed:      11390k 	464.43k reads/sec
+Bases Processed:        865m 	35.30m bases/sec
+Started analysis of hash3_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash3_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash3_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash3_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash3_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash3_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash3_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash3_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash3_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash3_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash3_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash3_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash3_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash3_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash3_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash3_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash3_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash3_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash3_1_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash3_1_w_o_control.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash3_2_JVpna103.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash3_2_JVpna103.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash3_2_JVpna103.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash3_2_JVpna103.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.024 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.132 seconds.
+Memory: max=1073m, total=1073m, free=1039m, used=34m
+
+Input is being processed as unpaired
+Started output streams:	0.028 seconds.
+Processing time:   		25.825 seconds.
+
+Input:                  	12995964 reads 		987693264 bases.
+QTrimmed:               	137 reads (0.00%) 	1145 bases (0.00%)
+FTrimmed:               	12995964 reads (100.00%) 	155951568 bases (15.79%)
+KTrimmed:               	2418160 reads (18.61%) 	86101997 bases (8.72%)
+Total Removed:          	122083 reads (0.94%) 	242054710 bases (24.51%)
+Result:                 	12873881 reads (99.06%) 	745638554 bases (75.49%)
+
+Time:                         	25.989 seconds.
+Reads Processed:      12995k 	500.06k reads/sec
+Bases Processed:        987m 	38.00m bases/sec
+Started analysis of hash3_2_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash3_2_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash3_2_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash3_2_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash3_2_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash3_2_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash3_2_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash3_2_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash3_2_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash3_2_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash3_2_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash3_2_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash3_2_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash3_2_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash3_2_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash3_2_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash3_2_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash3_2_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash3_2_JVpna103.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash3_2_JVpna103.fq.gz_trimmed.fastq.gz
+java -ea -Xmx1g -Xms1g -cp /home/jakob/bin/bbmap/current/ jgi.BBDuk -Xmx1g in=../data/fastq/hash3_2_w_o_control.fq.gz ref=~/bin/bbmap/resources/adapters.fa t=20 out=../data/libs/hash3_2_w_o_control.fq.gz_trimmed.fastq.gz ktrim=r k=23 mink=11 hdist=1 qtrim=r trimq=10 ftl=12
+Executing jgi.BBDuk [-Xmx1g, in=../data/fastq/hash3_2_w_o_control.fq.gz, ref=/home/jakob/bin/bbmap/resources/adapters.fa, t=20, out=../data/libs/hash3_2_w_o_control.fq.gz_trimmed.fastq.gz, ktrim=r, k=23, mink=11, hdist=1, qtrim=r, trimq=10, ftl=12]
+Version 38.79
+
+Set threads to 20
+maskMiddle was disabled because useShortKmers=true
+0.020 seconds.
+Initial:
+Memory: max=1073m, total=1073m, free=1043m, used=30m
+
+Added 219105 kmers; time: 	0.089 seconds.
+Memory: max=1073m, total=1073m, free=1039m, used=34m
+
+Input is being processed as unpaired
+Started output streams:	0.026 seconds.
+Processing time:   		24.965 seconds.
+
+Input:                  	11942228 reads 		907609328 bases.
+QTrimmed:               	125 reads (0.00%) 	1081 bases (0.00%)
+FTrimmed:               	11942228 reads (100.00%) 	143306736 bases (15.79%)
+KTrimmed:               	1465417 reads (12.27%) 	46300473 bases (5.10%)
+Total Removed:          	73761 reads (0.62%) 	189608290 bases (20.89%)
+Result:                 	11868467 reads (99.38%) 	718001038 bases (79.11%)
+
+Time:                         	25.083 seconds.
+Reads Processed:      11942k 	476.10k reads/sec
+Bases Processed:        907m 	36.18m bases/sec
+Started analysis of hash3_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 5% complete for hash3_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 10% complete for hash3_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 15% complete for hash3_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 20% complete for hash3_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 25% complete for hash3_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 30% complete for hash3_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 35% complete for hash3_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 40% complete for hash3_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 45% complete for hash3_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 50% complete for hash3_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 55% complete for hash3_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 60% complete for hash3_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 65% complete for hash3_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 70% complete for hash3_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 75% complete for hash3_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 80% complete for hash3_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 85% complete for hash3_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 90% complete for hash3_2_w_o_control.fq.gz_trimmed.fastq.gz
+Approx 95% complete for hash3_2_w_o_control.fq.gz_trimmed.fastq.gz
+java -ea -Xmx119265m -Xms119265m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash1_1_Jvpna21.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash1_1_Jvpna21.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash1_1_Jvpna21.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash1_1_Jvpna21.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.086 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.077 seconds.
+Analyzed Index:   	0.163 seconds.
+Started output stream:	0.065 seconds.
+Cleared Memory:    	0.143 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	12170944	(733464931 bases)
+
+Mapping:          	951.751 seconds.
+Reads/sec:       	12787.95
+kBases/sec:      	770.65
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 94.6092% 	 11514831 	 95.9475% 	   703741201
+unambiguous:     	 88.3703% 	 10755496 	 91.2149% 	   669029649
+ambiguous:       	  6.2389% 	   759335 	  4.7325% 	    34711552
+low-Q discards:  	  0.0000% 	        3 	  0.0000% 	          34
+
+perfect best site:	 58.1074% 	  7072214 	 60.8284% 	   446154943
+semiperfect site:	 58.1143% 	  7073063 	 60.8357% 	   446208298
+
+Match Rate:      	      NA 	       NA 	 69.3715% 	   694683982
+Error Rate:      	 36.8889% 	  4440865 	 30.6270% 	   306698310
+Sub Rate:        	 32.5538% 	  3918992 	  0.8089% 	     8099802
+Del Rate:        	  3.0188% 	   363424 	 29.7241% 	   297655750
+Ins Rate:        	  5.9029% 	   710616 	  0.0941% 	      942758
+N Rate:          	  0.0204% 	     2451 	  0.0015% 	       14659
+
+Total time:     	952.432 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119348m -Xms119348m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash1_1_Jvpna22.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash1_1_Jvpna22.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash1_1_Jvpna22.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash1_1_Jvpna22.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.102 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.057 seconds.
+Analyzed Index:   	0.183 seconds.
+Started output stream:	0.067 seconds.
+Cleared Memory:    	0.145 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	11189049	(690509150 bases)
+
+Mapping:          	851.633 seconds.
+Reads/sec:       	13138.34
+kBases/sec:      	810.81
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 96.2249% 	 10766656 	 97.0781% 	   670332858
+unambiguous:     	 91.2135% 	 10205918 	 92.8954% 	   641451157
+ambiguous:       	  5.0115% 	   560738 	  4.1827% 	    28881701
+low-Q discards:  	  0.0000% 	        1 	  0.0000% 	          11
+
+perfect best site:	 60.6371% 	  6784714 	 62.4091% 	   430940456
+semiperfect site:	 60.6436% 	  6785447 	 62.4158% 	   430987043
+
+Match Rate:      	      NA 	       NA 	 73.7035% 	   662668182
+Error Rate:      	 35.8803% 	  3980384 	 26.2950% 	   236418371
+Sub Rate:        	 31.1767% 	  3458588 	  0.7593% 	     6826861
+Del Rate:        	  3.0724% 	   340837 	 25.4440% 	   228766986
+Ins Rate:        	  5.7559% 	   638534 	  0.0917% 	      824524
+N Rate:          	  0.0194% 	     2156 	  0.0015% 	       13291
+
+Total time:     	852.364 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119348m -Xms119348m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash1_1_Jvpna30.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash1_1_Jvpna30.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash1_1_Jvpna30.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash1_1_Jvpna30.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.086 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.053 seconds.
+Analyzed Index:   	0.064 seconds.
+Started output stream:	0.065 seconds.
+Cleared Memory:    	0.143 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	12280172	(711786556 bases)
+
+Mapping:          	1116.979 seconds.
+Reads/sec:       	10994.09
+kBases/sec:      	637.24
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 91.0162% 	 11176943 	 93.2959% 	   664067358
+unambiguous:     	 83.1999% 	 10217090 	 88.0024% 	   626389207
+ambiguous:       	  7.8163% 	   959853 	  5.2935% 	    37678151
+low-Q discards:  	  0.0000% 	        4 	  0.0000% 	          56
+
+perfect best site:	 51.9241% 	  6376368 	 55.9292% 	   398096580
+semiperfect site:	 51.9299% 	  6377076 	 55.9354% 	   398140812
+
+Match Rate:      	      NA 	       NA 	 62.5848% 	   653604315
+Error Rate:      	 39.7149% 	  4799100 	 37.4140% 	   390733572
+Sub Rate:        	 35.4983% 	  4289574 	  0.9012% 	     9411459
+Del Rate:        	  3.4888% 	   421584 	 36.4134% 	   380283142
+Ins Rate:        	  6.2568% 	   756066 	  0.0995% 	     1038971
+N Rate:          	  0.0184% 	     2222 	  0.0012% 	       12613
+
+Total time:     	1117.535 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119541m -Xms119541m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash1_1_Jvpna31.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash1_1_Jvpna31.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash1_1_Jvpna31.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash1_1_Jvpna31.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.086 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.092 seconds.
+Analyzed Index:   	0.155 seconds.
+Started output stream:	0.069 seconds.
+Cleared Memory:    	0.144 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	12241984	(738927108 bases)
+
+Mapping:          	976.456 seconds.
+Reads/sec:       	12537.15
+kBases/sec:      	756.74
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 90.3785% 	 11064117 	 92.7450% 	   685317738
+unambiguous:     	 84.9830% 	 10403609 	 88.6194% 	   654832424
+ambiguous:       	  5.3954% 	   660508 	  4.1256% 	    30485314
+low-Q discards:  	  0.0000% 	        5 	  0.0000% 	          55
+
+perfect best site:	 57.7654% 	  7071634 	 60.5462% 	   447392619
+semiperfect site:	 57.7724% 	  7072487 	 60.5536% 	   447446832
+
+Match Rate:      	      NA 	       NA 	 76.5224% 	   677784650
+Error Rate:      	 33.3043% 	  3990755 	 23.4758% 	   207933069
+Sub Rate:        	 29.2493% 	  3504856 	  0.7637% 	     6764061
+Del Rate:        	  2.6959% 	   323036 	 22.6271% 	   200415763
+Ins Rate:        	  4.8516% 	   581352 	  0.0850% 	      753245
+N Rate:          	  0.0198% 	     2368 	  0.0018% 	       15782
+
+Total time:     	977.150 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119456m -Xms119456m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash1_1_Jvpna32.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash1_1_Jvpna32.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash1_1_Jvpna32.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash1_1_Jvpna32.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.086 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.053 seconds.
+Analyzed Index:   	0.158 seconds.
+Started output stream:	0.068 seconds.
+Cleared Memory:    	0.152 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	10613923	(650147073 bases)
+
+Mapping:          	772.282 seconds.
+Reads/sec:       	13743.58
+kBases/sec:      	841.85
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 94.9149% 	 10074199 	 96.2028% 	   625459411
+unambiguous:     	 89.9564% 	  9547901 	 92.3683% 	   600529495
+ambiguous:       	  4.9586% 	   526298 	  3.8345% 	    24929916
+low-Q discards:  	  0.0000% 	        1 	  0.0000% 	          12
+
+perfect best site:	 61.5271% 	  6530439 	 63.6307% 	   413693152
+semiperfect site:	 61.5353% 	  6531306 	 63.6392% 	   413748433
+
+Match Rate:      	      NA 	       NA 	 76.0770% 	   618787119
+Error Rate:      	 33.7351% 	  3542096 	 23.9210% 	   194566314
+Sub Rate:        	 29.4398% 	  3091103 	  0.7319% 	     5952759
+Del Rate:        	  2.6720% 	   280555 	 23.1026% 	   187909646
+Ins Rate:        	  5.2355% 	   549713 	  0.0865% 	      703909
+N Rate:          	  0.0215% 	     2259 	  0.0019% 	       15624
+
+Total time:     	772.944 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119203m -Xms119203m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash1_1_Jvpna33.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash1_1_Jvpna33.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash1_1_Jvpna33.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash1_1_Jvpna33.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.091 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.075 seconds.
+Analyzed Index:   	0.078 seconds.
+Started output stream:	0.069 seconds.
+Cleared Memory:    	0.142 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	10690971	(653477830 bases)
+
+Mapping:          	781.010 seconds.
+Reads/sec:       	13688.65
+kBases/sec:      	836.71
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 95.1327% 	 10170614 	 96.3851% 	   629855304
+unambiguous:     	 90.2402% 	  9647557 	 92.6272% 	   605298277
+ambiguous:       	  4.8925% 	   523057 	  3.7579% 	    24557027
+low-Q discards:  	  0.0000% 	        2 	  0.0000% 	          26
+
+perfect best site:	 60.6882% 	  6488163 	 62.8969% 	   411017598
+semiperfect site:	 60.6944% 	  6488822 	 62.9033% 	   411059417
+
+Match Rate:      	      NA 	       NA 	 75.0283% 	   622760912
+Error Rate:      	 34.7791% 	  3680954 	 24.9703% 	   207262051
+Sub Rate:        	 30.4661% 	  3224469 	  0.7649% 	     6348791
+Del Rate:        	  2.8272% 	   299227 	 24.1170% 	   200179679
+Ins Rate:        	  5.3694% 	   568286 	  0.0884% 	      733581
+N Rate:          	  0.0197% 	     2085 	  0.0014% 	       12020
+
+Total time:     	781.611 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119503m -Xms119503m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash1_1_Jvpna34.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash1_1_Jvpna34.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash1_1_Jvpna34.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash1_1_Jvpna34.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.086 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.053 seconds.
+Analyzed Index:   	0.066 seconds.
+Started output stream:	0.071 seconds.
+Cleared Memory:    	0.142 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	9769851	(596100709 bases)
+
+Mapping:          	729.458 seconds.
+Reads/sec:       	13393.29
+kBases/sec:      	817.18
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 94.4203% 	  9224722 	 95.8336% 	   571264568
+unambiguous:     	 89.2942% 	  8723907 	 91.8878% 	   547743819
+ambiguous:       	  5.1261% 	   500815 	  3.9458% 	    23520749
+low-Q discards:  	  0.0000% 	        1 	  0.0000% 	          11
+
+perfect best site:	 61.0955% 	  5968939 	 63.4268% 	   378087401
+semiperfect site:	 61.1033% 	  5969701 	 63.4349% 	   378135894
+
+Match Rate:      	      NA 	       NA 	 75.7220% 	   565033892
+Error Rate:      	 33.7034% 	  3254258 	 24.2763% 	   181148427
+Sub Rate:        	 29.6204% 	  2860020 	  0.7476% 	     5578260
+Del Rate:        	  2.5887% 	   249955 	 23.4430% 	   174930995
+Ins Rate:        	  5.1444% 	   496724 	  0.0857% 	      639172
+N Rate:          	  0.0206% 	     1986 	  0.0018% 	       13244
+
+Total time:     	730.023 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119282m -Xms119282m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash1_1_Jvpna36.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash1_1_Jvpna36.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash1_1_Jvpna36.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash1_1_Jvpna36.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.087 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.053 seconds.
+Analyzed Index:   	0.112 seconds.
+Started output stream:	0.065 seconds.
+Cleared Memory:    	0.143 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	10626614	(646263632 bases)
+
+Mapping:          	838.723 seconds.
+Reads/sec:       	12669.99
+kBases/sec:      	770.53
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 93.8421% 	  9972236 	 95.2938% 	   615849436
+unambiguous:     	 88.1503% 	  9367390 	 90.7550% 	   586516868
+ambiguous:       	  5.6918% 	   604846 	  4.5388% 	    29332568
+low-Q discards:  	  0.0000% 	        2 	  0.0000% 	          26
+
+perfect best site:	 59.5071% 	  6323587 	 62.0077% 	   400733069
+semiperfect site:	 59.5132% 	  6324236 	 62.0141% 	   400774327
+
+Match Rate:      	      NA 	       NA 	 71.1881% 	   608568816
+Error Rate:      	 34.7874% 	  3647208 	 28.8105% 	   246293691
+Sub Rate:        	 30.5683% 	  3204859 	  0.7624% 	     6517873
+Del Rate:        	  2.9033% 	   304395 	 27.9602% 	   239024720
+Ins Rate:        	  5.4073% 	   566911 	  0.0879% 	      751098
+N Rate:          	  0.0192% 	     2013 	  0.0014% 	       11649
+
+Total time:     	839.332 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119257m -Xms119257m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash1_1_Jvpna37.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash1_1_Jvpna37.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash1_1_Jvpna37.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash1_1_Jvpna37.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.091 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.093 seconds.
+Analyzed Index:   	0.062 seconds.
+Started output stream:	0.066 seconds.
+Cleared Memory:    	0.145 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	12157512	(740684702 bases)
+
+Mapping:          	879.113 seconds.
+Reads/sec:       	13829.30
+kBases/sec:      	842.54
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 94.0970% 	 11439857 	 95.5767% 	   707922221
+unambiguous:     	 89.1897% 	 10843253 	 91.8701% 	   680467795
+ambiguous:       	  4.9073% 	   596604 	  3.7066% 	    27454426
+low-Q discards:  	  0.0000% 	        5 	  0.0000% 	          59
+
+perfect best site:	 60.0243% 	  7297457 	 62.4537% 	   462585198
+semiperfect site:	 60.0342% 	  7298666 	 62.4641% 	   462661988
+
+Match Rate:      	      NA 	       NA 	 74.2820% 	   699924114
+Error Rate:      	 34.4810% 	  4140300 	 25.7157% 	   242306660
+Sub Rate:        	 30.0604% 	  3609503 	  0.7548% 	     7112371
+Del Rate:        	  2.7564% 	   330979 	 24.8691% 	   234329907
+Ins Rate:        	  5.5605% 	   667673 	  0.0917% 	      864382
+N Rate:          	  0.0239% 	     2864 	  0.0023% 	       21354
+
+Total time:     	879.718 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119354m -Xms119354m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash1_1_w_o_control.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash1_1_w_o_control.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash1_1_w_o_control.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash1_1_w_o_control.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.087 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.054 seconds.
+Analyzed Index:   	0.066 seconds.
+Started output stream:	0.067 seconds.
+Cleared Memory:    	0.163 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	12388217	(754168850 bases)
+
+Mapping:          	904.793 seconds.
+Reads/sec:       	13691.77
+kBases/sec:      	833.53
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 95.9589% 	 11887596 	 96.9531% 	   731189826
+unambiguous:     	 90.1303% 	 11165531 	 92.5399% 	   697907070
+ambiguous:       	  5.8286% 	   722065 	  4.4132% 	    33282756
+low-Q discards:  	  0.0000% 	        3 	  0.0000% 	          35
+
+perfect best site:	 60.3391% 	  7474943 	 62.5734% 	   471909462
+semiperfect site:	 60.3461% 	  7475801 	 62.5807% 	   471963951
+
+Match Rate:      	      NA 	       NA 	 70.7115% 	   722165007
+Error Rate:      	 35.9172% 	  4410912 	 29.2870% 	   299103188
+Sub Rate:        	 31.7959% 	  3904786 	  0.7883% 	     8051285
+Del Rate:        	  2.2997% 	   282425 	 28.4048% 	   290094077
+Ins Rate:        	  5.9679% 	   732904 	  0.0938% 	      957826
+N Rate:          	  0.0201% 	     2469 	  0.0015% 	       15708
+
+Total time:     	905.378 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119488m -Xms119488m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash1_2_JVpna100.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash1_2_JVpna100.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash1_2_JVpna100.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash1_2_JVpna100.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.086 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.069 seconds.
+Analyzed Index:   	0.065 seconds.
+Started output stream:	0.072 seconds.
+Cleared Memory:    	0.143 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	12357888	(697183156 bases)
+
+Mapping:          	1088.158 seconds.
+Reads/sec:       	11356.70
+kBases/sec:      	640.70
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 90.2661% 	 11154979 	 93.0710% 	   648875669
+unambiguous:     	 78.3255% 	  9679382 	 84.7218% 	   590666041
+ambiguous:       	 11.9405% 	  1475597 	  8.3493% 	    58209628
+low-Q discards:  	  0.0000% 	        5 	  0.0000% 	          71
+
+perfect best site:	 50.2597% 	  6211032 	 55.0917% 	   384089916
+semiperfect site:	 50.2662% 	  6211837 	 55.0989% 	   384140318
+
+Match Rate:      	      NA 	       NA 	 58.1449% 	   637926486
+Error Rate:      	 40.5642% 	  4942371 	 41.8537% 	   459189795
+Sub Rate:        	 36.3498% 	  4428881 	  0.8964% 	     9834292
+Del Rate:        	  3.3912% 	   413181 	 40.8571% 	   448256044
+Ins Rate:        	  6.5950% 	   803541 	  0.1002% 	     1099459
+N Rate:          	  0.0193% 	     2351 	  0.0014% 	       15432
+
+Total time:     	1088.741 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119242m -Xms119242m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash1_2_JVpna101.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash1_2_JVpna101.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash1_2_JVpna101.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash1_2_JVpna101.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.085 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.061 seconds.
+Analyzed Index:   	0.069 seconds.
+Started output stream:	0.095 seconds.
+Cleared Memory:    	0.145 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	9640261	(553079945 bases)
+
+Mapping:          	910.457 seconds.
+Reads/sec:       	10588.37
+kBases/sec:      	607.47
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 90.9584% 	  8768623 	 93.3532% 	   516317766
+unambiguous:     	 83.0743% 	  8008578 	 88.1618% 	   487605489
+ambiguous:       	  7.8841% 	   760045 	  5.1913% 	    28712277
+low-Q discards:  	  0.0000% 	        3 	  0.0000% 	          33
+
+perfect best site:	 49.5754% 	  4779198 	 53.7921% 	   297513464
+semiperfect site:	 49.5812% 	  4779754 	 53.7984% 	   297548264
+
+Match Rate:      	      NA 	       NA 	 58.4117% 	   507322561
+Error Rate:      	 41.9836% 	  3988261 	 41.5871% 	   361195922
+Sub Rate:        	 37.5875% 	  3570646 	  0.9288% 	     8067139
+Del Rate:        	  3.5472% 	   336965 	 40.5526% 	   352211245
+Ins Rate:        	  6.9887% 	   663898 	  0.1056% 	      917538
+N Rate:          	  0.0184% 	     1744 	  0.0012% 	       10528
+
+Total time:     	911.056 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119387m -Xms119387m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash1_2_JVpna102.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash1_2_JVpna102.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash1_2_JVpna102.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash1_2_JVpna102.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.086 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.053 seconds.
+Analyzed Index:   	0.158 seconds.
+Started output stream:	0.065 seconds.
+Cleared Memory:    	0.142 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	11718624	(689752567 bases)
+
+Mapping:          	1015.243 seconds.
+Reads/sec:       	11542.68
+kBases/sec:      	679.40
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 92.9978% 	 10898059 	 94.8474% 	   654212642
+unambiguous:     	 86.2812% 	 10110970 	 90.1649% 	   621914407
+ambiguous:       	  6.7166% 	   787089 	  4.6826% 	    32298235
+low-Q discards:  	  0.0001% 	        6 	  0.0000% 	          64
+
+perfect best site:	 53.8020% 	  6304849 	 57.3994% 	   395914091
+semiperfect site:	 53.8092% 	  6305694 	 57.4071% 	   395967128
+
+Match Rate:      	      NA 	       NA 	 61.5385% 	   644036451
+Error Rate:      	 39.6617% 	  4591578 	 38.4600% 	   402506154
+Sub Rate:        	 35.2292% 	  4078435 	  0.8664% 	     9067375
+Del Rate:        	  3.0909% 	   357824 	 37.4891% 	   392345880
+Ins Rate:        	  6.8924% 	   797924 	  0.1044% 	     1092899
+N Rate:          	  0.0207% 	     2393 	  0.0015% 	       15917
+
+Total time:     	1015.895 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119363m -Xms119363m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash1_2_JVpna29.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash1_2_JVpna29.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash1_2_JVpna29.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash1_2_JVpna29.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.085 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.053 seconds.
+Analyzed Index:   	0.063 seconds.
+Started output stream:	0.064 seconds.
+Cleared Memory:    	0.142 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	11355875	(680115709 bases)
+
+Mapping:          	899.711 seconds.
+Reads/sec:       	12621.69
+kBases/sec:      	755.93
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 94.6696% 	 10750556 	 96.2121% 	   654353606
+unambiguous:     	 89.0678% 	 10114431 	 92.4511% 	   628774529
+ambiguous:       	  5.6017% 	   636125 	  3.7610% 	    25579077
+low-Q discards:  	  0.0000% 	        2 	  0.0000% 	          22
+
+perfect best site:	 58.3287% 	  6623733 	 61.3109% 	   416985166
+semiperfect site:	 58.3365% 	  6624617 	 61.3192% 	   417041241
+
+Match Rate:      	      NA 	       NA 	 69.4353% 	   645774824
+Error Rate:      	 36.6581% 	  4125125 	 30.5630% 	   284247561
+Sub Rate:        	 32.3218% 	  3637162 	  0.8204% 	     7629827
+Del Rate:        	  2.4076% 	   270923 	 29.6423% 	   275685115
+Ins Rate:        	  6.3247% 	   711716 	  0.1003% 	      932619
+N Rate:          	  0.0208% 	     2344 	  0.0018% 	       16336
+
+Total time:     	900.262 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119305m -Xms119305m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash1_2_JVpna35.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash1_2_JVpna35.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash1_2_JVpna35.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash1_2_JVpna35.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.086 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.054 seconds.
+Analyzed Index:   	0.064 seconds.
+Started output stream:	0.065 seconds.
+Cleared Memory:    	0.143 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	12322778	(742854737 bases)
+
+Mapping:          	962.141 seconds.
+Reads/sec:       	12807.67
+kBases/sec:      	772.09
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 95.5508% 	 11774508 	 96.8584% 	   719517157
+unambiguous:     	 90.4710% 	 11148536 	 93.4423% 	   694140303
+ambiguous:       	  5.0798% 	   625972 	  3.4161% 	    25376854
+low-Q discards:  	  0.0000% 	        2 	  0.0000% 	          20
+
+perfect best site:	 59.5263% 	  7335289 	 62.2712% 	   462584483
+semiperfect site:	 59.5353% 	  7336404 	 62.2807% 	   462655231
+
+Match Rate:      	      NA 	       NA 	 69.7575% 	   710373281
+Error Rate:      	 36.2756% 	  4437139 	 30.2405% 	   307953378
+Sub Rate:        	 31.9331% 	  3905977 	  0.7969% 	     8114876
+Del Rate:        	  2.4002% 	   293584 	 29.3446% 	   298829587
+Ins Rate:        	  6.2855% 	   768821 	  0.0991% 	     1008915
+N Rate:          	  0.0234% 	     2859 	  0.0020% 	       20085
+
+Total time:     	962.700 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119377m -Xms119377m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash1_2_JVpna99.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash1_2_JVpna99.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash1_2_JVpna99.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash1_2_JVpna99.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.085 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.055 seconds.
+Analyzed Index:   	0.063 seconds.
+Started output stream:	0.065 seconds.
+Cleared Memory:    	0.143 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	11055678	(658716561 bases)
+
+Mapping:          	856.042 seconds.
+Reads/sec:       	12914.88
+kBases/sec:      	769.49
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 93.8608% 	 10376944 	 95.6935% 	   630349039
+unambiguous:     	 88.2037% 	  9751515 	 92.1130% 	   606763289
+ambiguous:       	  5.6571% 	   625429 	  3.5806% 	    23585750
+low-Q discards:  	  0.0000% 	        4 	  0.0000% 	          49
+
+perfect best site:	 58.7570% 	  6495980 	 62.0346% 	   408632169
+semiperfect site:	 58.7680% 	  6497206 	 62.0464% 	   408709657
+
+Match Rate:      	      NA 	       NA 	 71.4378% 	   622414033
+Error Rate:      	 35.4437% 	  3878944 	 28.5598% 	   248831989
+Sub Rate:        	 31.2452% 	  3419456 	  0.8100% 	     7057289
+Del Rate:        	  2.2906% 	   250677 	 27.6515% 	   240917962
+Ins Rate:        	  6.0205% 	   658878 	  0.0983% 	      856738
+N Rate:          	  0.0249% 	     2721 	  0.0024% 	       20979
+
+Total time:     	856.598 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119361m -Xms119361m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash1_2_w_o_control.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash1_2_w_o_control.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash1_2_w_o_control.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash1_2_w_o_control.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.071 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.052 seconds.
+Analyzed Index:   	0.054 seconds.
+Started output stream:	0.059 seconds.
+Cleared Memory:    	0.143 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	10156726	(611163153 bases)
+
+Mapping:          	774.948 seconds.
+Reads/sec:       	13106.33
+kBases/sec:      	788.65
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 95.1485% 	  9663968 	 96.6921% 	   590946183
+unambiguous:     	 90.1404% 	  9155309 	 93.2485% 	   569900196
+ambiguous:       	  5.0081% 	   508659 	  3.4436% 	    21045987
+low-Q discards:  	  0.0000% 	        2 	  0.0000% 	          24
+
+perfect best site:	 58.4841% 	  5940073 	 61.2610% 	   374404418
+semiperfect site:	 58.4924% 	  5940915 	 61.2697% 	   374457820
+
+Match Rate:      	      NA 	       NA 	 70.4077% 	   583324137
+Error Rate:      	 36.9285% 	  3722304 	 29.5905% 	   245155490
+Sub Rate:        	 32.2011% 	  3245793 	  0.8102% 	     6712611
+Del Rate:        	  2.3707% 	   238965 	 28.6723% 	   237548318
+Ins Rate:        	  6.8388% 	   689330 	  0.1080% 	      894561
+N Rate:          	  0.0222% 	     2239 	  0.0018% 	       14874
+
+Total time:     	775.449 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119357m -Xms119357m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash2_1_Jvpna21.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash2_1_Jvpna21.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash2_1_Jvpna21.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash2_1_Jvpna21.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.128 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.058 seconds.
+Analyzed Index:   	0.193 seconds.
+Started output stream:	0.065 seconds.
+Cleared Memory:    	0.142 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	11942473	(712596303 bases)
+
+Mapping:          	1024.799 seconds.
+Reads/sec:       	11653.48
+kBases/sec:      	695.35
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 92.4455% 	 11040276 	 94.6522% 	   674488039
+unambiguous:     	 87.2113% 	 10415185 	 91.0824% 	   649050105
+ambiguous:       	  5.2342% 	   625091 	  3.5698% 	    25437934
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	 55.7785% 	  6661328 	 58.8381% 	   419277822
+semiperfect site:	 55.7857% 	  6662196 	 58.8458% 	   419332772
+
+Match Rate:      	      NA 	       NA 	 69.2854% 	   665451829
+Error Rate:      	 37.1402% 	  4377299 	 30.7130% 	   294982994
+Sub Rate:        	 32.4329% 	  3822508 	  0.8307% 	     7978276
+Del Rate:        	  2.5128% 	   296159 	 29.7738% 	   285962399
+Ins Rate:        	  6.8024% 	   801726 	  0.1085% 	     1042319
+N Rate:          	  0.0201% 	     2368 	  0.0016% 	       15615
+
+Total time:     	1025.609 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119333m -Xms119333m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash2_1_Jvpna22.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash2_1_Jvpna22.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash2_1_Jvpna22.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash2_1_Jvpna22.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.086 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.053 seconds.
+Analyzed Index:   	0.063 seconds.
+Started output stream:	0.065 seconds.
+Cleared Memory:    	0.142 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	12511888	(750048357 bases)
+
+Mapping:          	1018.110 seconds.
+Reads/sec:       	12289.33
+kBases/sec:      	736.71
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 95.2587% 	 11918668 	 96.5241% 	   723977558
+unambiguous:     	 89.3561% 	 11180134 	 92.2157% 	   691661999
+ambiguous:       	  5.9027% 	   738534 	  4.3085% 	    32315559
+low-Q discards:  	  0.0000% 	        2 	  0.0000% 	          22
+
+perfect best site:	 57.1713% 	  7153211 	 60.0866% 	   450678534
+semiperfect site:	 57.1770% 	  7153928 	 60.0926% 	   450723869
+
+Match Rate:      	      NA 	       NA 	 65.4884% 	   713760701
+Error Rate:      	 38.4015% 	  4763858 	 34.5104% 	   376129870
+Sub Rate:        	 33.8754% 	  4202378 	  0.8346% 	     9096346
+Del Rate:        	  2.9423% 	   365010 	 33.5742% 	   365926563
+Ins Rate:        	  6.6607% 	   826282 	  0.1016% 	     1106961
+N Rate:          	  0.0190% 	     2354 	  0.0012% 	       13550
+
+Total time:     	1018.670 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119331m -Xms119331m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash2_1_Jvpna30.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash2_1_Jvpna30.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash2_1_Jvpna30.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash2_1_Jvpna30.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.086 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.067 seconds.
+Analyzed Index:   	0.063 seconds.
+Started output stream:	0.065 seconds.
+Cleared Memory:    	0.149 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	11659770	(680941751 bases)
+
+Mapping:          	1017.400 seconds.
+Reads/sec:       	11460.36
+kBases/sec:      	669.30
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 93.1400% 	 10859907 	 95.0621% 	   647317654
+unambiguous:     	 86.4670% 	 10081851 	 90.7391% 	   617880729
+ambiguous:       	  6.6730% 	   778056 	  4.3230% 	    29436925
+low-Q discards:  	  0.0000% 	        2 	  0.0000% 	          25
+
+perfect best site:	 52.8568% 	  6162984 	 56.6163% 	   385524279
+semiperfect site:	 52.8627% 	  6163671 	 56.6227% 	   385567622
+
+Match Rate:      	      NA 	       NA 	 62.9186% 	   637135517
+Error Rate:      	 40.7223% 	  4695475 	 37.0802% 	   375486469
+Sub Rate:        	 36.1701% 	  4170575 	  0.9017% 	     9130887
+Del Rate:        	  3.7585% 	   433370 	 36.0759% 	   365316861
+Ins Rate:        	  6.5975% 	   760727 	  0.1026% 	     1038721
+N Rate:          	  0.0192% 	     2214 	  0.0012% 	       12529
+
+Total time:     	1017.979 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119240m -Xms119240m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash2_1_Jvpna31.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash2_1_Jvpna31.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash2_1_Jvpna31.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash2_1_Jvpna31.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.086 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.059 seconds.
+Analyzed Index:   	0.064 seconds.
+Started output stream:	0.066 seconds.
+Cleared Memory:    	0.146 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	11790295	(691896667 bases)
+
+Mapping:          	1010.811 seconds.
+Reads/sec:       	11664.20
+kBases/sec:      	684.50
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 93.5152% 	 11025721 	 95.2798% 	   659238093
+unambiguous:     	 87.0201% 	 10259930 	 90.8835% 	   628819973
+ambiguous:       	  6.4951% 	   765791 	  4.3963% 	    30418120
+low-Q discards:  	  0.0000% 	        1 	  0.0000% 	          12
+
+perfect best site:	 53.3745% 	  6293012 	 56.9730% 	   394194303
+semiperfect site:	 53.3794% 	  6293592 	 56.9783% 	   394230742
+
+Match Rate:      	      NA 	       NA 	 62.0148% 	   648814099
+Error Rate:      	 40.5727% 	  4731408 	 37.9841% 	   397398498
+Sub Rate:        	 36.1508% 	  4215747 	  0.8922% 	     9334839
+Del Rate:        	  3.3983% 	   396295 	 36.9888% 	   386985878
+Ins Rate:        	  6.7618% 	   788536 	  0.1030% 	     1077781
+N Rate:          	  0.0173% 	     2012 	  0.0011% 	       11374
+
+Total time:     	1011.379 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119282m -Xms119282m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash2_1_Jvpna32.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash2_1_Jvpna32.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash2_1_Jvpna32.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash2_1_Jvpna32.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.087 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.055 seconds.
+Analyzed Index:   	0.068 seconds.
+Started output stream:	0.068 seconds.
+Cleared Memory:    	0.150 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	12632381	(738823700 bases)
+
+Mapping:          	1144.003 seconds.
+Reads/sec:       	11042.26
+kBases/sec:      	645.82
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 92.7724% 	 11719363 	 94.6639% 	   699399141
+unambiguous:     	 86.4555% 	 10921394 	 90.3856% 	   667790094
+ambiguous:       	  6.3169% 	   797969 	  4.2783% 	    31609047
+low-Q discards:  	  0.0000% 	        3 	  0.0000% 	          40
+
+perfect best site:	 51.6262% 	  6521622 	 55.2810% 	   408429168
+semiperfect site:	 51.6308% 	  6522196 	 55.2859% 	   408465103
+
+Match Rate:      	      NA 	       NA 	 60.1016% 	   687662357
+Error Rate:      	 41.6646% 	  5196360 	 39.8974% 	   456493194
+Sub Rate:        	 37.2940% 	  4651260 	  0.9205% 	    10532325
+Del Rate:        	  3.5672% 	   444893 	 38.8727% 	   444768195
+Ins Rate:        	  6.9087% 	   861644 	  0.1042% 	     1192674
+N Rate:          	  0.0172% 	     2143 	  0.0010% 	       11785
+
+Total time:     	1144.577 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119313m -Xms119313m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash2_1_Jvpna33.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash2_1_Jvpna33.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash2_1_Jvpna33.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash2_1_Jvpna33.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.092 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.059 seconds.
+Analyzed Index:   	0.062 seconds.
+Started output stream:	0.066 seconds.
+Cleared Memory:    	0.142 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	10886288	(644775917 bases)
+
+Mapping:          	964.533 seconds.
+Reads/sec:       	11286.59
+kBases/sec:      	668.48
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 93.8343% 	 10215074 	 95.4302% 	   615311095
+unambiguous:     	 87.3065% 	  9504440 	 90.6651% 	   584586806
+ambiguous:       	  6.5278% 	   710634 	  4.7651% 	    30724289
+low-Q discards:  	  0.0000% 	        3 	  0.0000% 	          36
+
+perfect best site:	 53.4105% 	  5814422 	 56.6955% 	   365559134
+semiperfect site:	 53.4148% 	  5814893 	 56.7001% 	   365588643
+
+Match Rate:      	      NA 	       NA 	 61.1677% 	   605657508
+Error Rate:      	 40.8628% 	  4399455 	 38.8314% 	   384492494
+Sub Rate:        	 36.2458% 	  3902367 	  0.8728% 	     8642189
+Del Rate:        	  3.7025% 	   398630 	 37.8574% 	   374848258
+Ins Rate:        	  6.7723% 	   729129 	  0.1012% 	     1002047
+N Rate:          	  0.0171% 	     1840 	  0.0009% 	        9351
+
+Total time:     	965.115 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119312m -Xms119312m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash2_1_Jvpna34.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash2_1_Jvpna34.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash2_1_Jvpna34.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash2_1_Jvpna34.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.073 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.046 seconds.
+Analyzed Index:   	0.054 seconds.
+Started output stream:	0.060 seconds.
+Cleared Memory:    	0.140 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	10662597	(647297817 bases)
+
+Mapping:          	880.322 seconds.
+Reads/sec:       	12112.16
+kBases/sec:      	735.30
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 95.4851% 	 10181192 	 96.6083% 	   625343494
+unambiguous:     	 90.2904% 	  9627300 	 92.5646% 	   599168349
+ambiguous:       	  5.1947% 	   553892 	  4.0438% 	    26175145
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	 57.7262% 	  6155117 	 60.1995% 	   389669965
+semiperfect site:	 57.7316% 	  6155683 	 60.2050% 	   389705647
+
+Match Rate:      	      NA 	       NA 	 66.6507% 	   616870941
+Error Rate:      	 38.0836% 	  4024752 	 33.3481% 	   308645966
+Sub Rate:        	 33.4108% 	  3530927 	  0.8140% 	     7533973
+Del Rate:        	  2.9684% 	   313709 	 32.4338% 	   300184037
+Ins Rate:        	  6.5977% 	   697255 	  0.1003% 	      927956
+N Rate:          	  0.0185% 	     1953 	  0.0011% 	       10624
+
+Total time:     	880.819 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119441m -Xms119441m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash2_1_Jvpna36.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash2_1_Jvpna36.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash2_1_Jvpna36.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash2_1_Jvpna36.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.101 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.056 seconds.
+Analyzed Index:   	0.065 seconds.
+Started output stream:	0.067 seconds.
+Cleared Memory:    	0.143 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	10789121	(645084597 bases)
+
+Mapping:          	887.143 seconds.
+Reads/sec:       	12161.65
+kBases/sec:      	727.15
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 93.9951% 	 10141240 	 95.6512% 	   617031213
+unambiguous:     	 88.3767% 	  9535065 	 91.6851% 	   591446526
+ambiguous:       	  5.6184% 	   606175 	  3.9661% 	    25584687
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	 57.2375% 	  6175418 	 60.3413% 	   389252273
+semiperfect site:	 57.2428% 	  6175998 	 60.3470% 	   389288916
+
+Match Rate:      	      NA 	       NA 	 68.3728% 	   608748064
+Error Rate:      	 37.1390% 	  3964456 	 31.6260% 	   281577905
+Sub Rate:        	 32.8333% 	  3504839 	  0.8331% 	     7417493
+Del Rate:        	  2.9440% 	   314263 	 30.6969% 	   273305424
+Ins Rate:        	  6.0386% 	   644603 	  0.0960% 	      854988
+N Rate:          	  0.0185% 	     1976 	  0.0012% 	       10668
+
+Total time:     	887.789 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119330m -Xms119330m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash2_1_Jvpna37.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash2_1_Jvpna37.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash2_1_Jvpna37.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash2_1_Jvpna37.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.088 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.048 seconds.
+Analyzed Index:   	0.063 seconds.
+Started output stream:	0.071 seconds.
+Cleared Memory:    	0.142 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	11591498	(695191360 bases)
+
+Mapping:          	975.631 seconds.
+Reads/sec:       	11881.03
+kBases/sec:      	712.56
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 94.0957% 	 10907096 	 95.7070% 	   665346871
+unambiguous:     	 88.7621% 	 10288858 	 92.0075% 	   639628516
+ambiguous:       	  5.3335% 	   618238 	  3.6995% 	    25718355
+low-Q discards:  	  0.0000% 	        2 	  0.0000% 	          25
+
+perfect best site:	 57.4301% 	  6657006 	 60.4119% 	   419978579
+semiperfect site:	 57.4377% 	  6657890 	 60.4200% 	   420034756
+
+Match Rate:      	      NA 	       NA 	 68.6776% 	   656546880
+Error Rate:      	 37.0477% 	  4248381 	 31.3208% 	   299422049
+Sub Rate:        	 32.4227% 	  3718018 	  0.8170% 	     7810384
+Del Rate:        	  2.8590% 	   327846 	 30.4019% 	   290637299
+Ins Rate:        	  6.4346% 	   737880 	  0.1019% 	      974366
+N Rate:          	  0.0211% 	     2424 	  0.0016% 	       15241
+
+Total time:     	976.189 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119411m -Xms119411m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash2_1_w_o_control.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash2_1_w_o_control.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash2_1_w_o_control.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash2_1_w_o_control.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.087 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.072 seconds.
+Analyzed Index:   	0.065 seconds.
+Started output stream:	0.066 seconds.
+Cleared Memory:    	0.141 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.

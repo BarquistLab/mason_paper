@@ -1,0 +1,15 @@
+Status	../data/rna_align/hash1_1_Jvpna21.fq.gz.bam	../data/rna_align/hash1_1_Jvpna22.fq.gz.bam	../data/rna_align/hash1_1_Jvpna30.fq.gz.bam	../data/rna_align/hash1_1_Jvpna31.fq.gz.bam	../data/rna_align/hash1_1_Jvpna32.fq.gz.bam	../data/rna_align/hash1_1_Jvpna33.fq.gz.bam	../data/rna_align/hash1_1_Jvpna34.fq.gz.bam	../data/rna_align/hash1_1_Jvpna36.fq.gz.bam	../data/rna_align/hash1_1_Jvpna37.fq.gz.bam	../data/rna_align/hash1_1_w_o_control.fq.gz.bam	../data/rna_align/hash1_2_JVpna100.fq.gz.bam	../data/rna_align/hash1_2_JVpna101.fq.gz.bam	../data/rna_align/hash1_2_JVpna102.fq.gz.bam	../data/rna_align/hash1_2_JVpna29.fq.gz.bam	../data/rna_align/hash1_2_JVpna35.fq.gz.bam	../data/rna_align/hash1_2_JVpna99.fq.gz.bam	../data/rna_align/hash1_2_w_o_control.fq.gz.bam	../data/rna_align/hash2_1_Jvpna21.fq.gz.bam	../data/rna_align/hash2_1_Jvpna22.fq.gz.bam	../data/rna_align/hash2_1_Jvpna30.fq.gz.bam	../data/rna_align/hash2_1_Jvpna31.fq.gz.bam	../data/rna_align/hash2_1_Jvpna32.fq.gz.bam	../data/rna_align/hash2_1_Jvpna33.fq.gz.bam	../data/rna_align/hash2_1_Jvpna34.fq.gz.bam	../data/rna_align/hash2_1_Jvpna36.fq.gz.bam
+Assigned	10085596	9492395	9827637	9641122	8859420	8955630	8052856	8774011	10075248	10412899	9504746	7638868	9563724	9398722	10380740	9199282	8480961	9800716	10450637	9610443	9716102	10352159	8939285	8941920	8974284
+Unassigned_Unmapped	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_Read_Type	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_Singleton	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_MappingQuality	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_Chimera	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_FragmentLength	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_Duplicate	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_MultiMapping	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_Secondary	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_NonSplit	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_NoFeatures	1032246	901397	979448	1073085	870107	848293	847550	869169	982564	1061972	1320974	829556	978094	966177	987256	854721	837874	843732	1038919	881195	916676	950589	898149	861714	815802
+Unassigned_Overlapping_Length	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_Ambiguity	396989	372864	369858	349910	344672	366691	324316	329056	382045	412725	329259	300199	356241	385657	406512	322941	345133	395828	429112	368269	392943	416615	377640	377558	351154

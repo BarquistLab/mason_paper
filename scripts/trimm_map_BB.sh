@@ -8,7 +8,7 @@ main(){
     echo "Trimming done. Start maopping"
     align_rna_reads_genome
     echo "Finished mapping. Start connecting all tab files"
-    featureCounts -T 5 -t CDS,sRNA -g locus_tag \
+    featureCounts -T 5 -t tRNA,rRNA -g locus_tag \
 		  -a $PROJECT/reference_sequences/FQ312003.1.gff \
 		  -o $PROJECT/rna_align/counttable.txt \
 		  $PROJECT/rna_align/*.bam
@@ -27,6 +27,7 @@ rename_trim_rna_libs(){
 			     ref=~/bin/bbmap/resources/adapters.fa t=20\
 			     out=$PROJECT/libs/${NEWNAME} ktrim=r k=23 mink=11\
 			     hdist=1 qtrim=r trimq=10 ftl=12
+	fastqc $PROJECT/libs/${NEWNAME} -o $PROJECT/libs/
     done
 }
 
