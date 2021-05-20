@@ -3207,3 +3207,940 @@ Cleared Memory:    	0.141 seconds.
 Processing reads in single-ended mode.
 Started read stream.
 Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	12373780	(754670434 bases)
+
+Mapping:          	989.225 seconds.
+Reads/sec:       	12508.56
+kBases/sec:      	762.89
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 95.8644% 	 11862055 	 96.7411% 	   730076519
+unambiguous:     	 91.1440% 	 11277955 	 93.1991% 	   703345912
+ambiguous:       	  4.7205% 	   584100 	  3.5420% 	    26730607
+low-Q discards:  	  0.0000% 	        1 	  0.0000% 	          10
+
+perfect best site:	 59.0744% 	  7309733 	 61.2825% 	   462481253
+semiperfect site:	 59.0807% 	  7310510 	 61.2891% 	   462530457
+
+Match Rate:      	      NA 	       NA 	 68.7576% 	   720600244
+Error Rate:      	 37.1066% 	  4550634 	 31.2410% 	   327415099
+Sub Rate:        	 32.5491% 	  3991727 	  0.8048% 	     8434312
+Del Rate:        	  2.8758% 	   352682 	 30.3382% 	   317953069
+Ins Rate:        	  6.3135% 	   774271 	  0.0981% 	     1027718
+N Rate:          	  0.0200% 	     2458 	  0.0014% 	       14245
+
+Total time:     	989.809 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119368m -Xms119368m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash2_2_JVpna100.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash2_2_JVpna100.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash2_2_JVpna100.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash2_2_JVpna100.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.094 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.068 seconds.
+Analyzed Index:   	0.067 seconds.
+Started output stream:	0.066 seconds.
+Cleared Memory:    	0.143 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	12125662	(707998545 bases)
+
+Mapping:          	1100.413 seconds.
+Reads/sec:       	11019.20
+kBases/sec:      	643.39
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 92.6934% 	 11239685 	 94.6326% 	   669997185
+unambiguous:     	 85.5447% 	 10372866 	 89.6963% 	   635048642
+ambiguous:       	  7.1486% 	   866819 	  4.9362% 	    34948543
+low-Q discards:  	  0.0000% 	        4 	  0.0000% 	          48
+
+perfect best site:	 52.9989% 	  6426466 	 56.9348% 	   403097821
+semiperfect site:	 53.0053% 	  6427240 	 56.9417% 	   403146404
+
+Match Rate:      	      NA 	       NA 	 60.4134% 	   659202301
+Error Rate:      	 40.1712% 	  4811649 	 39.5853% 	   431935672
+Sub Rate:        	 36.0321% 	  4315874 	  0.8883% 	     9692893
+Del Rate:        	  3.2217% 	   385895 	 38.5973% 	   421155849
+Ins Rate:        	  6.5612% 	   785889 	  0.0996% 	     1086930
+N Rate:          	  0.0191% 	     2292 	  0.0014% 	       15061
+
+Total time:     	1101.047 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119246m -Xms119246m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash2_2_JVpna101.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash2_2_JVpna101.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash2_2_JVpna101.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash2_2_JVpna101.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.086 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.064 seconds.
+Analyzed Index:   	0.064 seconds.
+Started output stream:	0.066 seconds.
+Cleared Memory:    	0.143 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	12246825	(727136343 bases)
+
+Mapping:          	965.628 seconds.
+Reads/sec:       	12682.76
+kBases/sec:      	753.02
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 95.4206% 	 11685988 	 96.6847% 	   703029545
+unambiguous:     	 88.4957% 	 10837915 	 91.7233% 	   666953211
+ambiguous:       	  6.9248% 	   848073 	  4.9614% 	    36076334
+low-Q discards:  	  0.0000% 	        5 	  0.0000% 	          56
+
+perfect best site:	 58.1747% 	  7124559 	 61.5890% 	   447835739
+semiperfect site:	 58.1814% 	  7125370 	 61.5960% 	   447886736
+
+Match Rate:      	      NA 	       NA 	 67.1404% 	   693357614
+Error Rate:      	 37.5279% 	  4559724 	 32.8581% 	   339324212
+Sub Rate:        	 33.5722% 	  4079091 	  0.8423% 	     8698254
+Del Rate:        	  3.0111% 	   365860 	 31.9230% 	   329667779
+Ins Rate:        	  5.8820% 	   714672 	  0.0928% 	      958179
+N Rate:          	  0.0198% 	     2407 	  0.0015% 	       15498
+
+Total time:     	966.198 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119430m -Xms119430m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash2_2_JVpna102.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash2_2_JVpna102.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash2_2_JVpna102.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash2_2_JVpna102.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.072 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.046 seconds.
+Analyzed Index:   	0.053 seconds.
+Started output stream:	0.055 seconds.
+Cleared Memory:    	0.140 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	10855228	(646402209 bases)
+
+Mapping:          	908.583 seconds.
+Reads/sec:       	11947.43
+kBases/sec:      	711.44
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 95.0432% 	 10317152 	 96.2789% 	   622348644
+unambiguous:     	 89.4590% 	  9710978 	 92.4468% 	   597578130
+ambiguous:       	  5.5842% 	   606174 	  3.8321% 	    24770514
+low-Q discards:  	  0.0000% 	        1 	  0.0000% 	          10
+
+perfect best site:	 55.8650% 	  6064271 	 59.0516% 	   381710767
+semiperfect site:	 55.8723% 	  6065065 	 59.0593% 	   381760740
+
+Match Rate:      	      NA 	       NA 	 63.2637% 	   612999505
+Error Rate:      	 39.5286% 	  4251306 	 36.7348% 	   355945021
+Sub Rate:        	 35.1835% 	  3783994 	  0.8620% 	     8352096
+Del Rate:        	  3.0957% 	   332938 	 35.7714% 	   346610059
+Ins Rate:        	  6.7208% 	   722820 	  0.1014% 	      982866
+N Rate:          	  0.0209% 	     2252 	  0.0015% 	       14177
+
+Total time:     	909.072 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119415m -Xms119415m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash2_2_JVpna29.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash2_2_JVpna29.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash2_2_JVpna29.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash2_2_JVpna29.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.085 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.053 seconds.
+Analyzed Index:   	0.064 seconds.
+Started output stream:	0.063 seconds.
+Cleared Memory:    	0.143 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	12194975	(718070673 bases)
+
+Mapping:          	1014.224 seconds.
+Reads/sec:       	12023.94
+kBases/sec:      	708.00
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 93.7089% 	 11427775 	 95.4335% 	   685280266
+unambiguous:     	 87.0998% 	 10621804 	 90.7757% 	   651833886
+ambiguous:       	  6.6090% 	   805971 	  4.6578% 	    33446380
+low-Q discards:  	  0.0000% 	        2 	  0.0000% 	          27
+
+perfect best site:	 54.0102% 	  6586534 	 57.6046% 	   413642000
+semiperfect site:	 54.0163% 	  6587276 	 57.6112% 	   413688780
+
+Match Rate:      	      NA 	       NA 	 61.3432% 	   674484124
+Error Rate:      	 40.1103% 	  4839691 	 38.6556% 	   425028048
+Sub Rate:        	 35.9136% 	  4333319 	  0.8814% 	     9691482
+Del Rate:        	  3.2292% 	   389637 	 37.6749% 	   414245789
+Ins Rate:        	  6.5207% 	   786785 	  0.0992% 	     1090777
+N Rate:          	  0.0186% 	     2240 	  0.0013% 	       13883
+
+Total time:     	1014.785 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119320m -Xms119320m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash2_2_JVpna35.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash2_2_JVpna35.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash2_2_JVpna35.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash2_2_JVpna35.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.086 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.053 seconds.
+Analyzed Index:   	0.064 seconds.
+Started output stream:	0.065 seconds.
+Cleared Memory:    	0.152 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	10397189	(607686190 bases)
+
+Mapping:          	878.321 seconds.
+Reads/sec:       	11837.58
+kBases/sec:      	691.87
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 94.0852% 	  9782214 	 95.7829% 	   582059445
+unambiguous:     	 87.0608% 	  9051873 	 90.8114% 	   551848488
+ambiguous:       	  7.0244% 	   730341 	  4.9715% 	    30210957
+low-Q discards:  	  0.0000% 	        1 	  0.0000% 	          12
+
+perfect best site:	 52.1322% 	  5420284 	 55.9076% 	   339742550
+semiperfect site:	 52.1378% 	  5420868 	 55.9136% 	   339779338
+
+Match Rate:      	      NA 	       NA 	 57.9847% 	   572065744
+Error Rate:      	 42.3238% 	  4360652 	 42.0141% 	   414503401
+Sub Rate:        	 37.9135% 	  3906249 	  0.9072% 	     8950720
+Del Rate:        	  3.4369% 	   354102 	 41.0023% 	   404521137
+Ins Rate:        	  7.1536% 	   737042 	  0.1046% 	     1031544
+N Rate:          	  0.0189% 	     1948 	  0.0012% 	       11437
+
+Total time:     	878.885 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119451m -Xms119451m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash2_2_JVpna99.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash2_2_JVpna99.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash2_2_JVpna99.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash2_2_JVpna99.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.089 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.056 seconds.
+Analyzed Index:   	0.069 seconds.
+Started output stream:	0.065 seconds.
+Cleared Memory:    	0.142 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	11087089	(652363892 bases)
+
+Mapping:          	974.996 seconds.
+Reads/sec:       	11371.42
+kBases/sec:      	669.09
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 94.3125% 	 10456511 	 95.8909% 	   625557810
+unambiguous:     	 87.7359% 	  9727357 	 91.3935% 	   596217877
+ambiguous:       	  6.5766% 	   729154 	  4.4975% 	    29339933
+low-Q discards:  	  0.0000% 	        4 	  0.0000% 	          53
+
+perfect best site:	 53.2192% 	  5900461 	 56.7344% 	   370114563
+semiperfect site:	 53.2265% 	  5901274 	 56.7422% 	   370165621
+
+Match Rate:      	      NA 	       NA 	 61.0099% 	   615354391
+Error Rate:      	 41.4654% 	  4554474 	 38.9886% 	   393244241
+Sub Rate:        	 37.0369% 	  4068063 	  0.9054% 	     9131698
+Del Rate:        	  3.1699% 	   348176 	 37.9784% 	   383055562
+Ins Rate:        	  7.0421% 	   773493 	  0.1048% 	     1056981
+N Rate:          	  0.0204% 	     2241 	  0.0015% 	       14740
+
+Total time:     	975.566 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119343m -Xms119343m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash2_2_w_o_control.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash2_2_w_o_control.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash2_2_w_o_control.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash2_2_w_o_control.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.086 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.093 seconds.
+Analyzed Index:   	0.096 seconds.
+Started output stream:	0.075 seconds.
+Cleared Memory:    	0.145 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	11113370	(668802921 bases)
+
+Mapping:          	897.524 seconds.
+Reads/sec:       	12382.25
+kBases/sec:      	745.16
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 96.2938% 	 10701481 	 97.3441% 	   651040081
+unambiguous:     	 90.2009% 	 10024364 	 92.7426% 	   620265129
+ambiguous:       	  6.0928% 	   677117 	  4.6015% 	    30774952
+low-Q discards:  	  0.0000% 	        1 	  0.0000% 	          11
+
+perfect best site:	 57.8917% 	  6433714 	 60.6682% 	   405750873
+semiperfect site:	 57.8977% 	  6434390 	 60.6746% 	   405793328
+
+Match Rate:      	      NA 	       NA 	 64.6525% 	   641817678
+Error Rate:      	 38.6381% 	  4266268 	 35.3463% 	   350889303
+Sub Rate:        	 34.3453% 	  3792269 	  0.8291% 	     8230510
+Del Rate:        	  2.8257% 	   312007 	 34.4185% 	   341679511
+Ins Rate:        	  6.5267% 	   720656 	  0.0986% 	      979282
+N Rate:          	  0.0192% 	     2120 	  0.0013% 	       12611
+
+Total time:     	898.166 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119301m -Xms119301m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash3_1_JVpna103.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash3_1_JVpna103.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash3_1_JVpna103.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash3_1_JVpna103.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.086 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.052 seconds.
+Analyzed Index:   	0.064 seconds.
+Started output stream:	0.065 seconds.
+Cleared Memory:    	0.143 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	11088415	(657362335 bases)
+
+Mapping:          	807.400 seconds.
+Reads/sec:       	13733.48
+kBases/sec:      	814.17
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 95.4089% 	 10579336 	 96.9543% 	   637341359
+unambiguous:     	 89.4801% 	  9921929 	 93.7992% 	   616600632
+ambiguous:       	  5.9288% 	   657407 	  3.1551% 	    20740727
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	 61.3125% 	  6798588 	 64.8494% 	   426295464
+semiperfect site:	 61.3251% 	  6799978 	 64.8628% 	   426383569
+
+Match Rate:      	      NA 	       NA 	 74.0417% 	   629780845
+Error Rate:      	 34.3013% 	  3778468 	 25.9555% 	   220771642
+Sub Rate:        	 30.2307% 	  3330071 	  0.7918% 	     6734456
+Del Rate:        	  2.3640% 	   260406 	 25.0695% 	   213234767
+Ins Rate:        	  5.6544% 	   622860 	  0.0943% 	      802419
+N Rate:          	  0.0270% 	     2973 	  0.0028% 	       23639
+
+Total time:     	807.963 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119318m -Xms119318m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash3_1_w_o_control.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash3_1_w_o_control.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash3_1_w_o_control.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash3_1_w_o_control.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.086 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.054 seconds.
+Analyzed Index:   	0.158 seconds.
+Started output stream:	0.066 seconds.
+Cleared Memory:    	0.146 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	11337680	(702773015 bases)
+
+Mapping:          	758.818 seconds.
+Reads/sec:       	14941.24
+kBases/sec:      	926.14
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 98.0479% 	 11116352 	 98.4870% 	   692140142
+unambiguous:     	 94.3181% 	 10693487 	 95.6674% 	   672324711
+ambiguous:       	  3.7297% 	   422865 	  2.8196% 	    19815431
+low-Q discards:  	  0.0000% 	        3 	  0.0000% 	          31
+
+perfect best site:	 64.5773% 	  7321570 	 66.1225% 	   464691283
+semiperfect site:	 64.5858% 	  7322532 	 66.1312% 	   464752285
+
+Match Rate:      	      NA 	       NA 	 77.1485% 	   684807350
+Error Rate:      	 33.6009% 	  3792933 	 22.8496% 	   202824311
+Sub Rate:        	 29.7680% 	  3360265 	  0.7386% 	     6555990
+Del Rate:        	  1.9006% 	   214546 	 22.0254% 	   195508284
+Ins Rate:        	  5.2644% 	   594258 	  0.0856% 	      760037
+N Rate:          	  0.0221% 	     2490 	  0.0019% 	       16765
+
+Total time:     	759.471 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119182m -Xms119182m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash3_2_JVpna103.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash3_2_JVpna103.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash3_2_JVpna103.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash3_2_JVpna103.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.096 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.049 seconds.
+Analyzed Index:   	0.077 seconds.
+Started output stream:	0.072 seconds.
+Cleared Memory:    	0.154 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	12873881	(745638554 bases)
+
+Mapping:          	993.610 seconds.
+Reads/sec:       	12956.67
+kBases/sec:      	750.43
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 93.9026% 	 12088908 	 95.9773% 	   715643523
+unambiguous:     	 86.7323% 	 11165808 	 92.3082% 	   688285346
+ambiguous:       	  7.1703% 	   923100 	  3.6691% 	    27358177
+low-Q discards:  	  0.0001% 	        8 	  0.0000% 	         104
+
+perfect best site:	 57.6845% 	  7426233 	 61.9181% 	   461685093
+semiperfect site:	 57.6944% 	  7427502 	 61.9288% 	   461765216
+
+Match Rate:      	      NA 	       NA 	 71.4837% 	   706101662
+Error Rate:      	 36.4953% 	  4660427 	 28.5140% 	   281655441
+Sub Rate:        	 32.6004% 	  4163049 	  0.8680% 	     8573553
+Del Rate:        	  2.6289% 	   335712 	 27.5503% 	   272136191
+Ins Rate:        	  5.6789% 	   725192 	  0.0957% 	      945697
+N Rate:          	  0.0239% 	     3047 	  0.0023% 	       22611
+
+Total time:     	994.223 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+java -ea -Xmx119322m -Xms119322m -cp /home/jakob/bin/bbmap/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 in=../data/libs/hash3_2_w_o_control.fq.gz_trimmed.fastq.gz trimreaddescription=t t=20 ref=../data/reference_sequences/FQ312003_wplasmids.fa k=8 ambig=best outm=../data/rna_align/hash3_2_w_o_control.fq.gz.sam
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, in=../data/libs/hash3_2_w_o_control.fq.gz_trimmed.fastq.gz, trimreaddescription=t, t=20, ref=../data/reference_sequences/FQ312003_wplasmids.fa, k=8, ambig=best, outm=../data/rna_align/hash3_2_w_o_control.fq.gz.sam]
+Version 38.79
+
+Set threads to 20
+Retaining first best site only for ambiguous mappings.
+NOTE:	Ignoring reference file because it already appears to have been processed.
+NOTE:	If you wish to regenerate the index, please manually delete ref/genome/1/summary.txt
+Set genome to 1
+
+Loaded Reference:	0.090 seconds.
+Loading index for chunk 1-1, build 1
+Generated Index:	0.060 seconds.
+Analyzed Index:   	0.064 seconds.
+Started output stream:	0.064 seconds.
+Cleared Memory:    	0.141 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 20 mapping threads.
+Detecting finished threads: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	8
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	11868467	(718001038 bases)
+
+Mapping:          	899.066 seconds.
+Reads/sec:       	13200.88
+kBases/sec:      	798.61
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 97.4469% 	 11565449 	 98.1310% 	   704581757
+unambiguous:     	 92.5267% 	 10981495 	 94.7239% 	   680118656
+ambiguous:       	  4.9202% 	   583954 	  3.4071% 	    24463101
+low-Q discards:  	  0.0000% 	        2 	  0.0000% 	          30
+
+perfect best site:	 61.1442% 	  7256885 	 63.7375% 	   457635677
+semiperfect site:	 61.1525% 	  7257861 	 63.7460% 	   457697292
+
+Match Rate:      	      NA 	       NA 	 70.5618% 	   695555575
+Error Rate:      	 36.4648% 	  4306692 	 29.4364% 	   290166711
+Sub Rate:        	 32.5998% 	  3850214 	  0.8222% 	     8105124
+Del Rate:        	  2.7039% 	   319341 	 28.5225% 	   281157896
+Ins Rate:        	  5.7603% 	   680327 	  0.0917% 	      903691
+N Rate:          	  0.0219% 	     2585 	  0.0018% 	       17367
+
+Total time:     	899.644 seconds.
+[bam_sort_core] merging from 0 files and 40 in-memory blocks...
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.1
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 38 BAM files                                     ||
+||                           o hash1_1_Jvpna21.fq.gz.bam                      ||
+||                           o hash1_1_Jvpna22.fq.gz.bam                      ||
+||                           o hash1_1_Jvpna30.fq.gz.bam                      ||
+||                           o hash1_1_Jvpna31.fq.gz.bam                      ||
+||                           o hash1_1_Jvpna32.fq.gz.bam                      ||
+||                           o hash1_1_Jvpna33.fq.gz.bam                      ||
+||                           o hash1_1_Jvpna34.fq.gz.bam                      ||
+||                           o hash1_1_Jvpna36.fq.gz.bam                      ||
+||                           o hash1_1_Jvpna37.fq.gz.bam                      ||
+||                           o hash1_1_w_o_control.fq.gz.bam                  ||
+||                           o hash1_2_JVpna100.fq.gz.bam                     ||
+||                           o hash1_2_JVpna101.fq.gz.bam                     ||
+||                           o hash1_2_JVpna102.fq.gz.bam                     ||
+||                           o hash1_2_JVpna29.fq.gz.bam                      ||
+||                           o hash1_2_JVpna35.fq.gz.bam                      ||
+||                           o hash1_2_JVpna99.fq.gz.bam                      ||
+||                           o hash1_2_w_o_control.fq.gz.bam                  ||
+||                           o hash2_1_Jvpna21.fq.gz.bam                      ||
+||                           o hash2_1_Jvpna22.fq.gz.bam                      ||
+||                           o hash2_1_Jvpna30.fq.gz.bam                      ||
+||                           o hash2_1_Jvpna31.fq.gz.bam                      ||
+||                           o hash2_1_Jvpna32.fq.gz.bam                      ||
+||                           o hash2_1_Jvpna33.fq.gz.bam                      ||
+||                           o hash2_1_Jvpna34.fq.gz.bam                      ||
+||                           o hash2_1_Jvpna36.fq.gz.bam                      ||
+||                           o hash2_1_Jvpna37.fq.gz.bam                      ||
+||                           o hash2_1_w_o_control.fq.gz.bam                  ||
+||                           o hash2_2_JVpna100.fq.gz.bam                     ||
+||                           o hash2_2_JVpna101.fq.gz.bam                     ||
+||                           o hash2_2_JVpna102.fq.gz.bam                     ||
+||                           o hash2_2_JVpna29.fq.gz.bam                      ||
+||                           o hash2_2_JVpna35.fq.gz.bam                      ||
+||                           o hash2_2_JVpna99.fq.gz.bam                      ||
+||                           o hash2_2_w_o_control.fq.gz.bam                  ||
+||                           o hash3_1_JVpna103.fq.gz.bam                     ||
+||                           o hash3_1_w_o_control.fq.gz.bam                  ||
+||                           o hash3_2_JVpna103.fq.gz.bam                     ||
+||                           o hash3_2_w_o_control.fq.gz.bam                  ||
+||                                                                            ||
+||             Output file : counttable.txt                                   ||
+||                 Summary : counttable.txt.summary                           ||
+||              Annotation : FQ312003.1.gff (GTF)                             ||
+||      Dir for temp files : ../data/rna_align                                ||
+||                                                                            ||
+||                 Threads : 5                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file FQ312003.1.gff ...                                    ||
+||    Features : 4981                                                         ||
+||    Meta-features : 4915                                                    ||
+||    Chromosomes/contigs : 4                                                 ||
+||                                                                            ||
+|| Process BAM file hash1_1_Jvpna21.fq.gz.bam...                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 11514831                                             ||
+||    Successfully assigned alignments : 10085596 (87.6%)                     ||
+||    Running time : 0.05 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash1_1_Jvpna22.fq.gz.bam...                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 10766656                                             ||
+||    Successfully assigned alignments : 9492395 (88.2%)                      ||
+||    Running time : 0.05 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash1_1_Jvpna30.fq.gz.bam...                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 11176943                                             ||
+||    Successfully assigned alignments : 9827637 (87.9%)                      ||
+||    Running time : 0.05 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash1_1_Jvpna31.fq.gz.bam...                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 11064117                                             ||
+||    Successfully assigned alignments : 9641122 (87.1%)                      ||
+||    Running time : 0.05 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash1_1_Jvpna32.fq.gz.bam...                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 10074199                                             ||
+||    Successfully assigned alignments : 8859420 (87.9%)                      ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash1_1_Jvpna33.fq.gz.bam...                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 10170614                                             ||
+||    Successfully assigned alignments : 8955630 (88.1%)                      ||
+||    Running time : 0.05 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash1_1_Jvpna34.fq.gz.bam...                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 9224722                                              ||
+||    Successfully assigned alignments : 8052856 (87.3%)                      ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash1_1_Jvpna36.fq.gz.bam...                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 9972236                                              ||
+||    Successfully assigned alignments : 8774011 (88.0%)                      ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash1_1_Jvpna37.fq.gz.bam...                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 11439857                                             ||
+||    Successfully assigned alignments : 10075248 (88.1%)                     ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash1_1_w_o_control.fq.gz.bam...                          ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 11887596                                             ||
+||    Successfully assigned alignments : 10412899 (87.6%)                     ||
+||    Running time : 0.05 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash1_2_JVpna100.fq.gz.bam...                             ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 11154979                                             ||
+||    Successfully assigned alignments : 9504746 (85.2%)                      ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash1_2_JVpna101.fq.gz.bam...                             ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 8768623                                              ||
+||    Successfully assigned alignments : 7638868 (87.1%)                      ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash1_2_JVpna102.fq.gz.bam...                             ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 10898059                                             ||
+||    Successfully assigned alignments : 9563724 (87.8%)                      ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash1_2_JVpna29.fq.gz.bam...                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 10750556                                             ||
+||    Successfully assigned alignments : 9398722 (87.4%)                      ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash1_2_JVpna35.fq.gz.bam...                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 11774508                                             ||
+||    Successfully assigned alignments : 10380740 (88.2%)                     ||
+||    Running time : 0.05 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash1_2_JVpna99.fq.gz.bam...                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 10376944                                             ||
+||    Successfully assigned alignments : 9199282 (88.7%)                      ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash1_2_w_o_control.fq.gz.bam...                          ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 9663968                                              ||
+||    Successfully assigned alignments : 8480961 (87.8%)                      ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash2_1_Jvpna21.fq.gz.bam...                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 11040276                                             ||
+||    Successfully assigned alignments : 9800716 (88.8%)                      ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash2_1_Jvpna22.fq.gz.bam...                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 11918668                                             ||
+||    Successfully assigned alignments : 10450637 (87.7%)                     ||
+||    Running time : 0.05 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash2_1_Jvpna30.fq.gz.bam...                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 10859907                                             ||
+||    Successfully assigned alignments : 9610443 (88.5%)                      ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash2_1_Jvpna31.fq.gz.bam...                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 11025721                                             ||
+||    Successfully assigned alignments : 9716102 (88.1%)                      ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash2_1_Jvpna32.fq.gz.bam...                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 11719363                                             ||
+||    Successfully assigned alignments : 10352159 (88.3%)                     ||
+||    Running time : 0.05 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash2_1_Jvpna33.fq.gz.bam...                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 10215074                                             ||
+||    Successfully assigned alignments : 8939285 (87.5%)                      ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash2_1_Jvpna34.fq.gz.bam...                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 10181192                                             ||
+||    Successfully assigned alignments : 8941920 (87.8%)                      ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash2_1_Jvpna36.fq.gz.bam...                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 10141240                                             ||
+||    Successfully assigned alignments : 8974284 (88.5%)                      ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash2_1_Jvpna37.fq.gz.bam...                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 10907096                                             ||
+||    Successfully assigned alignments : 9633943 (88.3%)                      ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash2_1_w_o_control.fq.gz.bam...                          ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 11862055                                             ||
+||    Successfully assigned alignments : 10488955 (88.4%)                     ||
+||    Running time : 0.05 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash2_2_JVpna100.fq.gz.bam...                             ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 11239685                                             ||
+||    Successfully assigned alignments : 9900901 (88.1%)                      ||
+||    Running time : 0.05 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash2_2_JVpna101.fq.gz.bam...                             ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 11685988                                             ||
+||    Successfully assigned alignments : 10146855 (86.8%)                     ||
+||    Running time : 0.05 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash2_2_JVpna102.fq.gz.bam...                             ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 10317152                                             ||
+||    Successfully assigned alignments : 9111050 (88.3%)                      ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash2_2_JVpna29.fq.gz.bam...                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 11427775                                             ||
+||    Successfully assigned alignments : 10025227 (87.7%)                     ||
+||    Running time : 0.05 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash2_2_JVpna35.fq.gz.bam...                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 9782214                                              ||
+||    Successfully assigned alignments : 8567720 (87.6%)                      ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash2_2_JVpna99.fq.gz.bam...                              ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 10456511                                             ||
+||    Successfully assigned alignments : 9266564 (88.6%)                      ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash2_2_w_o_control.fq.gz.bam...                          ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 10701481                                             ||
+||    Successfully assigned alignments : 9383181 (87.7%)                      ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash3_1_JVpna103.fq.gz.bam...                             ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 10579336                                             ||
+||    Successfully assigned alignments : 9371370 (88.6%)                      ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash3_1_w_o_control.fq.gz.bam...                          ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 11116352                                             ||
+||    Successfully assigned alignments : 9841569 (88.5%)                      ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash3_2_JVpna103.fq.gz.bam...                             ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 12088908                                             ||
+||    Successfully assigned alignments : 10695142 (88.5%)                     ||
+||    Running time : 0.05 minutes                                             ||
+||                                                                            ||
+|| Process BAM file hash3_2_w_o_control.fq.gz.bam...                          ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 11565449                                             ||
+||    Successfully assigned alignments : 10159360 (87.8%)                     ||
+||    Running time : 0.04 minutes                                             ||
+||                                                                            ||
+|| Write the final count table.                                               ||
+|| Write the read assignment summary.                                         ||
+||                                                                            ||
+|| Summary of counting results can be found in file "../data/rna_align/count  ||
+|| table.txt.summary"                                                         ||
+||                                                                            ||
+\\============================================================================//
+

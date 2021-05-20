@@ -8,7 +8,7 @@ main(){
     echo "Trimming done. Start maopping"
     align_rna_reads_genome
     echo "Finished mapping. Start connecting all tab files"
-    featureCounts -T 5 -t tRNA,rRNA -g locus_tag \
+    featureCounts -T 5 -t CDS,sRNA -g locus_tag \
 		  -a $PROJECT/reference_sequences/FQ312003.1.gff \
 		  -o $PROJECT/rna_align/counttable.txt \
 		  $PROJECT/rna_align/*.bam

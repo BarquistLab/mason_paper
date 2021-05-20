@@ -141,3 +141,15 @@ Starting mapping for sample: hash2_1_Jvpna34.fq.gz
 Starting mapping for sample: hash2_1_Jvpna36.fq.gz
 Starting mapping for sample: hash2_1_Jvpna37.fq.gz
 Starting mapping for sample: hash2_1_w_o_control.fq.gz
+Starting mapping for sample: hash2_2_JVpna100.fq.gz
+Starting mapping for sample: hash2_2_JVpna101.fq.gz
+Starting mapping for sample: hash2_2_JVpna102.fq.gz
+Starting mapping for sample: hash2_2_JVpna29.fq.gz
+Starting mapping for sample: hash2_2_JVpna35.fq.gz
+Starting mapping for sample: hash2_2_JVpna99.fq.gz
+Starting mapping for sample: hash2_2_w_o_control.fq.gz
+Starting mapping for sample: hash3_1_JVpna103.fq.gz
+Starting mapping for sample: hash3_1_w_o_control.fq.gz
+Starting mapping for sample: hash3_2_JVpna103.fq.gz
+Starting mapping for sample: hash3_2_w_o_control.fq.gz
+Finished mapping. Start connecting all tab files
