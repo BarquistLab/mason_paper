@@ -4,4 +4,4 @@
 *.sam
 *.bam
 *.fastq.gz
-*.fastqc.zip
+*fastqc.zip
