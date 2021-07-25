@@ -1,0 +1,4 @@
+Wed Jun 30 15:46:44 2021
+
+breseq -r ./ecoli536.fasta CCR20_pks_plus_R1.fq CCR20_pks_plus_R2
+

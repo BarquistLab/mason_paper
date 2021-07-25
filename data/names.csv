@@ -1,0 +1,39 @@
+sample,test
+#1_1 w/o control,control
+#1_1 Jvpna21,acpP
+#1_1 Jvpna30,acpP-PNA-mut-2
+#1_1 Jvpna31,acpP-PNA-mut-3
+#1_1 Jvpna32,acpP-PNA-mut-4
+#1_1 Jvpna33,acpP-PNA-mut-5
+#1_1 Jvpna34,acpP-PNA-mut-6
+#1_1 Jvpna36,acpP-PNA-mut-8
+#1_1 Jvpna37,acpP-PNA-mut-9
+#1_1 Jvpna22,acpP-scrambled
+#2_1 w/o control,control
+#2_1 Jvpna21,acpP
+#2_1 Jvpna30,acpP-PNA-mut-2
+#2_1 Jvpna31,acpP-PNA-mut-3
+#2_1 Jvpna32,acpP-PNA-mut-4
+#2_1 Jvpna33,acpP-PNA-mut-5
+#2_1 Jvpna34,acpP-PNA-mut-6
+#2_1 Jvpna36,acpP-PNA-mut-8
+#2_1 Jvpna37,acpP-PNA-mut-9
+#2_1 Jvpna22,acpP-scrambled
+#1_2 w/o control,control
+#1_2 JVpna29,acpP-PNA-mut-1
+#1_2 JVpna35,acpP-PNA-mut-7
+#1_2 JVpna99,KFF_rpl32
+#1_2  JVpna100,KFF_ompC
+#1_2  JVpna101,KFF_penta
+#1_2 JVpna102,KFF_ddlB
+#2_2  w/o control,control
+#2_2 JVpna29,acpP-PNA-mut-1
+#2_2 JVpna35,acpP-PNA-mut-7
+#2_2 JVpna99,KFF_rpl32
+#2_2 JVpna100,KFF_ompC
+#2_2 JVpna101,KFF_penta
+#2_2 JVpna102,KFF_ddlB
+#3_1  w/o control,control
+#3_1 JVpna103,KFF_ackA
+#3_2  w/o control,control
+#3_2 JVpna103,KFF_ackA
