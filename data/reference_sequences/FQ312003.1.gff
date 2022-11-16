@@ -1,7 +1,7 @@
 ##gff-version 3
 ##sequence-region FQ312003.1 1 4878012
 ##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=216597
-FQ312003.1	EMBL	region	1	4878012	.	+	.	ID=FQ312003.1:1..4878012;Dbxref=taxon:216597;Is_circular=true;gbkey=Src;mol_type=genomic DNA;strain=SL1344
+#FQ312003.1	EMBL	region	1	4878012	.	+	.	ID=FQ312003.1:1..4878012;Dbxref=taxon:216597;Is_circular=true;gbkey=Src;mol_type=genomic DNA;strain=SL1344
 FQ312003.1	EMBL	gene	169	255	.	+	.	ID=gene-SL1344_0001;Name=thrL;gbkey=Gene;gene=thrL;gene_biotype=protein_coding;locus_tag=SL1344_0001
 FQ312003.1	EMBL	CDS	169	255	.	+	0	ID=cds-CBW16102.1;Parent=gene-SL1344_0001;Dbxref=EnsemblGenomes-Gn:SL1344_0001,EnsemblGenomes-Tr:CBW16102,GOA:E1W7M4,InterPro:IPR011720,UniProtKB/TrEMBL:E1W7M4,NCBI_GP:CBW16102.1;Name=CBW16102.1;gbkey=CDS;gene=thrL;inference=similar to AA sequence:INSD:CBG23019.1;locus_tag=SL1344_0001;product=thr operon leader peptide;protein_id=CBW16102.1;transl_table=11
 FQ312003.1	EMBL	gene	337	2799	.	+	.	ID=gene-SL1344_0002;Name=thrA;gbkey=Gene;gene=thrA;gene_biotype=protein_coding;locus_tag=SL1344_0002

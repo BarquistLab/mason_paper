@@ -6,3 +6,17 @@
 *.fastq.gz
 *fastqc.zip
 *.fq.gz
+*.svg
+*.fna
+*.gff
+*.zip
+*/GEO_submission_04_2022/*
+*.fna
+*.fasta
+*.gff
+*.gff3
+data/mismatches_02_2021/pna_wholegenome.tab
+*.tab
+*.fasta
+*.pdf
+*.svg

@@ -11,7 +11,7 @@ from Bio.Seq import Seq
 # create new gff with only ess. genes:
 length_region = 15
 
-# create gff with only essential salmonella genes:
+# create gff with  salmonella genes:
 with open("../data/reference_sequences/FQ312003.1.gff") as origin_file:
     f_start_regions = open("../data/mismatches_02_2021/start_regions.gff", "w")
 
@@ -27,11 +27,11 @@ with open("../data/reference_sequences/FQ312003.1.gff") as origin_file:
             s = int(line[3])
             e = int(line[4])
             if line[6] == "+":
-                line[3] = str(s - 15)
-                line[4] = str(s + 11)
+                line[3] = str(s - 30)
+                line[4] = str(s + 15)
             else:
-                line[3] = str(e - 11)
-                line[4] = str(e + 15)
+                line[3] = str(e - 15)
+                line[4] = str(e + 30)
             f_start_regions.write("\t".join(line))
     f_start_regions.close()
 

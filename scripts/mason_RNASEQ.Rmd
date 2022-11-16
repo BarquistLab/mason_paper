@@ -15,10 +15,11 @@ knitr::opts_chunk$set(echo = TRUE, warning = TRUE)
 
 # Packages
 I import the packages needed for all analysis. They can all be installed from Bioconductor or CRAN if not statet otherwise:
-```{r, message=FALSE}
+```{r, message=FALSE, echo=FALSE}
 library(edgeR)
 library(circlize)
 library(dplyr)
+library(cowplot)
 library(ggplot2)
 library('RUVSeq')
 library(RColorBrewer)
@@ -33,6 +34,13 @@ library(eulerr)
 library(tidyverse)
 library(grid)
 library(circlize)
+library(ggpubr)
+library(rmelting)
+```
+
+```{r}
+melting(sequence = "AGAGUAUGAG", comp.sequence = "UCUCAUACUC", nucleic.acid.conc = 2e-06,
+        hybridisation.type = "rnarna", Na.conc = 1)
 ```
 
 
@@ -64,6 +72,13 @@ colnames (gwc) <- gsub(pnapat,"\\1", colnames(gwc))
 
 gwc_lex <- gwc
 ```
+
+Make GEO_ready:
+```{r}
+gwc_geo <- gwc[,grepl("Jvpna|JVpna29|JVpna35|control", colnames(gwc))]
+write.csv(gwc_geo, "../data/GEO_submission_04_2022/count_table.csv")
+```
+
 
 # Gene length vs. expression:
 make plot visualizing length:
@@ -168,22 +183,70 @@ y <- estimateDisp(y, design, robust = T)
 
 And now I create PCA and RLE plots:
 ```{r}
-library(RColorBrewer)
-nb.cols <- 18
-mycolors <- colorRampPalette(brewer.pal(8, "Set1"))(nb.cols)
+mycolors <- c("chocolate4","#1F78B4","cyan4","#33A02C","deepskyblue4", "#E31A1C","deeppink3",
+              "#FF7F00","bisque4","#6A3D9A","coral4","black")
 
 plotPCA(cpm(y), col=mycolors[acpP_mut_test])
 plotRLE(cpm(y), outline=FALSE, ylim=c(-1, 1), col=mycolors[acpP_mut_test],
         main="RLE", las=2)
 
-# save em as svgs
-svg("../analysis/PCA_allsamples.svg")
-plotPCA(cpm(y), col=mycolors[acpP_mut_test])
+logCPM <- cpm(y, log=TRUE, prior.count=2) 
+logCPM_no_batch <- removeBatchEffect(logCPM, batch=batches, design=model.matrix(~0+acpP_mut_test))
+short_names <- c("acpP_B1", "scr_B1", "mm2_B1", "mm3_B1", "mm4_B1", "mm5_B1", "mm6_B1",
+                               "mm8_B1", "mm9_B1", "ctrl_B1", "mm1_B2", "mm7_B2", "ctrl_B2","acpP_B3",
+                               "scr_B3", "mm2_B3", "mm3_B3", "mm4_B3", "mm5_B3", "mm6_B3", "mm8_B3",
+                               "mm9_B3", "ctrl_B3", "mm1_B4", "mm7_B4", "ctrl_B4", "ctrl_B5", "ctrl_B6")
+colnames(logCPM_no_batch) <- short_names
+colnames(logCPM) <- short_names
+
+# MDS plot:
+plotMDS(logCPM_no_batch, col=mycolors[acpP_mut_test], top = 1000)
+
+# PCA:
+pca <- prcomp(t(logCPM_no_batch))
+df_pca <- as.data.frame(pca$x)
+
+theme<-theme(panel.background = element_blank(),panel.border=element_rect(fill=NA),
+             panel.grid.major = element_blank(),panel.grid.minor = element_blank(),
+             strip.background=element_blank(),
+             axis.text=element_text(colour="black", size=12),axis.ticks=element_line(colour="black"),
+             axis.title=element_text(colour="black", size=13),
+             plot.margin=unit(c(1,1,1,1),"line"),legend.position = "none")
+
+percentage <- round(pca$sdev / sum(pca$sdev) * 100, 2)
+percentage <- paste( colnames(df_pca), "(", paste( as.character(percentage), "%", ")", sep="") )
+
+
+
+df_pca$group <-acpP_mut_test
+
+p<-ggplot(df_pca,aes(x=PC1,y=PC2,group=group,label=short_names, colour=group))
+p<-p+geom_point(size=3)+ scale_shape_identity()+
+  geom_text_repel(size=4, min.segment.length = 0, seed = 42, box.padding = 0.5, max.overlaps = 20)+
+  theme + xlab(percentage[1]) + ylab(percentage[2])+ scale_color_manual(values = mycolors)
+p
+
+#for unnormalized stuff:
+pca_unnorm <- prcomp(t(logCPM))
+df_pca_unnorm <- as.data.frame(pca_unnorm$x)
+percentage_unnorm <- round(pca_unnorm$sdev / sum(pca_unnorm$sdev) * 100, 2)
+percentage_unnorm <- paste( colnames(df_pca_unnorm), 
+                            "(", paste( as.character(percentage_unnorm), "%", ")", sep="") )
+df_pca_unnorm$group <-acpP_mut_test
+
+
+p_unnorm<-ggplot(df_pca_unnorm,aes(x=PC1,y=PC2,group=group,label=short_names, colour=group))
+p_unnorm<-p_unnorm+geom_point(size=3)+ scale_shape_identity()+
+  geom_text_repel(size=4, min.segment.length = 0, seed = 42, box.padding = 0.5, max.overlaps = 20)+
+  theme + xlab(percentage_unnorm[1]) + ylab(percentage_unnorm[2])+ scale_color_manual(values = mycolors)
+p_unnorm
+
+
+# save pca as svg
+svg("../analysis/PCA_mutagenesis.svg", width = 14)
+ggarrange(p_unnorm, p, ncol = 2, labels = c("A","B"))
 dev.off()
-svg("../analysis/RLE_allsamples.svg")
-plotRLE(cpm(y), outline=FALSE, ylim=c(-1, 1), col=mycolors[acpP_mut_test],
-        main="RLE", las=2)
-dev.off()
+
 ```
 
 You can see that the TMM was succesful (TMM centers the RLE around 0). The PCA plot shows a slight batch effect, which I address using 
@@ -268,7 +331,7 @@ Now I create a function which makes nice volcano-plots and run it on all the res
 ```{r}
 do_volcano <- function(restab, targetgene = NULL, pointsize = 2, x_limit = F,y_limit=F, show_sig = F, alpha=0.05, 
                        minlogfc=1, title = "Volcano", off_target_list = NULL, phopq = NULL) {
-  cols = c("targets"="red","0 mm"="cyan", "1 mm"="blue","2 mm"="darkblue", "PhoPQ"="darkred")
+  cols = c("targets"="darkorange","0 mm"="cyan", "1 mm"="blue","2 mm"="darkblue", "PhoPQ"="darkred")
   rownames(restab) <- gsub("^([^A-Z].+)" , "italic('\\1')" , rownames(restab))
   g_labels <- gsub("^([^A-Z].+)" , "italic('\\1')" , targetgene)
   g = ggplot(restab) +
@@ -291,7 +354,8 @@ do_volcano <- function(restab, targetgene = NULL, pointsize = 2, x_limit = F,y_l
         panel.grid.minor.y = element_blank(),
         panel.grid.major.x =  element_blank(),#element_line(colour="lightgrey", size=0.3),
         panel.grid.major.y = element_blank(),#element_line(colour="lightgrey", size=0.3),
-        plot.title = element_text(hjust = 0.5, size = 23))+
+        plot.title = element_text(hjust = 0.5, size = 23), 
+        legend.position = "none")+
   ggtitle(title)+
   xlab(expression("log"[2]*" fold change")) +
   ylab(expression("- log"[10]*" P-value (FDR)"))+
@@ -310,12 +374,12 @@ do_volcano <- function(restab, targetgene = NULL, pointsize = 2, x_limit = F,y_l
       geom_point(
         data = restab[restab$FDR<alpha & restab$logFC < -minlogfc,],
         aes(x = logFC, y = -log10(FDR)),
-        color = "blue", 
+        color = "steelblue", 
         cex = pointsize) +
       geom_point(
         data = restab[restab$FDR<alpha & restab$logFC > minlogfc,],
         aes(x = logFC, y = -log10(FDR)),
-        color = "red", 
+        color = "darkred", 
         cex = pointsize) 
   } else{
     # different colors for different mismatches:
@@ -374,7 +438,7 @@ do_volcano <- function(restab, targetgene = NULL, pointsize = 2, x_limit = F,y_l
   g <- g + geom_point(
         data = restab[gsub("^([^A-Z].+)" , "italic('\\1')" , targetgene),],
         aes(x = logFC, y = -log10(FDR), color = "targets"),
-        cex = pointsize)
+        cex = pointsize+1)
   
   # add labels:
   g_labels <- unique(g_labels)
@@ -424,50 +488,35 @@ phopqvolc <- c(phopqvolc, "phoP", "phoQ")
 
 # Off-target analysis:
 ```{r}
-startot <- read.delim("../data/mismatches_02_2021/pna_2mm_startregions.tab")
-startot <- startot %>% filter(trans_id %in% rownames(y))
-
-startot$genename <- sapply(startot$trans_id, function(x) ifelse(x %in% pnames$V2, pnames[x,]$V1[1] , x))
-
-startot$mismatch_pos <- unlist(lapply(1:dim(startot)[1], function(x) {
-  paste(which(strsplit(startot$target_seq, "")[[x]] != strsplit(startot$probe_seq, "")[[x]]), collapse =';')
-}))
-
-x <- "mut_6"
-startot %>% filter(grepl(x, probe_id) , num_mismatch==0) %>% dim
-startot %>% filter(grepl(x, probe_id) , num_mismatch==1) %>% dim
-startot %>% filter(grepl(x, probe_id) , num_mismatch==2) %>% dim
-
+off_targets <- read.delim("../data/offtargets_fulltranscripts_sorted_new.tab")
+startot <- off_targets %>% filter(locus_tag %in% rownames(y)) %>% filter(trans_coord %in% c(-20:3))
 ```
 
 Investigation of off-target positions:
 ```{r}
-# get nr of bases away from the center:
-startot$mismatch_pos_from_center <- sapply(startot$mismatch_pos, function(x){
-  mm_pos <- abs(as.numeric(strsplit(x, ";")[[1]]) - 5.5)
-  central_mm <- min(mm_pos)
-  ifelse(central_mm %in% c(-Inf, Inf), NA, central_mm)
-})
+ 
+
+# get logcpm:
 
 startot$logcpm <- unlist(sapply(1:dim(startot)[1], function(x){
-  pname <- gsub(".*\\_(acpP(_PNA_mut_\\d)?)", "\\1", startot$probe_id[x])
+  pname <- gsub(".*\\_(acpP(_PNA_mut_\\d)?).*", "\\1", startot$probe_id[x])
   rname <- paste0(pname, "_vs_scr", sep="")
-  lt <- startot$trans_id[x]
+  lt <- startot$locus_tag[x]
   x <- res_acpP_mutants_vs_scr[[rname]]$table[lt,]$logCPM
   ifelse(is.null(x), NA, x)
 }))
 
 startot$logfc <- unlist(sapply(1:dim(startot)[1], function(x){
-  pname <- gsub(".*\\_(acpP(_PNA_mut_\\d)?)", "\\1", startot$probe_id[x])
+  pname <- gsub(".*\\_(acpP(_PNA_mut_\\d)?).*", "\\1", startot$probe_id[x])
   rname <- paste0(pname, "_vs_scr", sep="")
-  lt <- startot$trans_id[x]
+  lt <- startot$locus_tag[x]
   x <- res_acpP_mutants_vs_scr[[rname]]$table[lt,]$logFC
   ifelse(is.null(x), NA, x)
 }))
 
-startot %>% filter(grepl(".*\\_(acpP(_PNA_mut_\\d)?)", probe_id) & num_mismatch == 1) %>% ggplot() + 
-    geom_boxplot(aes(x=factor(mismatch_pos_from_center), y=logfc))+ geom_point(aes(x=factor(mismatch_pos_from_center), y=logfc))+
-  theme_classic() + scale_size(breaks = c(0:4), range = c(1,15))
+startot %>% filter(grepl(".*\\_(acpP(_PNA_mut_\\d)?)", probe_id)) %>% ggplot() + 
+    geom_boxplot(aes(x=factor(longest_stretch), y=logfc))+ geom_point(aes(x=factor(longest_stretch), y=logfc))+
+  theme_classic()
 ```
 
 
@@ -495,55 +544,54 @@ for (resname in names(res_acpP_mutants)){
    # check for off-targets (with 0 mismatches):
   targetgene <- gsub("_vs_ctrl", "" , resname)
   offt_zero_mm <- startot %>% filter(grepl(paste(targetgene, "$", sep = ""), probe_id) & num_mismatch==0) %>% 
-    select(genename) %>% unlist
+    select(gene_name) %>% unlist
   list_ot_0[[targetgene]] <- offt_zero_mm
   
   offt_one_mm <- startot %>% filter(grepl(paste(targetgene, "$", sep = ""), probe_id) & num_mismatch==1) %>% 
-    select(genename) %>% unlist
+    select(gene_name) %>% unlist
   list_ot_1[[targetgene]] <- offt_one_mm
   
   offt_two_mm <- startot %>% filter(grepl(paste(targetgene, "$", sep = ""), probe_id) & num_mismatch==2) %>% 
-    select(genename) %>% unlist
+    select(gene_name) %>% unlist
   list_ot_2[[targetgene]] <- offt_two_mm
-  
-  off_targets <- list(zero = offt_zero_mm, one = offt_one_mm, two = offt_two_mm)
+  print(list_ot_2)
+  OT <- list(zero = offt_zero_mm, one = offt_one_mm, two = offt_two_mm)
   
   #tgene_lt <- gsub(".*(ECP_.+)", "\\1", startot[grepl(targetgene, startot$probe_id),4][1])
   
   # make volcanos:
   svg(paste0("../analysis/volcanoplots_bc/",resname, ".svg"))
   print(do_volcano(restab, targetgene = c("acpP","fabF"), title=resname, 
-                   x_limit = 5, show_sig = T, phopq = phopqvolc,
-                   y_limit = 25,
-                   alpha=0.001, pointsize = 3,
-                   off_target_list = off_targets))
+                   x_limit = 6, show_sig = F, 
+                   y_limit = 23,
+                   alpha=0.001, pointsize = 2))
   dev.off()
   pdf(paste0("../analysis/volcanoplots_bc/",resname, ".pdf"))
   print(do_volcano(restab, targetgene = c("acpP","fabF"), title=resname, 
                  x_limit = 5, show_sig = T, phopq = phopqvolc,
                  y_limit = 25,
                  alpha=0.001, pointsize = 3,
-                 off_target_list = off_targets))
+                 off_target_list = OT))
   dev.off()
   
   # check offt with mm in outer reg:
      # check for off-targets (with 0 mismatches):
   targetgene <- gsub("_vs_ctrl", "" , resname)
   offt_zero_mm <- startot %>% filter(grepl(paste(targetgene, "$", sep = ""), probe_id) & num_mismatch==0) %>% 
-    select(genename) %>% unlist
+    select(gene_name) %>% unlist
   list_ot_0[[targetgene]] <- offt_zero_mm
   
   offt_one_mm <- startot %>% filter(grepl(paste(targetgene, "$", sep = ""), probe_id) & num_mismatch==1 & 
-                                      mismatch_pos_from_center > 2) %>% 
-    select(genename) %>% unlist
+                                      longest_stretch > 6) %>% 
+    select(gene_name) %>% unlist
   list_ot_1[[targetgene]] <- offt_one_mm
   
   offt_two_mm <- startot %>% filter(grepl(paste(targetgene, "$", sep = ""), probe_id) & num_mismatch==2 & 
-                                      mismatch_pos_from_center > 2) %>% 
-    select(genename) %>% unlist
+                                      longest_stretch > 6) %>% 
+    select(gene_name) %>% unlist
   list_ot_2[[targetgene]] <- offt_two_mm
   
-  off_targets <- list(zero = offt_zero_mm, one = offt_one_mm, two = offt_two_mm)
+  OT <- list(zero = offt_zero_mm, one = offt_one_mm, two = offt_two_mm)
   
   #tgene_lt <- gsub(".*(ECP_.+)", "\\1", startot[grepl(targetgene, startot$probe_id),4][1])
   
@@ -553,14 +601,14 @@ for (resname in names(res_acpP_mutants)){
                    x_limit = 5, show_sig = T, phopq = phopqvolc,
                    y_limit = 25,
                    alpha=0.001, pointsize = 3,
-                   off_target_list = off_targets))
+                   off_target_list = OT))
   dev.off()
   pdf(paste0("../analysis/volcanoplots_bc/",resname, "_ends.pdf"))
   print(do_volcano(restab, targetgene = c("acpP","fabF"), title=resname, 
                    x_limit = 5, show_sig = T, phopq = phopqvolc,
                    y_limit = 25,
                    alpha=0.001, pointsize = 3,
-                   off_target_list = off_targets))
+                   off_target_list = OT))
   dev.off()
   
   #save result_table:
@@ -578,7 +626,50 @@ DEgenes <- sapply(res_acpP_mutants, function (x) rownames(x$table[x$table$FDR < 
 Reduce(intersect, DEgenes)
 ```
 
+## analysis to check hypergeometric p value:
+```{r}
+startot_acpp <- read.delim("../data/mismatches_02_2021/pna_3mm_startregions.tab") %>% 
+  filter(grepl("acpP", probe_id)) #%>% filter(num_mismatch>0)
+startot_acpp$probe_id <- gsub("Jv.+_(acpP.*)", "\\1", startot_acpp$probe_id)
 
+# total mismatches:
+m <- dim(unique(startot_acpp[,c("trans_id", "probe_id")]))[1]
+n <- (dim(res_acpP_mutants$acpP_vs_ctrl[grepl("SL1344", rownames(res_acpP_mutants$acpP_vs_ctrl)),])[1]*11) - m
+
+startot_acpp$term_mm <- !grepl("3|4|5|6|7", startot_acpp$mismatch_pos)
+
+all_sigs <- sapply(names(res_acpP_mutants), function(x){
+  sig <- rownames(res_acpP_mutants[[x]]$table[ res_acpP_mutants[[x]]$table$logFC < (-1) &
+                                                res_acpP_mutants[[x]]$table$FDR < 0.001,])
+  sig <-sig[grepl("SL1344", sig)] # no sRNAs
+  y <- gsub("_vs_ctrl","", x )
+  sig_mm <- startot_acpp %>% filter(probe_id == y)
+  sapply(sig, function(x) {
+    is_mm <- x %in% sig_mm$trans_id
+    is_term_mm <- NA
+    if (is_mm) {
+      is_term_mm <- sum(sig_mm[sig_mm$trans_id==x,][["term_mm"]])>0
+    }
+     is_mm & is_term_mm
+    })
+  
+})
+all_sigs <- unlist(all_sigs)
+
+# find nr of sign. downreg. genes (k):
+k <- length(unlist(sapply(names(res_acpP_mutants), function(x){
+  sig <- rownames(res_acpP_mutants[[x]]$table[ res_acpP_mutants[[x]]$table$logFC < (-1) &
+                                                res_acpP_mutants[[x]]$table$FDR < 0.001,])
+})))
+
+q <- sum(all_sigs) # all sign. depleted genes without central mismatches
+
+m <- sum(startot_acpp$term_mm) # all genes with up to 2 mismatches not in centre
+n <- dim(res_acpP_mutants$acpP_vs_ctrl$table)[1]*length((res_acpP_mutants)) - m # all genes with central mismatches
+
+pval <- phyper(q,m,n,k, lower.tail = F)
+print(paste0("P-value: " , pval))
+```
 
 
 Check acpP downregulation in different mutants:
@@ -606,7 +697,52 @@ svg("../analysis/mismatch_plot.svg")
 print(g_mismatches)
 dev.off()
 g_mismatches
+# add predicted melting temps:
+gdata$Tm_predicted <- c(58.6, 15.7, 48.5, 36.3, 30.4, 32.6, 30.7, 28.5, 26.3, 41.5, 46.3)
+gdata$shortnames <- gsub("acpP_PNA_mut_", "mm", gdata$names)
+gdata$shortnames <- gsub("acpP_scrambled", "scr", gdata$shortnames)
+gdata$od <- c(0, 0.92, 0.013, 0.32, 1.07, 0.89, 0.73, 0.47, 0.51, 0.04, 0.01)
+gdata$mic <- c(1.25, 20, 5, 20, 20, 20, 20, 20, 20, 10, 5)
+gdata$pna_rna_binding <- c(0.92, NA, 0.39, 0.13, 0.07, 0.40, 0.68, 0.05, 0.08, 0.23, 0.20)
+
+g_melting <- gdata %>% ggplot(aes(x=Tm_predicted, y=-mutants_logchange, label = shortnames)) + 
+  geom_point() +stat_cor(method="pearson", )+
+  theme_minimal() + geom_smooth(method=lm, se=FALSE, color="black") + geom_text_repel(min.segment.length = 0)+
+  theme(axis.line = element_line(size = 0.5), 
+        axis.text = element_text(size = 12), 
+        axis.title = element_text(size = 13)
+        ) + 
+  xlim(c(15,60)) + ylim(0, 2.5) +
+  labs(x="predicted Tm (°C)", y="acpP mRNA -log2 fold change")
+g_melting
+svg("../analysis/melting_plot.svg")
+print(g_melting)
+dev.off()
 ```
+
+```{r}
+g_binding_od <- gdata %>% ggplot(aes(x=pna_rna_binding, y=od, label = shortnames)) + 
+  geom_point() +
+  theme_minimal() + geom_text_repel(min.segment.length = 0)+
+  theme(axis.line = element_line(size = 0.5), 
+        axis.text = element_text(size = 12), 
+        axis.title = element_text(size = 13)
+        ) + 
+  xlim(c(0,1)) + ylim(0, 1) +
+  labs(x="PNA-RNA binding (Giorgia's data)", y="OD600 (after 24 hours)")
+
+g_predict_od <- gdata %>% ggplot(aes(x=Tm_predicted, y=od, label = shortnames)) + 
+  geom_point() +
+  theme_minimal() + geom_text_repel(min.segment.length = 0)+
+  theme(axis.line = element_line(size = 0.5), 
+        axis.text = element_text(size = 12), 
+        axis.title = element_text(size = 13)
+        ) + ylim(0, 1) +
+  labs(x="predicted TM °C (RNA-RNA prediction, MELTING5)", y="OD600 (after 24 hours)")
+
+```
+
+
 
 Same for fabF:
 ```{r}
@@ -634,7 +770,7 @@ svg("../analysis/mismatch_plot_fabF.svg")
 print(g_mismatches)
 dev.off()
 
-gd_all <- rbind(gdata, gdata_fabf)
+gd_all <- rbind(gdata[,c(1:4)], gdata_fabf)
 
 g_mismatches_acpp_fabf <- gd_all %>% ggplot(aes(x=names, y=-mutants_logchange, fill=Gene)) + 
   geom_bar(stat='identity', width = 0.8, position = "dodge", color="black") +
@@ -670,6 +806,16 @@ mutants_pvals <- data.frame(sapply(res_acpP_mutants, function(x) x$table$FDR),
 mutants_logchange <- mutants_logchange[order(mutants_pvals$acpP_vs_ctrl),]
 mutants_pvals <- mutants_pvals[order(mutants_pvals$acpP_vs_ctrl),]
 
+#generate data for upset plots:
+list_topup_per_cond <- lapply(names(mutants_pvals)[-12], function(x) {
+  degenes <- mutants_pvals[rownames(mutants_logchange)[mutants_logchange[[x]]<(-1) & mutants_pvals[[x]] < 0.001],]
+  degenes <- rownames(degenes[order(degenes[[x]]),])
+  x <- degenes[1:15]
+  x[!is.na(x)]
+})
+
+names(list_topup_per_cond) <- names(mutants_pvals)[-12]
+
 topdegenes <- c()
 for (i in names(mutants_logchange[-12])) {
   degenes <- mutants_pvals[rownames(mutants_logchange)[abs(mutants_logchange[[i]])>1 & mutants_pvals[[i]] < 0.001],]
@@ -677,6 +823,9 @@ for (i in names(mutants_logchange[-12])) {
   topdegenes <- unique(append(topdegenes, degenes[1:10]))
 }
 topdegenes <- topdegenes[!is.na(topdegenes)]
+
+#topdegenes <- unique(c(unlist(lapply(res_acpP_mutants, function(x) c(rownames(topTags(x, n=5)), rownames(topTags(x, n=5, sort.by = "logFC")))))))  
+
 
 mutants_logchange <- mutants_logchange[topdegenes,]
 mutants_pvals <- mutants_pvals[topdegenes,]
@@ -687,38 +836,45 @@ rownames(mutants_pvals) <- rownames(mutants_logchange)
 
 mutants_logchange <- mutants_logchange[order(mutants_logchange$acpP_vs_ctrl, decreasing = T),][-12]
 mutants_pvals <- mutants_pvals[rownames(mutants_logchange),][-12]
+mutants_logchange <- mutants_logchange[,c(2,1,3:11)]
+mutants_pvals <- mutants_pvals[,c(2,1,3:11)]
 
 diff_exp <- sapply(names(mutants_pvals), function(x) {
   tf <- mutants_pvals[[x]] < 0.001 & abs(mutants_logchange[[x]])>1
   ifelse(tf, "*", " ")
   })
 
-colnames(mutants_logchange) <- c("acpP", "scrambled", "mm1", "mm2", "mm3", "mm4", "mm5", "mm6", "mm7", "mm8", "mm9")
+colnames(mutants_logchange) <- c("acpPscr", "acpP", "mm1", "mm2", "mm3", "mm4", "mm5", "mm6", "mm7", "mm8", "mm9")
 
 
 
-c1 =  circlize::colorRamp2(c(-3, 0, 3), c("blue", "white", "red"))
-ht4 <- Heatmap(mutants_logchange, name = "Log2 FC",
+c1 =  circlize::colorRamp2(c(-2, 0, 2), c("steelblue", "white", "darkorange"))
+ht4 <- Heatmap(t(mutants_logchange), name = "Log2 FC",
                col = c1,
                cluster_rows = F, cluster_columns = F, show_heatmap_legend = F,
                cell_fun = function(j, i, x, y, width, height, fill) {
-                 grid.text(sprintf("%.1s", diff_exp[i, j]), x, y)
+                 grid.text(sprintf("%.1s", t(diff_exp)[i, j]), x, y)
                }, 
                border = TRUE,
-               height = unit(30, "cm"), width = unit(13, "cm"),
+               width = unit(40, "cm"), height = unit(10, "cm"),
                #row_names_max_width = max_text_width(c(0,0),gp = gpar(fontsize = 0)),
                column_names_rot = 45)
 
 lgd2 = Legend(col_fun = c1, title = expression("Log"[2]*" FC"), labels_gp = gpar(fontsize = 10),
              title_gp = gpar(fontsize = 15),grid_width =  unit(0.8, "cm"),
-             at = c(-2, 0, 2), legend_width = unit(2, "cm"),
-             labels = c("-3", "  0", "  3"), legend_height = unit(3, "cm"),
-             title_position = "leftcenter-rot")
+             at = c(-2, 0, 2), legend_width = unit(4, "cm"),
+             labels = c("-2", "  0", "  2"), legend_height = unit(3, "cm"),
+             title_position = "topcenter", direction = "horizontal")
 
-svg("../analysis/heatmap_rnaseq.svg", height = 15, width = 15)
+svg("../analysis/heatmap_rnaseq_mutagens.svg", height = 15, width = 20)
 print(ht4)
-draw(lgd2, x = unit(8, "cm"), y = unit(19, "cm"), just = c("left", "bottom"))
+draw(lgd2, x = unit(25, "cm"), y = unit(28, "cm"), just = c("center", "top"))
 dev.off()
+```
+## Venn diagrams/upset plots:
+```{r}
+m <- make_comb_mat(list_topup_per_cond[!is.na(list_topup_per_cond)])
+UpSet(m[comb_size(m) >= 1])
 ```
 
 
@@ -787,7 +943,45 @@ for (i in names(acpp_kegg_frysig)) {
 kegg_siggos <- unique(kegg_siggos[!grepl("NA", kegg_siggos)])
 ```
 
+save csv of all raw counts for supplementary material:
+```{r}
+library(writexl)
+counts <- y$counts 
 
+colnames(counts) <- short_names
+
+prefname <- ifelse(rownames(counts) %in% pnames$V2 ,pnames[rownames(counts),]$V1, "" )
+prefname <- ifelse(isUnique(prefname), prefname, "")
+gene_name <- ifelse(prefname != "", prefname, rownames(counts))
+
+locus_tag <- rownames(counts)
+
+counts_raw <- cbind(locus_tag, gene_name, counts)
+
+write_xlsx(as.data.frame(counts_raw), "../analysis/supp_tables/raw_counts.xlsx")
+
+DE_list = list()
+for (i in names(res_acpP_mutants)) {
+  tab <- res_acpP_mutants[[i]]$table[order(res_acpP_mutants[[i]]$table$FDR),]
+  print(tab)
+  
+  locus_tag <- rownames(tab)
+  prefname <- ifelse(rownames(tab) %in% pnames$V2 ,pnames[rownames(tab),]$V1, "" )
+  prefname <- ifelse(isUnique(prefname), prefname, "")
+  gene_name <- ifelse(prefname != "", prefname, rownames(tab))
+  tabs <- cbind(gene_name,locus_tag,tab) 
+  DE_list[[i]] <- tabs
+}  
+write_xlsx(DE_list, "../analysis/supp_tables/DE_analysis_acpP_mutagenesis.xlsx")
+
+GSA_list = list()
+for (l in names(acpp_kegg_fry)){
+  tabs <- acpp_kegg_fry[[l]]
+  GSA_list[[paste0("pathway_fry_", l)]] <- tabs
+}
+write_xlsx(GSA_list, "../analysis/supp_tables/pathway_fry_analysis_acpP_mutagenesis.xlsx")
+
+```
 
 # Non-essential genes:
 ```{r}
@@ -834,17 +1028,54 @@ y <- estimateDisp(y, design, robust = T)
 
 And now I create PCA and RLE plots:
 ```{r}
-library(RColorBrewer)
-nb.cols <- 18
-mycolors <- colorRampPalette(brewer.pal(8, "Set1"))(nb.cols)
+mycolors <- c(#"chocolate4","#1F78B4","cyan4","#33A02C","deepskyblue4", "#E31A1C","deeppink3",
+              "black","#FF7F00","bisque4","#6A3D9A","coral4")
 
 plotPCA(cpm(y), col=mycolors[non_ess_test])
 plotRLE(cpm(y), outline=FALSE, ylim=c(-1, 1), col=mycolors[non_ess_test],
         main="RLE", las=2)
 
+logCPM_no_batch <- cpm(y, log = TRUE, prior.count = 2)
+logCPM_no_batch <- logCPM_no_batch[,!grepl("99",colnames(logCPM_no_batch))]
+t <- factor(as.character(non_ess_test[!grepl("rpl32", non_ess_test)]))
+
+short_names <- c("ctrl_B1", "ompC_B2", "penta_B2", "ddlB_B2", "ctrl_B2", 
+                 "ctrl_B2", "ompC_B3", "penta_B3", "ddlB_B3", "ctrl_B3",
+                 "ackA_B4", "ctrl_B4", "ackA_B5", "ctrl_B5")
+colnames(logCPM_no_batch) <- short_names
+
+
+# MDS plot:
+plotMDS(logCPM_no_batch, col=mycolors[t], top = 1000)
+
+# PCA:
+pca <- prcomp(t(logCPM_no_batch))
+df_pca <- as.data.frame(pca$x)
+
+theme<-theme(panel.background = element_blank(),panel.border=element_rect(fill=NA),
+             panel.grid.major = element_blank(),panel.grid.minor = element_blank(),
+             strip.background=element_blank(),
+             axis.text=element_text(colour="black", size=12),axis.ticks=element_line(colour="black"),
+             axis.title=element_text(colour="black", size=13),
+             plot.margin=unit(c(1,1,1,1),"line"),legend.position = "none")
+
+percentage <- round(pca$sdev / sum(pca$sdev) * 100, 2)
+percentage <- paste( colnames(df_pca), "(", paste( as.character(percentage), "%", ")", sep="") )
+
+
+
+df_pca$group <-t
+
+p<-ggplot(df_pca,aes(x=PC1,y=PC2,group=group,label=short_names, colour=group))
+p<-p+geom_point(size=3)+ scale_shape_identity()+
+  geom_text_repel(size=4, min.segment.length = 0, seed = 42, box.padding = 0.5, max.overlaps = 20)+
+  theme + xlab(percentage[1]) + ylab(percentage[2])+ scale_color_manual(values = mycolors)
+p
+
+
 # save em as svgs
 svg("../analysis/PCA_non_ess_test.svg")
-plotPCA(cpm(y), col=mycolors[non_ess_test])
+print(p)
 dev.off()
 svg("../analysis/RLE_non_ess_test.svg")
 plotRLE(cpm(y), outline=FALSE, ylim=c(-1, 1), col=mycolors[non_ess_test],
@@ -890,6 +1121,7 @@ Now I adjust p-values (FDR), create volcano plots, histograms for the results (a
 list_ot_0 <- list()
 list_ot_1 <- list()
 list_ot_2 <- list()
+list_plots <- list()
 
 for (resname in names(res_mismatch_pnas)){
   # adjust p-values FDR
@@ -906,77 +1138,79 @@ for (resname in names(res_mismatch_pnas)){
   hist(restab$PValue, breaks=100, main=resname)
   
    # check for off-targets (with 0 mismatches):
-  targetgene <- gsub("_vs_ctrl", "" , resname)
+  targetgene <- gsub("KFF_(.*)_vs_ctrl", "\\1" , resname)
   offt_zero_mm <- startot %>% filter(grepl(targetgene, probe_id) & num_mismatch==0) %>% 
-    select(genename) %>% unlist
+    select(gene_name) %>% unlist
   list_ot_0[[targetgene]] <- offt_zero_mm
   
   offt_one_mm <- startot %>% filter(grepl(targetgene, probe_id) & num_mismatch==1) %>% 
-    select(genename) %>% unlist
+    select(gene_name) %>% unlist
   list_ot_1[[targetgene]] <- offt_one_mm
   
   offt_two_mm <- startot %>% filter(grepl(targetgene, probe_id) & num_mismatch==2) %>% 
-    select(genename) %>% unlist
+    select(gene_name) %>% unlist
   list_ot_2[[targetgene]] <- offt_two_mm
   
   off_targets <- list(zero = offt_zero_mm, one = offt_one_mm, two = offt_two_mm)
   
-  #tgene_lt <- gsub(".*(ECP_.+)", "\\1", startot[grepl(targetgene, startot$probe_id),4][1])
+  tgene_lt <- gsub(".*(ECP_.+)", "\\1", startot[grepl(targetgene, startot$probe_id),4][1])
   
   # make volcanos:
-  
+  list_plots[[targetgene]] <- do_volcano(restab, targetgene = offt_zero_mm, title=targetgene, show_sig = F,
+                   x_limit = 6, 
+                   y_limit = 23,
+                   alpha=0.001, pointsize = 2)
   svg(paste0("../analysis/volcanoplots_bc/",resname, ".svg"))
-  print(do_volcano(restab, NULL, title=resname, show_sig = T,
-                   x_limit = 6, phopq = phopqvolc,
+  print(do_volcano(restab, targetgene = offt_zero_mm, title=targetgene, show_sig = F,
+                   x_limit = 6, 
                    y_limit = 23,
-                   alpha=0.001, pointsize = 3,
-                   off_target_list = off_targets))
+                   alpha=0.001, pointsize = 2))
   dev.off()
   
-  pdf(paste0("../analysis/volcanoplots_bc/",resname, ".pdf"))
-  print(do_volcano(restab, NULL, title=resname, show_sig = T,
-                   x_limit = 6, phopq = phopqvolc,
-                   y_limit = 23,
-                   alpha=0.001, pointsize = 3,
-                   off_target_list = off_targets))
-  dev.off()
+  #pdf(paste0("../analysis/volcanoplots_bc/",resname, ".pdf"))
+  #print(do_volcano(restab, NULL, title=resname, show_sig = T,
+  #                 x_limit = 6, phopq = phopqvolc,
+  #                 y_limit = 23,
+  #                 alpha=0.001, pointsize = 3,
+  #                 off_target_list = off_targets))
+  #dev.off()
   
   # check offt with mm in outer reg:
      # check for off-targets (with 0 mismatches):
   targetgene <- gsub("_vs_ctrl", "" , resname)
   offt_zero_mm <- startot %>% filter(grepl(paste(targetgene, "$", sep = ""), probe_id) & num_mismatch==0) %>% 
-    select(genename) %>% unlist
+    select(gene_name) %>% unlist
   list_ot_0[[targetgene]] <- offt_zero_mm
   
   offt_one_mm <- startot %>% filter(grepl(paste(targetgene, "$", sep = ""), probe_id) & num_mismatch==1 & 
-                                      mismatch_pos_from_center > 3) %>% 
-    select(genename) %>% unlist
+                                      longest_stretch > 6) %>% 
+    select(gene_name) %>% unlist
   list_ot_1[[targetgene]] <- offt_one_mm
   
   offt_two_mm <- startot %>% filter(grepl(paste(targetgene, "$", sep = ""), probe_id) & num_mismatch==2 & 
-                                      mismatch_pos_from_center > 3) %>% 
-    select(genename) %>% unlist
+                                      longest_stretch > 6) %>% 
+    select(gene_name) %>% unlist
   list_ot_2[[targetgene]] <- offt_two_mm
   
   off_targets <- list(zero = offt_zero_mm, one = offt_one_mm, two = offt_two_mm)
   
-  #tgene_lt <- gsub(".*(ECP_.+)", "\\1", startot[grepl(targetgene, startot$probe_id),4][1])
+  tgene_lt <- gsub(".*(ECP_.+)", "\\1", startot[grepl(targetgene, startot$probe_id),4][1])
   
   # make volcanos:
-  svg(paste0("../analysis/volcanoplots_bc/",resname, "_ends.svg"))
-  print(do_volcano(restab, targetgene = c("acpP","fabF"), title=resname, 
-                   x_limit = 6, show_sig = T, phopq = phopqvolc,
-                   y_limit = 23,
-                   alpha=0.001, pointsize = 3,
-                   off_target_list = off_targets))
-  dev.off()
-  pdf(paste0("../analysis/volcanoplots_bc/",resname, "_ends.pdf"))
-  print(do_volcano(restab, targetgene = c("acpP","fabF"), title=resname, 
-                   x_limit = 6, show_sig = T, phopq = phopqvolc,
-                   y_limit = 23,
-                   alpha=0.001, pointsize = 3,
-                   off_target_list = off_targets))
-  dev.off()
+  #svg(paste0("../analysis/volcanoplots_bc/",resname, "_ends.svg"))
+  #print(do_volcano(restab, targetgene = c("acpP","fabF"), title=resname, 
+  #                 x_limit = 6, show_sig = T, phopq = phopqvolc,
+  #                 y_limit = 23,
+  #                 alpha=0.001, pointsize = 3,
+  #                 off_target_list = off_targets))
+  #dev.off()
+  #pdf(paste0("../analysis/volcanoplots_bc/",resname, "_ends.pdf"))
+  #print(do_volcano(restab, targetgene = c("acpP","fabF"), title=resname, 
+  #                 x_limit = 6, show_sig = T, phopq = phopqvolc,
+  #                 y_limit = 23,
+  #                 alpha=0.001, pointsize = 3,
+  #                 off_target_list = off_targets))
+ # dev.off()
   
   #pval distributions:
   hist(restab$PValue, breaks=100, main=resname)
@@ -984,7 +1218,9 @@ for (resname in names(res_mismatch_pnas)){
   dataname <- paste("../analysis/diff_exp_rawdata/", resname, ".csv", sep = "")
   write.csv(restab[order(restab$FDR),], dataname)
 }
-
+  svg("../analysis/figures/volcanos.svg", width = 10, height = 10)
+  ggarrange(list_plots$ompC, list_plots$ackA, list_plots$ddlB, list_plots$penta)
+  dev.off()
 ```
 
 check overlapping genes:
@@ -992,13 +1228,75 @@ check overlapping genes:
 DEgenes <- sapply(res_mismatch_pnas, function (x) rownames(x$table[x$table$FDR < 0.01 & abs(x$table$logFC)>1,]))
 overlapping <- Reduce(intersect, DEgenes)
 
-prefname <- ifelse(overlapping %in% pnames$V2 ,pnames[overlapping,]$V1, "" )
+#prefname <- ifelse(overlapping %in% pnames$V2 ,pnames[overlapping,]$V1, "" )
 #prefname <- ifelse(isUnique(prefname), prefname, "")
 overlapping <- ifelse(prefname != "", prefname,overlapping)
-
 ```
 
+## heatmaps rnaseq:
+```{r}
+mismatch_logchange <- data.frame(sapply(res_mismatch_pnas, function(x) x$table$logFC), 
+                                row.names = rownames(res_mismatch_pnas$KFF_ackA_vs_ctrl$table), 
+                                genenames = prefname)
+mismatch_pvals <- data.frame(sapply(res_mismatch_pnas, function(x) x$table$FDR), 
+                            row.names = rownames(res_mismatch_pnas$KFF_ackA_vs_ctrl$table),
+                            genenames = prefname)
 
+mismatch_logchange <- mismatch_logchange[order(mismatch_pvals$KFF_ackA_vs_ctrl),]
+mismatch_pvals <- mismatch_pvals[order(mismatch_pvals$KFF_ackA_vs_ctrl),]
+
+topdegenes <- c()
+for (i in names(mismatch_logchange[-6])) {
+  degenes <- mismatch_pvals[rownames(mismatch_logchange)[abs(mismatch_logchange[[i]])>1 & mismatch_pvals[[i]] < 0.001],]
+  degenes <- rownames(degenes[order(degenes[[i]]),])
+  topdegenes <- unique(append(topdegenes, degenes[1:20]))
+}
+topdegenes <- topdegenes[!is.na(topdegenes)]
+topdegenes <- c("ackA", "ddlB", "ompC", "ybeX", "ybjZ", "aegA", "hslR")
+
+mismatch_logchange <- mismatch_logchange[mismatch_logchange$genenames %in% topdegenes,]
+mismatch_pvals <- mismatch_pvals[mismatch_pvals$genenames %in% topdegenes,]
+
+rownames(mismatch_logchange) <- ifelse(mismatch_logchange$genenames == "", rownames(mismatch_logchange),
+                                            mismatch_logchange$genenames)
+rownames(mismatch_pvals) <- rownames(mismatch_logchange)
+
+mismatch_logchange <- mismatch_logchange[order(mismatch_logchange$KFF_ackA_vs_ctrl, decreasing = T),][-6]
+mismatch_pvals <- mismatch_pvals[rownames(mismatch_logchange),][-6]
+
+diff_exp <- sapply(names(mismatch_pvals[-6]), function(x) {
+  tf <- mismatch_pvals[[x]] < 0.001 & abs(mismatch_logchange[[x]])>1
+  ifelse(tf, "*", " ")
+  })
+
+colnames(mismatch_logchange) <- gsub("_vs_ctrl", "", colnames(mismatch_logchange))
+colnames(mismatch_logchange) <- gsub("KFF_", "", colnames(mismatch_logchange))
+
+
+
+c1 =  circlize::colorRamp2(c(-3, 0, 3), c("blue", "white", "red"))
+ht4 <- Heatmap(mismatch_logchange, name = "Log2 FC",
+               col = c1,
+               cluster_rows = F, cluster_columns = F, show_heatmap_legend = F,
+               cell_fun = function(j, i, x, y, width, height, fill) {
+                 grid.text(sprintf("%.1s", diff_exp[i, j]), x, y)
+               }, 
+               border = TRUE,
+               height = unit(10, "cm"), width = unit(10, "cm"),
+               #row_names_max_width = max_text_width(c(0,0),gp = gpar(fontsize = 0)),
+               column_names_rot = 45)
+
+lgd2 = Legend(col_fun = c1, title = expression("Log"[2]*" FC"), labels_gp = gpar(fontsize = 10),
+             title_gp = gpar(fontsize = 15),grid_width =  unit(0.8, "cm"),
+             at = c(-2, 0, 2), legend_width = unit(2, "cm"),
+             labels = c("-3", "  0", "  3"), legend_height = unit(3, "cm"),
+             title_position = "leftcenter-rot")
+
+svg("../analysis/heatmap_noness.svg", height = 15, width = 15)
+print(ht4)
+draw(lgd2, x = unit(8, "cm"), y = unit(19, "cm"), just = c("left", "bottom"))
+dev.off()
+```
 
 # KEGG pathway analysis
 
@@ -1006,6 +1304,8 @@ overlapping <- ifelse(prefname != "", prefname,overlapping)
 l <- length(colnames(con_mismatch_pnas))
 list_kegg_fry <- lapply(1:l, function(x) fry(y,idx_kegg, design, con_mismatch_pnas[,x]))
 names(list_kegg_fry) <- colnames(con_mismatch_pnas)
+list_kegg_fry$KFF_rpl32_vs_ctrl <- NULL  #remove rpl32
+res_mismatch_pnas$KFF_rpl32_vs_ctrl <- NULL
 ```
 
 add KEGG terms:
@@ -1061,10 +1361,7 @@ mm_hm_kegg <- as.data.frame(mm_hm_kegg)
 rownames(mm_hm_kegg) <- gsub("\\.", "\\:", rownames(mm_hm_kegg))
 rownames(acpp_hm_kegg) <- gsub("\\.", "\\:", rownames(acpp_hm_kegg))
 ```
-get size of kegg terms:
-```{r}
 
-```
 
 make heatmap:
 ```{r}
@@ -1087,12 +1384,14 @@ keggpws <- list_kegg_fry$KFF_ackA_vs_ctrl[rownames(mm_hm_kegg),] [["TERM"]]
 
 
 rownames(logchange_kegg) <- ifelse(!is.na(keggpws),keggpws, rownames(logchange_kegg) )
+colnames(logchange_kegg) <- gsub("acpP_PNA_mut_(\\d)", "mm\\1", colnames(logchange_kegg))
+colnames(logchange_kegg) <- gsub("acpP_scrambled", "scr", colnames(logchange_kegg))
 ```
 
 plot hm (save as pdf):
 ```{r}
-col_fun = colorRamp2(c(-2,0, 2), c("blue", "white", "red"))
-exp <- factor(c(rep("acpP", 11), rep("mismatch", 5)))
+col_fun = colorRamp2(c(-2,0, 2), c("steelblue", "white", "darkorange"))
+exp <- factor(c(rep("acpP", 11), rep("NE genes", 4)))
 
 ht_vert <- Heatmap(logchange_kegg, cluster_rows = F, cluster_columns = F,
                name = "GO-analysis", col = col_fun,
@@ -1102,24 +1401,24 @@ ht_vert <- Heatmap(logchange_kegg, cluster_rows = F, cluster_columns = F,
                cell_fun = function(j, i, x, y, width, height, fill) {
                  grid.text(sprintf("%.1s", pvals_kegg[i, j]), x, y)
                }, column_split = exp,
-               column_names_gp = gpar(fontsize = 10),
+               column_names_gp = gpar(fontsize = 8, fontface = "italic"),
                row_names_gp = gpar(fontsize = 10),
                row_title = NULL,
                width = unit(15, "cm"), height = unit(15, "cm"),
-               column_names_rot = 45,
+               
                right_annotation = rowAnnotation(genes = anno_barplot(kegg_sizes)))
 
 ht_vert
 
 lgd = Legend(col_fun = col_fun, title = expression("mean log"[2]*" FC"), #direction = "horizontal",
-             title_gp = gpar(fontsize = 12), labels = c("-2", " 0"," 2"), legend_height = unit(3, "cm"),
+             title_gp = gpar(fontsize = 12), labels = c("-2", " 0"," 2"), legend_height = unit(6, "cm"),
              at = c(-2, 0, 2), border = "black",
              title_position = "leftcenter-rot")
 draw(lgd)
 
 svg("../analysis/pathway_analysis/hm_KEGG.svg", width = unit(12, "cm"),  height = unit(10, "cm"))
 draw(ht_vert)
-draw(lgd, x = unit(2, "cm"), y = unit(12, "cm"), just = c("left", "bottom"))
+draw(lgd, x = unit(2, "cm"), y = unit(10, "cm"), just = c("left", "bottom"))
 dev.off()
 ```
 
@@ -1127,68 +1426,73 @@ check mismatch PNAs for all sequences:
 ```{r}
 all_res <- append(res_acpP_mutants, res_mismatch_pnas)
 
-startot$mismatch_pos_from_center <- sapply(startot$mismatch_pos, function(x){
-  mm_pos <- abs(as.numeric(strsplit(x, ";")[[1]]) - 5.5)
-  central_mm <- min(mm_pos)
-  ifelse(central_mm %in% c(-Inf, Inf), NA, central_mm)
-})
+startot <- startot %>% filter(trans_coord %in% c(-20:3))   %>% 
+  mutate(probe_id=gsub("_rev","", probe_id)) %>%
+  filter(!grepl("rpl32", probe_id)) 
 
 startot$logcpm <- unlist(sapply(1:dim(startot)[1], function(x){
-  pname <- gsub(".*\\_(acpP(_PNA_mut_\\d)?)", "\\1", startot$probe_id[x])
+  pname <- gsub(".*\\_(acpP(_PNA_mut_\\d)?).*", "\\1", startot$probe_id[x])
   pname <- gsub(".*_(KFF_.*)", "\\1", pname)
   rname <- paste0(pname, "_vs_ctrl", sep="")
-  lt <- startot$trans_id[x]
-  x <- log10(exp(all_res[[rname]]$table[lt,]$logCPM))
-  ifelse(is.null(x), NA, x)
+  lt <- startot$locus_tag[x]
+  y <- all_res[[rname]]$table[lt,]$logCPM
+  ifelse(is.null(y), NA, y)
 }))
 
+
 startot$logfc <- unlist(sapply(1:dim(startot)[1], function(x){
-  pname <- gsub(".*\\_(acpP(_PNA_mut_\\d)?)", "\\1", startot$probe_id[x])
+  pname <- gsub(".*\\_(acpP(_PNA_mut_\\d)?).*", "\\1", startot$probe_id[x])
   pname <- gsub(".*_(KFF_.*)", "\\1", pname)
   rname <- paste0(pname, "_vs_ctrl", sep="")
-  lt <- startot$trans_id[x]
-  x <- all_res[[rname]]$table[lt,]$logFC
-  ifelse(is.null(x), NA, x)
+  lt <- startot$locus_tag[x]
+  y <- all_res[[rname]]$table[lt,]$logFC
+  ifelse(is.null(y), NA, y)
 }))
 
 startot$minlog10FDR <- unlist(sapply(1:dim(startot)[1], function(x){
-  pname <- gsub(".*\\_(acpP(_PNA_mut_\\d)?)", "\\1", startot$probe_id[x])
+  pname <- gsub(".*\\_(acpP(_PNA_mut_\\d)?).*", "\\1", startot$probe_id[x])
   pname <- gsub(".*_(KFF_.*)", "\\1", pname)
   rname <- paste0(pname, "_vs_ctrl", sep="")
-  lt <- startot$trans_id[x]
-  x <- -log10(all_res[[rname]]$table[lt,]$FDR)
-  ifelse(is.null(x), NA, x)
+  lt <- startot$locus_tag[x]
+  y <- -log10(all_res[[rname]]$table[lt,]$FDR)
+  ifelse(is.null(y), NA, y)
 }))
 
 # add RNAseE cleavage sites for salmonella:
-rnaseE <- read.delim("../data/paper_suppmat/rnasse_e_1-s2.0-S1097276516307109-mmc2.csv", header = T)
-startot$RNAseE_sites <- unlist(sapply(1:dim(startot)[1], function(x){
-  gname <- startot$genename[x]
-  lt <- paste0(startot$trans_id[x], ";", sep="")
-  sum(grepl(gname, rnaseE$Gene) | grepl(lt, rnaseE$Gene))
-}))
+#rnaseE <- read.delim("../data/paper_suppmat/rnasse_e_1-s2.0-S1097276516307109-mmc2.csv", header = T)
+#startot$RNAseE_sites <- unlist(sapply(1:dim(startot)[1], function(x){
+#  gname <- startot$gene_name[x]
+#  lt <- paste0(startot$locus_tag[x], ";", sep="")
+#  sum(grepl(gname, rnaseE$Gene) | grepl(lt, rnaseE$Gene))
+#}))
   
 mrna_HL <- read.csv("../data/paper_suppmat/LNM3_all_param.csv", header = T)
 rownames(mrna_HL) <- mrna_HL$ltag
 startot$mrna_HL <- unlist(sapply(1:dim(startot)[1], function(x){
-  gname <- startot$trans_id[x]
+  gname <- startot$locus_tag[x]
   ifelse(gname %in% mrna_HL$ltag, mrna_HL$beta_WT[grepl(gname, mrna_HL$ltag)], NA)
 }))
 
+startot$downregulated <- ifelse(startot$logfc<(-1) & startot$minlog10FDR>3, "yes", "no")
+
 #mismatch_pos
-startot %>% filter(num_mismatch %in% c(1,2)) %>% 
+plot_mismatch_pos <- startot %>% filter(grepl("acpP", probe_id)) %>% 
   #filter( logcpm>3 ) %>%
   ggplot() + 
-    geom_boxplot(aes(x=factor(mismatch_pos_from_center), y=logfc ))+ 
-  geom_point(aes(x=factor(mismatch_pos_from_center), y=logfc))+
-  theme_classic()
+  xlab("Longest matching base-stretch") +
+  ylim(c(-3,3)) + 
+  #geom_hline(yintercept=0, linetype="dashed", color="grey")+
+  ylab(expression(Log[2]~fold~change))+
+    geom_boxplot(aes(x=factor(longest_stretch), y=logfc ))+ 
+    theme_classic()+
+  theme(axis.text = element_text(size=15),
+        axis.title = element_text(size=20))
 
-#RNAseE sites
-startot %>% filter(num_mismatch %in% c(1,2)) %>% 
-  filter( logcpm>2 ) %>%
-  ggplot() + 
-  geom_point(aes(x=RNAseE_sites, y=logfc))+
-  theme_classic() + scale_x_continuous(limits = c(0,20))
+svg("../analysis/boxplot_mismatch_pos_salm.svg")
+print(plot_mismatch_pos)
+dev.off()
+  
+
 
 
 cols = c("0"="#440154FF","1"="#3B528BFF", "2"="#21908CFF","3"="#5DC863FF", "4"="#FDE725FF", "none"="white")
@@ -1196,12 +1500,10 @@ startot %>% filter(num_mismatch %in% c(0,1,2)) %>%
   filter( logcpm>4 ) %>%
   ggplot() + geom_hline(yintercept = 0, linetype="dashed")+
   geom_point(aes(x=mrna_HL, y=logfc, bg="0"), size=4)+
-  geom_point(data=startot[startot$mismatch_pos_from_center==1.5,], aes(x=mrna_HL, y=logfc, bg="1"), size=4, pch=21)+
-  geom_point(data=startot[startot$mismatch_pos_from_center==2.5,], aes(x=mrna_HL, y=logfc, bg="2"), size=4, pch=21)+
-  geom_point(data=startot[startot$mismatch_pos_from_center==3.5,], aes(x=mrna_HL, y=logfc, bg="3"), size=4, pch=21)+
-  geom_point(data=startot[startot$mismatch_pos_from_center==4.5,], aes(x=mrna_HL, y=logfc, bg="4"), size=4, pch=21)+
-  geom_point(data=startot[is.na(startot$mismatch_pos_from_center),], aes(x=mrna_HL, y=logfc, bg="none"), size=4, pch=21)+
-  #geom_smooth(method=lm , color="black")+ 
+  geom_point(data=startot[startot$longest_stretch<5,], aes(x=mrna_HL, y=logfc, bg="1"), size=4, pch=21)+
+  geom_point(data=startot[startot$longest_stretch %in% 5:6,], aes(x=mrna_HL, y=logfc, bg="2"), size=4, pch=21)+
+  geom_point(data=startot[startot$longest_stretch > 6,], aes(x=mrna_HL, y=logfc, bg="3"), size=4, pch=21)+
+  geom_point(data=startot[startot$longest_stretch > 8,], aes(x=mrna_HL, y=logfc, bg="4"), size=4, pch=21)+
   scale_fill_viridis(discrete = T) + xlim(0,1.5) + ylim(-2.5,2.5) + scale_color_viridis(discrete = T)+
   theme_minimal()+ xlab("mRNA decay rate")+ ylab("log2 FC")+
   ggtitle("Expression change vs. mRNA decay")+
@@ -1232,7 +1534,7 @@ dev.off()
 
 mm_pos <- startot %>% filter(num_mismatch %in% c(0,1,2)) %>% 
   filter( logcpm>2) %>%
-  ggplot(aes(x=mrna_HL, y=logfc, bg=factor(mismatch_pos_from_center))) + 
+  ggplot(aes(x=mrna_HL, y=logfc, bg=factor(longest_stretch))) + 
   scale_fill_viridis(discrete = T, name= "")+
   geom_point(pch=21, size=4) + 
   ylim(-3,3) + xlim(0,1.6) +
@@ -1251,10 +1553,10 @@ dev.off()
 
 
 only_ends <- startot %>% filter(num_mismatch %in% c(0,1,2)) %>% 
-  filter( logcpm>2 &  mismatch_pos_from_center %in% c(3.5,4.5, NA)) %>%
+  filter( logcpm>2 &  longest_stretch > 7) %>%
   ggplot(aes(x=mrna_HL, y=logfc)) + 
   scale_fill_viridis(discrete = T, name= "")+
-  geom_point(aes(bg=factor(mismatch_pos_from_center)), pch=21, size=4) + 
+  geom_point(aes(bg=factor(longest_stretch)), pch=21, size=4) + 
   ylim(-3,3) + xlim(0,1.6) +
   theme_minimal()+ xlab("mRNA decay rate")+ ylab("log2 FC")+
   ggtitle("Expression change vs. mRNA decay")+
@@ -1271,18 +1573,876 @@ svg("../analysis/rna_decay/startot_tl.svg")
 print(only_ends+geom_smooth(method = "lm", color = "black"))
 dev.off()
 
+#mismatch_pos
+p_mmpos_violin <- startot %>% 
+  mutate(lmbs = factor(ifelse(longest_stretch>6, ">=7", "<7"))) %>%
+  filter( logcpm>5 ) %>%
+  ggplot() + 
+  geom_violin(aes(x=lmbs, y=logfc), fill="steelblue", alpha=0.7, width=1)+
+  geom_boxplot(aes(x=lmbs, y=logfc ), width=0.15)+ 
+  scale_fill_manual(values="steelblue")+
+  theme_classic()+ ylim(c(-4,0)) + 
+  xlab("Longest matching base-stretch") +
+  ylab(expression(Log[2]~fold~change)) +
+  theme(axis.text = element_text(size=15),
+        axis.title = element_text(size=20))
+
+svg("../analysis/violin_plot_salm.svg")
+print(p_mmpos_violin)
+dev.off()
+
 ```
-check correlation:
+
 ```{r}
-sot <- startot %>% filter(num_mismatch %in% c(0,1,2)) %>% 
-    filter( logcpm>2 &  mismatch_pos_from_center %in% c(3.5,4.5, NA))
-summary(lm( sot$logfc ~ sot$mrna_HL))
-summary(lm( startot$logfc ~ startot$mrna_HL))
+perc <- data.frame(percentage = sapply(5:10, function(x){
+  sum(na.omit(startot$longest_stretch== x & startot$minlog10FDR > 3 & startot$logfc < (-1) & startot$num_mismatch == 1)) / sum(na.omit(startot$longest_stretch== x & startot$num_mismatch == 1))
+}), longest_stretch = 5:10)
+
+
+
+so_acpp_pnas <- startot %>% filter(grepl("acpP", probe_id)) %>% filter(logcpm>5)
+df_bin <- data.frame(above_7 = c(">= 7", "< 7"), 
+                     perc_down = c(sum(so_acpp_pnas$longest_stretch>=7 &
+                                         so_acpp_pnas$downregulated=="yes" &
+                                         so_acpp_pnas$logcpm>5)/
+                                     sum(so_acpp_pnas$longest_stretch>=7 &
+                                         so_acpp_pnas$logcpm>5)*100,
+                                   sum(so_acpp_pnas$longest_stretch<7 &
+                                         so_acpp_pnas$downregulated=="yes" &
+                                         so_acpp_pnas$logcpm>5)/
+                                     sum(so_acpp_pnas$longest_stretch<7 &
+                                         so_acpp_pnas$logcpm>5)*100))
+
+x_ph1 <- sum(so_acpp_pnas$longest_stretch>=7 & so_acpp_pnas$downregulated=="yes" &
+                                         so_acpp_pnas$logcpm>5)
+x_ph2 <- sum(so_acpp_pnas$longest_stretch<7 & so_acpp_pnas$downregulated=="yes" &
+                                         so_acpp_pnas$logcpm>5)
+
+m_ph <- sum(so_acpp_pnas$downregulated=="yes" & so_acpp_pnas$logcpm>5)
+n_ph <- sum(so_acpp_pnas$downregulated=="no" & so_acpp_pnas$logcpm>5)
+
+k_ph1  <- sum(so_acpp_pnas$longest_stretch>=7 & so_acpp_pnas$logcpm>5)
+k_ph2  <- sum(so_acpp_pnas$longest_stretch<7 & so_acpp_pnas$logcpm>5)
+
+hypergeom_test <- c(phyper(x_ph1,m_ph,n_ph,k_ph1, lower.tail = F), phyper(x_ph2,m_ph,n_ph,k_ph2, lower.tail = F))
+plot_7 <- df_bin %>% ggplot(aes(x=above_7, y=perc_down)) + geom_bar(stat="identity", fill="steelblue") +
+  ylim(0,20) + 
+  theme_minimal()+ xlab("Longest matching base-stretch")+ ylab("percentage sign. downregulated off-target genes")+
+  theme( axis.line = element_line(),
+         axis.title = element_text(size = 14),
+         axis.text = element_text(size = 12),
+         plot.title = element_text(size = 16),
+         legend.title = element_text(size = 13),
+         legend.text = element_text(size = 12))
+svg("../analysis/stretch_plot.svg")
+print(plot_7)
+dev.off()
+
+
+startot_mm <- startot %>% filter(num_mismatch ==c(1,2,3) & grepl("acpP", probe_id)) 
+startot_mm$central_mm <- sapply(startot_mm$mismatch_positions, function(x){
+  s <- strsplit2(x, ";")
+  s <- as.integer(s)
+  out <- min(abs(s-5.5))
+})
+
+perc <- data.frame(percentage = sapply(0.5:4.5, function(x){
+  sum(startot_mm$central_mm== x & startot_mm$downregulated=="yes" & startot_mm$logcpm>5) / 
+    sum(startot_mm$central_mm== x& startot_mm$logcpm>5)
+}), pos = 0.5:4.5)
+
+g_cent_mm <- perc %>% ggplot(aes(x=as.factor(pos), y=percentage*100)) + geom_point(size=4) + 
+  theme_minimal()+ xlab("mismatch position relative to center")+ ylab("% sign. downregulated off-target genes")+
+  ylim(0,70)+
+  theme( axis.line = element_line(),
+         axis.title = element_text(size = 14),
+         axis.text = element_text(size = 12),
+         plot.title = element_text(size = 16),
+         legend.title = element_text(size = 13),
+         legend.text = element_text(size = 12))
+svg("../analysis/cent_mm_plot.svg")
+print(g_cent_mm)
+dev.off()
+
+
+write.csv(startot_mm, "../analysis/ot_salm.csv")
+```
+# added
+melting:
+```{r}
+#startot$Tm <- sapply(startot$binding_sequence, function(x) {
+#  melting(sequence = x, nucleic.acid.conc = 0.000008, hybridisation.type = "rnarna", Na.conc = 0.1)$Results$`Melting temperature (C)`
+#})
+#write.csv(startot, "../data/salm_offtargets_w_tm.csv")
+startot <- read.csv("../data/salm_offtargets_w_tm.csv")[-1]
+
+#add mfes:
+mfes_salm <- read.csv("../data/mfe_predictions/salm_mfe.tsv", sep = "\t", header = F, col.names = c("locus_tag", "mfe"))
+mfes_salm <- mfes_salm[isUnique(mfes_salm$locus_tag),]
+rownames(mfes_salm) <- mfes_salm$locus_tag
+
+startot$mfe <-  mfes_salm[startot$locus_tag,]$mfe
+
+pointsize <- 3
+
+
+# make plot cpm
+cpm_plot_salm <- startot %>% filter(grepl("acpP", probe_id)) %>%
+  filter(longest_stretch>6) %>%
+  ggplot(aes(x=logcpm, y=logfc)) + 
+  geom_point(aes(fill=minlog10FDR), shape=21, colour="darkgrey",  size=pointsize) + 
+  geom_vline(xintercept = 5, linetype="dotted", size=1)+
+  xlim(0,15) + 
+  ylim(-4,4) + 
+  theme_minimal() + scale_fill_viridis(expression(-log[10]~FDR))+
+  xlab(expression(log~counts~per~million) )+ ylab(expression(log[2]~fold~change))+
+  theme( axis.line = element_line(),
+         axis.title = element_text(size = 14),
+         axis.text = element_text(size = 12),
+         plot.title = element_text(size = 16),
+         legend.title = element_text(size = 13),
+         legend.text = element_text(size = 12),
+         legend.position="none")
+
+
+# make plot mfe
+startot$mfe <- as.numeric(startot$mfe)
+mfe_plot_salm <- startot %>% filter(grepl("acpP", probe_id)) %>% filter(logcpm > 5) %>%
+  filter(longest_stretch>6) %>%
+  ggplot(aes(x=mfe, y=logfc)) + 
+  geom_point(aes(fill=minlog10FDR), shape=21, colour="darkgrey",  size=pointsize) + 
+  geom_vline(xintercept = -10, linetype="dotted", size=1)+
+  xlim(-20,0) + 
+  ylim(-4,4) + 
+  theme_minimal() + scale_fill_viridis(expression(-log[10]~FDR))+
+  xlab("minimum free energy (delta G)")+ ylab(expression(log[2]~fold~change))+
+  theme( axis.line = element_line(),
+         axis.title = element_text(size = 14),
+         axis.text = element_text(size = 12),
+         plot.title = element_text(size = 16),
+         legend.title = element_text(size = 13),
+         legend.text = element_text(size = 12),
+         legend.position="none")
+mfe_plot_salm
+
+# make plot tm
+Tm_plot_salm <- startot %>%  filter(grepl("acpP", probe_id)) %>% filter(logcpm>5 & mfe>(-10)) %>% 
+  filter(longest_stretch>6) %>%
+  ggplot(aes(x=Tm, y=logfc)) + 
+  geom_point(aes(fill=minlog10FDR), shape=21, colour="darkgrey",  size=pointsize) + 
+  geom_vline(xintercept = 20, linetype="dotted", size=1)+
+  xlim(10,60) + ylim(-4,4) + theme_minimal() + 
+  scale_fill_viridis(expression(-log[10]~FDR))+
+  xlab("melting temperature (in °C)")+ ylab(expression(log[2]~fold~change))+
+  theme( axis.line = element_line(),
+         axis.title = element_text(size = 14),
+         axis.text = element_text(size = 12),
+         plot.title = element_text(size = 16),
+         legend.title = element_text(size = 13),
+         legend.text = element_text(size = 12),
+         legend.position="none") 
+Tm_plot_salm
+
+svg("../analysis/supp_plots_logfc_salm.svg", height = 5, width=15)
+plot_grid( cpm_plot_salm, mfe_plot_salm, Tm_plot_salm, nrow = 1, labels=c("A", "B", "C"))
+dev.off()
+
+svg("../analysis/legend.svg")
+startot %>% filter(grepl("acpP", probe_id)) %>%
+  filter(longest_stretch>6) %>%
+  ggplot(aes(x=mfe, y=logfc)) + 
+  geom_point(aes(fill=minlog10FDR), shape=21, colour="darkgrey",  size=pointsize) + 
+  xlim(-20,0) + 
+  ylim(-4,4) + 
+  theme_minimal() + scale_fill_viridis(expression(-log[10]~FDR))+
+  xlab("minimum free energy (delta G)")+ ylab(expression(log[2]~fold~change))+
+  theme( axis.line = element_line(),
+         axis.title = element_text(size = 14),
+         axis.text = element_text(size = 12),
+         plot.title = element_text(size = 16),
+         legend.title = element_text(size = 13),
+         legend.text = element_text(size = 12))
+dev.off()
+
 ```
 
 
 
-Packages used:
+
+
+# UPEC analysis for mismatches:
+## Data Acquisition  
+
+I generated a tab file containing gene counts after upstream processing. Upstream processing included folowing steps (starting with fastq-files): 
+ 
+ - BBtools for filtering, trimming and mapping 
+ - featureCounts for generating a count matrix
+
+
+Firstly, I import the gene-wise counts:
+```{r}
+GenewiseCounts <- read.delim(
+  "../../pna_rnaseq_experiments/upec_transcriptomics_03_21/data/rna_align/counttable.txt",sep = "\t",
+  row.names = 1, header = T, comment.char = "#")
+
+dim(GenewiseCounts)
+head(GenewiseCounts[,1:6])
+```
+I have to change column names, since they include the whole path:
+```{r}
+gwc <- GenewiseCounts[,5:length(GenewiseCounts[1,])]
+gwc[,grepl("fq\\.gz",colnames(gwc))] <- NULL
+pnapat <- "\\.\\.\\.data\\.rna_align\\..*_(\\d)_(.*)\\.bam"
+colnames (gwc) <- gsub(pnapat,"\\2_\\1", colnames(gwc))
+colnames (gwc) <- gsub(".*\\.hash\\d_(.*)\\.bam","\\1_3", colnames(gwc))
+newnames <- read.delim("../../pna_rnaseq_experiments/upec_transcriptomics_03_21/data/samples/samples.tsv", header = F) 
+newnames <- unlist(newnames)
+names(newnames) <- NULL
+newnames <- gsub("-", "_", newnames)
+colnames(gwc) <- c("Length",newnames)
+#colnames(gwc) <- c("Chr", "start", "End", "Strans","Length",newnames)
+# take only MH data to start:
+gwc <- gwc[,!grepl("col|tnaB|adk|rnpA", colnames(gwc))]
+newnames <- newnames[!grepl("col|tnaB|adk|rnpA", newnames)]
+
+colnames (gwc)
+```
+
+I also create a factor variable for groups of the sample data manually (from assigning sample codes to condition):
+```{r}
+test <- gsub("_\\d[ab]?", "" , newnames)
+test <- as.factor(test)
+test
+```
+
+Now that I have the read count dataframe with sample names, I import them into the edgeR environment:
+```{r}
+rownames(gwc)[rownames(gwc) == "omrA"] <- "OmrA"
+rownames(gwc)[rownames(gwc) == "omrB"] <- "OmrB"
+rownames(gwc)[rownames(gwc) == "AKN40_0794"] <- "ECP_3062"
+y <- DGEList(gwc[,-1], group = test, genes = gwc[,1,drop=FALSE])
+options(digits = 3)
+head(y$samples)
+```
+# Filtering
+Now I want to filter out Genes which have very low counts across all libraries. 
+I do this by creating a cutoff $$\frac {10} {L} $$
+where L is the minimum library size in millions. We delete genes that are below the cutoff in at least 2 libraries:
+```{r}
+L <- min(y$samples$lib.size) / 1000000
+cutoff <- 10/L
+keep <- rowSums(cpm(y) > cutoff) >= 10
+table(keep)
+```
+
+I retain only the unfiltered genes,and delete 519 genes below the threshold:
+```{r}
+y <- y[keep, , keep.lib.sizes=FALSE]
+```
+
+
+
+# Design matrix
+I create a design matrix for the samples:
+```{r}
+batches <- factor(gsub(".*(\\d[ab]?).*","\\1",rownames(y$samples)))
+batches <- gsub("3a", "4",batches)
+batches <- factor(gsub("3b", "5",batches))
+design <- model.matrix(~0+test+batches)
+colnames(design) <- c(levels(test), "batch2", "batch3", "batch4", "batch5")
+rownames(design) <- colnames(y$counts)
+design[1:5,]
+```
+
+We first create a new design matrix (with matrix W):
+```{r}
+design <- model.matrix(~0+test+batches)
+colnames(design) <- c(levels(test), "batch2", "batch3", "batch4", "batch5")
+rownames(design) <- colnames(y$counts)
+
+design
+```
+I check how the standard TMM normalization of edgeR performs. I start with calculating normalization factors:
+```{r, error=FALSE}
+y <- calcNormFactors(y)
+y <- estimateDisp(y, design, robust = T)
+```
+
+
+Now we create a DGElist object and create a list of results of DE genes:
+```{r}
+fit <- glmQLFit(y, design, robust = TRUE)
+
+con <- makeContrasts(acpP_vs_ctrl = acpP - control,
+                     acpP_scr_vs_ctrl = acpP_scr - control,
+                     csrA_vs_ctrl = csrA - control, 
+                     dnaB_vs_ctrl = dnaB - control, 
+                     ftsZ_vs_ctrl = ftsZ - control,
+                     nusG_vs_ctrl = nusG - control,
+                     pyrH_vs_ctrl = pyrH - control,
+                     rplS_vs_ctrl = rplS - control,
+                     rpoD_vs_ctrl = rpoD - control,
+                     rpsH_vs_ctrl = rpsH - control,
+                     #tnaB_vs_ctrl = tnaB - control,
+                     yidC_vs_ctrl = yidC - control,
+                     ispH_vs_ctrl = ispH - control,
+                     levels = design)
+
+all_res_tmm <- list(acpP_vs_ctrl = glmQLFTest(fit, contrast = con[,1]),
+                 acpPscr_vs_ctrl = glmQLFTest(fit, contrast = con[,2]),
+                 csrA_vs_ctrl = glmQLFTest(fit, contrast = con[,3]), 
+                 dnaB_vs_ctrl = glmQLFTest(fit, contrast = con[,4]), 
+                 ftsZ_vs_ctrl = glmQLFTest(fit, contrast = con[,5]),
+                 nusG_vs_ctrl = glmQLFTest(fit, contrast = con[,6]),
+                 pyrH_vs_ctrl = glmQLFTest(fit, contrast = con[,7]),
+                 rplS_vs_ctrl = glmQLFTest(fit, contrast = con[,8]),
+                 rpoD_vs_ctrl = glmQLFTest(fit, contrast = con[,9]),
+                 rpsH_vs_ctrl = glmQLFTest(fit, contrast = con[,10]),
+                 yidC_vs_ctrl = glmQLFTest(fit, contrast = con[,11]),
+                 ispH_vs_ctrl = glmQLFTest(fit, contrast = con[,12])
+                )
+
+```
+
+
+# Off-target analysis:
+```{r}
+#startot_upec <- read.delim("../../pna_rnaseq_experiments/upec_transcriptomics_03_21/data/off_targets_search/offtargets_fulltranscripts_sorted_new.tab")
+otherot <- read.delim("../../pna_rnaseq_experiments/upec_transcriptomics_03_21/data/off_targets_search/offtargets_fulltranscripts_sorted.tab")
+
+#startot_upec <- startot_upec %>% filter(trans_coord %in% c(-20:3)) %>% mutate(probe_id=gsub("_rev","", probe_id))
+
+startot_upec <- read.csv("../data/upec_offtargets_w_tm.csv")[-1] 
+
+
+#startot_upec$mismatch_pos <- unlist(lapply(1:dim(startot_upec)[1], function(x) {
+#  paste(which(strsplit(startot_upec$target_seq, "")[[x]] != strsplit(startot_upec$probe_seq, "")[[x]]), collapse =';')
+#}))
+
+```
+
+get actual gene names:
+```{r}
+eggnogg <- read.delim("../../pna_rnaseq_experiments/upec_transcriptomics_03_21/data/pathway_annotation/eggnogg_output.tsv" ,sep = "\t", header = T,row.names = 1, comment.char = "#")
+idx_names <- data.frame(cbind(rownames(eggnogg), eggnogg[,5]),row.names = rownames(eggnogg))
+colnames(idx_names) = c("locus_tag", "gene")
+idx_names$gene <- ifelse(idx_names$gene=="", idx_names$locus_tag, idx_names$gene)
+idx_names$gene <- ifelse(isUnique(idx_names$gene), idx_names$gene, idx_names$locus_tag)
+
+alt_names <- sapply(rownames(all_res_tmm$acpP_vs_ctrl), function (x) {
+  if (x %in% idx_names$locus_tag) {
+    x <- idx_names[x,]$gene
+  } else {
+    x <- x
+  }
+}) 
+alt_names["ECP_3718"] = "kbl"
+alt_names["ECP_0710"] = "pgm"
+alt_names["ECP_0826"] = "dps"
+alt_names["ECP_0104"] = "coaE"
+alt_names["ECP_0027"] = "ispH"
+alt_names["ECP_2607"] = "rplS"
+alt_names["ECP_2656"] = "csrA"
+alt_names["ECP_3394"] = "rpsH"
+#alt_names["omrA"] = "OmrA"
+#alt_names["omrB"] = "OmrB"
+names(alt_names)[names(alt_names)=="AKN40_0794"] <- "ECP_3062"
+alt_names[names(alt_names)=="ECP_3062"] <- "ECP_3062"
+
+startot_upec$genenames <- alt_names[startot_upec$gene_name]
+otherot$genenames <- alt_names[otherot$gene_name]
+```
+
+
+```{r}
+for (resname in names(all_res_tmm)){
+  # adjust p-values FDR
+  all_res_tmm[[resname]]$table$FDR <- p.adjust(all_res_tmm[[resname]]$table$PValue, method = "fdr")
+}
+```
+
+generate log2FC and pvals for heatmaps:
+```{r}
+logCPM <- cpm(y, log=TRUE, prior.count=2)
+logCPM_no_batch <- removeBatchEffect(logCPM, batch=batches, design=model.matrix(~0+test))
+logCPM <- t(scale(t(logCPM_no_batch))) #centered around 0
+
+# take out logcpm of unwanted genes:
+logCPM <- logCPM[, !grepl("tnaB|adk|rnpA", colnames(logCPM))]
+
+rn <- rownames(all_res_tmm$acpP_vs_ctrl)
+
+logchange <- data.frame(lapply(all_res_tmm, function(x) x$table$logFC), 
+                        row.names = rn)
+
+# get pvalues df:
+pvals <- data.frame(lapply(all_res_tmm, function(x) x$table$FDR), 
+                        row.names = rn)
+pvals <- ifelse(pvals<0.001 & abs(logchange) > 1, "*", " ")
+
+rownames(logCPM) <- rn
+```
+
+order data:
+```{r}
+logchange_ordered <- as.data.frame(logchange[order(logchange[,1], decreasing = T),])
+logCPM_ordered <- as.data.frame(logCPM[order(logchange[,1], decreasing = T),])
+pvals_ordered <- as.data.frame(pvals[order(logchange[,1], decreasing = T),])
+```
+
+Now I can generate heatmaps. I start with using the 10 most sign genes per sample:
+```{r}
+topdegenes <- c()
+for (i in names(logchange_ordered)) {
+  degenes <- pvals_ordered[rownames(logchange_ordered)[abs(logchange_ordered[[i]])>1 & pvals_ordered[[i]] < 0.001],]
+  degenes <- rownames(degenes[order(degenes[[i]]),])
+  topdegenes <- unique(append(topdegenes, degenes[1:10]))
+}
+topdegenes <- topdegenes[!is.na(topdegenes)]
+
+
+topDEgenes <- unique(c(unlist(lapply(all_res_tmm, function(x) c(rownames(topTags(x, n=5)), rownames(topTags(x, n=5, sort.by = "logFC")))))))
+
+hm_high_de <- list(fc = logchange_ordered[rownames(logchange_ordered) %in% topDEgenes,],
+                   pvals_ordered = pvals_ordered[rownames(pvals_ordered) %in% topDEgenes,])
+
+colnames(hm_high_de$fc) <- gsub("_vs_ctrl", "", colnames(hm_high_de$fc))
+
+
+# add genenames:
+rownames(hm_high_de$fc) <- sapply(rownames(hm_high_de$fc), function (x) {
+  if (x %in% names(alt_names)) {
+    x <- alt_names[x]
+  } else {
+    x <- x
+  }
+}) 
+
+hm_high_de <- lapply(hm_high_de, function(x){
+  t(x[,c(2,1,3:12)])
+})
+#rownames(hm_high_de$fc) <- ifelse(grepl("ECP", rownames(hm_high_de$fc)), rownames(hm_high_de$fc), expression(italic( rownames(hm_high_de$fc))))
+
+col_fun <- circlize::colorRamp2(c(-2, 0, 2), c("steelblue", "white", "darkorange"))
+ht_high_de <- Heatmap(hm_high_de$fc, name = "Log2 FC",
+               col = col_fun,
+               cluster_rows = F, cluster_columns = F, show_heatmap_legend = F,
+               cell_fun = function(j, i, x, y, width, height, fill) {
+                 grid.text(sprintf("%.1s", as.matrix(hm_high_de$pvals_ordered)[i, j]), x, y, gp = gpar(fontsize = 10))
+               }, show_row_names = T, border = TRUE, row_names_gp = gpar(fontsize =11),
+               column_names_gp = gpar(fontsize = 10), 
+               column_names_max_height=max_text_width(colnames(hm_high_de),gp = gpar(fontsize = 9)),
+               width = unit(40, "cm"), height = unit(10, "cm"), row_dend_width = unit(6, "cm"), 
+               column_names_rot = 45, cluster_column_slices=FALSE)
+#,
+               #column_dend_height = unit(3, "cm"), column_title_gp = gpar(fontsize = 40),
+               #show_row_dend = F, show_column_dend = F, column_names_rot = 45)
+
+lgd = Legend(col_fun = col_fun, title = expression("Log"[2]*" FC"), labels_gp = gpar(fontsize = 10),
+             title_gp = gpar(fontsize = 15),grid_width =  unit(0.8, "cm"),
+             at = c(-2, 0, 2), legend_width = unit(4, "cm"),
+             labels = c("-2", "  0", "  2"), legend_height = unit(3, "cm"),
+             title_position = "topcenter", direction = "horizontal")
+
+svg("../analysis/hm_high_de_upec.svg", width = 21, height = 10)
+draw(ht_high_de)
+draw(lgd, x = unit(25, "cm"), y = unit(20, "cm"), just = c("left", "bottom"))
+dev.off()
+
+```
+
+check mismatch PNAs for all sequences (UPEC):
+```{r}
+all_res <- all_res_tmm
+
+#off_targets <- read.delim("../../pna_rnaseq_experiments/upec_transcriptomics_03_21/data/off_targets_search/offtargets_fulltranscripts_sorted_new.tab")
+#startot_upec <- startot_upec %>% filter(locus_tag %in% rownames(y)) %>% filter(trans_coord %in% c(-20:-3))
+
+#startot_upec <- startot_upec %>% filter(trans_coord %in% c(-20:3)) %>% mutate(probe_id=gsub("_rev","", probe_id)) %>%
+#  filter(!grepl("rpl32", probe_id))
+
+startot_upec$logcpm <- unlist(sapply(1:dim(startot_upec)[1], function(x){
+  pname <- gsub("KFF-", "", startot_upec$probe_id[x])
+  rname <- paste0(pname, "_vs_ctrl", sep="")
+  lt <- startot_upec$locus_tag[x]
+  y <- all_res[[rname]]$table[lt,]$logCPM
+  ifelse(is.null(y), NA, y)
+}))
+
+
+startot_upec$logfc <- unlist(sapply(1:dim(startot_upec)[1], function(x){
+  pname <- gsub("KFF-", "", startot_upec$probe_id[x])
+  rname <- paste0(pname, "_vs_ctrl", sep="")
+  lt <- startot_upec$locus_tag[x]
+  y <- all_res[[rname]]$table[lt,]$logFC
+  ifelse(is.null(y), NA, y)
+}))
+
+startot_upec$minlog10FDR <- unlist(sapply(1:dim(startot_upec)[1], function(x){
+  pname <- gsub("KFF-", "", startot_upec$probe_id[x])
+  rname <- paste0(pname, "_vs_ctrl", sep="")
+  lt <- startot_upec$locus_tag[x]
+  y <- -log10(all_res[[rname]]$table[lt,]$FDR)
+  ifelse(is.null(y), NA, y)
+}))
+
+startot_upec$downregulated <- ifelse(startot_upec$logfc<(-1) & startot_upec$minlog10FDR>3, "yes", "no")
+
+#mismatch_pos
+p_mmpos_violin <- startot_upec %>% 
+  mutate(lmbs = factor(ifelse(longest_stretch>6, ">=7", "<7"))) %>%
+  filter( logcpm>5 ) %>%
+  ggplot() + 
+  geom_violin(aes(x=lmbs, y=logfc), fill="steelblue", alpha=0.7, width=1)+
+  geom_boxplot(aes(x=lmbs, y=logfc ), width=0.15)+ 
+  scale_fill_manual(values="steelblue")+
+  theme_classic()+ ylim(c(-4,0)) + 
+  xlab("Longest matching base-stretch") +
+  ylab(expression(Log[2]~fold~change)) +
+  theme(axis.text = element_text(size=15),
+        axis.title = element_text(size=20))
+
+svg("../analysis/violin_plot_upec.svg")
+print(p_mmpos_violin)
+dev.off()
+
+#mismatch_pos
+plot_mismatch_pos <- startot_upec %>% #filter(grepl("acpP", probe_id)) %>% 
+  #filter( logcpm>3 ) %>%
+  ggplot() + 
+  xlab("Longest matching base-stretch") +
+  ylim(c(-3,3)) +
+  #geom_hline(yintercept=0, linetype="dashed", color="grey")+
+  ylab(expression(Log[2]~fold~change))+
+  geom_boxplot(aes(x=factor(longest_stretch), y=logfc ))+ 
+ # geom_point(aes(x=factor(longest_stretch), y=logfc ))+
+  theme_classic()+
+  theme(axis.text = element_text(size=15),
+        axis.title = element_text(size=20))
+
+svg("../analysis/boxplot_mismatch_pos_upec.svg")
+print(plot_mismatch_pos)
+dev.off()
+
+# violin:
+startot_upec %>% 
+  filter( logcpm>5 ) %>%
+  ggplot() + 
+    geom_violin(aes(x=factor(longest_stretch>6), y=logfc ))+ 
+  #geom_boxplot(aes(x=factor(longest_stretch>6), y=logfc))+
+  theme_classic() + ylim(c(-5,0))
+
+# get nr of mismatch genes which are downregulated -> 248:
+startot_upec %>% unite(ui, c(gene_name,probe_id)) %>% distinct(ui, .keep_all = TRUE) %>% filter(downregulated=="yes") %>% dim()
+```
+melting:
+```{r}
+#startot_upec$Tm <- sapply(startot_upec$binding_sequence, function(x) {
+#  melting(sequence = x, nucleic.acid.conc = 0.000008, hybridisation.type = "rnarna", Na.conc = 0.1)$Results$`Melting #temperature (C)`
+#})
+
+#write.csv(startot_upec, "../data/upec_offtargets_w_tm.csv")
+
+#add mfes:
+mfes_upec <- read.csv("../data/mfe_predictions/upec_mfe.tsv", sep = "\t", header = F, col.names = c("locus_tag", "mfe"))
+rownames(mfes_upec) <- mfes_upec$locus_tag
+
+startot_upec$mfe <-  mfes_upec[startot_upec$locus_tag,]$mfe
+
+pointsize <- 3
+
+
+# make plot cpm
+cpm_plot_upec <- startot_upec %>%
+  filter(longest_stretch>6) %>%
+  ggplot(aes(x=logcpm, y=logfc)) + 
+  geom_point(aes(fill=minlog10FDR), shape=21, colour="darkgrey",  size=pointsize) + 
+  geom_vline(xintercept = 5, linetype="dotted", size=1)+
+  xlim(0,15) + 
+  ylim(-4,4) + 
+  theme_minimal() + scale_fill_viridis(expression(-log[10]~FDR))+
+  xlab(expression(log~counts~per~million) )+ ylab(expression(log[2]~fold~change))+
+  theme( axis.line = element_line(),
+         axis.title = element_text(size = 14),
+         axis.text = element_text(size = 12),
+         plot.title = element_text(size = 16),
+         legend.title = element_text(size = 13),
+         legend.text = element_text(size = 12),
+         legend.position="none")
+cpm_plot_upec
+
+# make plot mfe
+mfe_plot_upec <- startot_upec %>% filter(logcpm > 5) %>%
+  filter(longest_stretch>6) %>%
+  ggplot(aes(x=mfe, y=logfc)) + 
+  geom_point(aes(fill=minlog10FDR), shape=21, colour="darkgrey",  size=pointsize) + 
+  geom_vline(xintercept = -10, linetype="dotted", size=1)+
+  xlim(-20,00) + 
+  ylim(-4,4) + 
+  theme_minimal() + scale_fill_viridis(expression(-log[10]~FDR))+
+  xlab("minimum free energy (delta G)")+ ylab(expression(log[2]~fold~change))+
+  theme( axis.line = element_line(),
+         axis.title = element_text(size = 14),
+         axis.text = element_text(size = 12),
+         plot.title = element_text(size = 16),
+         legend.title = element_text(size = 13),
+         legend.text = element_text(size = 12),
+         legend.position="none")
+mfe_plot_upec
+
+# make plot tm
+Tm_plot_upec <- startot_upec %>% filter(logcpm>5 & mfe>(-10)) %>% 
+  filter(longest_stretch>6) %>%
+  ggplot(aes(x=Tm, y=logfc)) + 
+  geom_point(aes(fill=minlog10FDR), shape=21, colour="darkgrey",  size=pointsize) + 
+  geom_vline(xintercept = 20, linetype="dotted", size=1)+
+  xlim(10,60) + ylim(-4,4) + theme_minimal() + 
+  scale_fill_viridis(expression(-log[10]~FDR))+
+  xlab("melting temperature (in °C)")+ ylab(expression(log[2]~fold~change))+
+  theme( axis.line = element_line(),
+         axis.title = element_text(size = 14),
+         axis.text = element_text(size = 12),
+         plot.title = element_text(size = 16),
+         legend.title = element_text(size = 13),
+         legend.text = element_text(size = 12),
+         legend.position="none") 
+Tm_plot_upec
+
+svg("../analysis/supp_plots_logfc.svg", height = 5, width=15)
+plot_grid(cpm_plot_upec, mfe_plot_upec,Tm_plot_upec,  nrow = 1, labels=c("D", "E", "F"))
+dev.off()
+```
+get % of depleted genes for above plot:
+```{r}
+# before
+# total mismatches >5 cpm:
+(startot %>%  filter(grepl("acpP", probe_id)) %>% filter(longest_stretch>6& downregulated=="yes" ) %>%  dim)[1] / 
+  (startot %>% filter(longest_stretch>6 ) %>%  filter(grepl("acpP", probe_id)) %>% dim)[1]
+
+(startot_upec %>%   filter(longest_stretch>6 & downregulated=="yes" )  %>% dim)[1] / 
+  (startot_upec %>% filter(longest_stretch>6 )  %>% dim)[1]
+
+# total mismatches >5 cpm:
+(startot %>%  filter(grepl("acpP", probe_id)) %>% filter(longest_stretch>6& downregulated=="yes" & logcpm > 5) %>%  dim)[1] / 
+  (startot %>% filter(longest_stretch>6  & logcpm > 5) %>%  filter(grepl("acpP", probe_id)) %>% dim)[1]
+
+(startot_upec %>%   filter(longest_stretch>6 & downregulated=="yes" & logcpm > 5)  %>% dim)[1] / 
+  (startot_upec %>% filter(longest_stretch>6 & logcpm > 5)  %>% dim)[1]
+
+# total mismatches >5 cpm and mfe >  -10:
+(startot %>%  filter(grepl("acpP", probe_id)) %>% filter(longest_stretch>6& downregulated=="yes" & logcpm > 5 & mfe > (-10)) %>%  dim)[1] / 
+  (startot %>% filter(longest_stretch>6  & logcpm > 5& mfe > (-10)) %>%  filter(grepl("acpP", probe_id)) %>% dim)[1]
+
+(startot_upec %>%   filter(longest_stretch>6 & downregulated=="yes" & logcpm > 5 & mfe > (-10))  %>% dim)[1] / 
+  (startot_upec %>% filter(longest_stretch>6 & logcpm > 5 & mfe > (-10))  %>% dim)[1]
+
+# total mismatches >5 cpm and mfe >  -10 and tm > 20:
+(startot %>%  filter(grepl("acpP", probe_id)) %>% filter(longest_stretch>6& downregulated=="yes" & logcpm > 5 & mfe > (-10)& Tm > 20) %>%  dim)[1] / (startot %>% filter(longest_stretch>6  & logcpm > 5& mfe > (-10)& Tm > 20) %>%  filter(grepl("acpP", probe_id)) %>% dim)[1]
+
+(startot_upec %>%   filter(longest_stretch>6 & downregulated=="yes" & logcpm > 5 & mfe > (-10)& Tm > 20)  %>% dim)[1] / 
+  (startot_upec %>% filter(longest_stretch>6 & logcpm > 5 & mfe > (-10) & Tm > 20)  %>% dim)[1]
+```
+
+
+
+```{r}
+perc <- data.frame(percentage = sapply(5:10, function(x){
+  sum(na.omit(startot_upec$longest_stretch== x & startot_upec$minlog10FDR > 3 & startot_upec$logfc < (-1) & startot_upec$num_mismatch == 1)) / sum(na.omit(startot_upec$longest_stretch== x & startot_upec$num_mismatch == 1))
+}), longest_stretch = 5:10)
+
+
+
+df_bin <- data.frame(above_7 = c(">= 7", "< 7"), 
+                     perc_down = c(sum(startot_upec$longest_stretch>=7 &
+                                         startot_upec$downregulated=="yes" &
+                                         startot_upec$logcpm>5)/
+                                     sum(startot_upec$longest_stretch>=7 &
+                                         startot_upec$logcpm>5)*100,
+                                   sum(startot_upec$longest_stretch<7 &
+                                         startot_upec$downregulated=="yes" &
+                                         startot_upec$logcpm>5)/
+                                     sum(startot_upec$longest_stretch<7 &
+                                         startot_upec$logcpm>5)*100))
+
+x_ph1 <- sum(startot_upec$longest_stretch>=7 & startot_upec$downregulated=="yes" &
+                                         startot_upec$logcpm>5)
+x_ph2 <- sum(startot_upec$longest_stretch<7 & startot_upec$downregulated=="yes" &
+                                         startot_upec$logcpm>5)
+
+m_ph <- sum(startot_upec$downregulated=="yes" & startot_upec$logcpm>5)
+n_ph <- sum(startot_upec$downregulated=="no" & startot_upec$logcpm>5)
+
+k_ph1  <- sum(startot_upec$longest_stretch>=7 & startot_upec$logcpm>5)
+k_ph2  <- sum(startot_upec$longest_stretch<7 & startot_upec$logcpm>5)
+
+hypergeom_test_upec <- c(phyper(x_ph1,m_ph,n_ph,k_ph1, lower.tail = F), phyper(x_ph2,m_ph,n_ph,k_ph2, lower.tail = F))
+hypergeom_test <- c(phyper(30,40,476,190, lower.tail = F), phyper(10,40,476,326, lower.tail = F))
+plot_7 <- df_bin %>% ggplot(aes(x=above_7, y=perc_down)) + geom_bar(stat="identity", fill="steelblue") +
+  ylim(0,20) + 
+  theme_minimal()+ xlab("Longest matching base-stretch")+ ylab("percentage sign. downregulated off-target genes")+
+  theme( axis.line = element_line(),
+         axis.title = element_text(size = 14),
+         axis.text = element_text(size = 12),
+         plot.title = element_text(size = 16),
+         legend.title = element_text(size = 13),
+         legend.text = element_text(size = 12))
+svg("../analysis/stretch_plot_upec.svg")
+print(plot_7)
+dev.off()
+
+
+startot_upec_mm <- startot_upec %>% filter(num_mismatch == c(1,2,3)) 
+startot_upec_mm$central_mm <- sapply(startot_upec_mm$mismatch_positions, function(x){
+  s <- strsplit2(x, ";")
+  s <- as.integer(s)
+  out <- min(abs(s-5.5))
+})
+
+perc <- data.frame(percentage = sapply(0.5:4.5, function(x){
+  sum(startot_upec_mm$central_mm== x & startot_upec_mm$downregulated=="yes" & startot_upec_mm$logcpm>5) / 
+    sum(startot_upec_mm$central_mm== x& startot_upec_mm$logcpm>5)
+}), pos = 0.5:4.5)
+
+g_cent_mm <- perc %>% ggplot(aes(x=as.factor(pos), y=percentage*100)) + geom_point(size=4) + 
+  theme_minimal()+ xlab("mismatch position relative to center")+ ylab("% of sign. downregulated off-target genes")+
+  ylim(0,70) +
+  theme( axis.line = element_line(),
+         axis.title = element_text(size = 14),
+         axis.text = element_text(size = 12),
+         plot.title = element_text(size = 16),
+         legend.title = element_text(size = 13),
+         legend.text = element_text(size = 12))
+svg("../analysis/cent_mm_plot_upec.svg")
+print(g_cent_mm)
+dev.off()
+
+
+write.csv(startot_upec, "../analysis/OT_upec.csv")
+```
+make table:
+```{r}
+downreg_genes_acpP <- lapply(res_acpP_mutants, function(x) rownames(x$table[x$table$logFC < -1 & x$table$FDR<0.001,]))
+upreg_genes_acpP <- sapply(res_acpP_mutants, function(x) rownames(x$table[x$table$logFC > 1 & x$table$FDR<0.001,]))
+
+ottable_acpp<- as.data.frame(t(sapply(names(res_acpP_mutants), function(x){
+  namego <- gsub("_vs_ctrl", "", x)
+  startots_sample <- startot %>% filter(grepl(paste0(namego, "$"), probe_id)) 
+  startots_ots_down <- startots_sample %>% filter(downregulated=="yes")
+  downreg_uniq <- unique(startots_ots_down$locus_tag)
+  c(length(downreg_genes_acpP[[x]]), length(downreg_uniq))
+})))
+colnames(ottable_acpp) <- c("no off-target", "off-targets (0-3 mm)")
+ottable_acpp$"no off-target" <- ottable_acpp$"no off-target" - ottable_acpp$`off-targets (0-3 mm)`
+
+ottable_acpp$sample <- gsub("_vs_ctrl", "", rownames(ottable_acpp))
+ottable_acpp$sample <- gsub("acpP_PNA_", "", ottable_acpp$sample)
+ottable_acpp$sample <- gsub("acpP_scrambled", "scr", ottable_acpp$sample)
+
+
+ottable_acpp <- ottable_acpp %>% pivot_longer(1:2, names_to = "type", values_to = "count")
+ottable_acpp$experiment <- "Salmonella"
+
+ottable_acpp$sample <- factor(ottable_acpp$sample, levels=levels(factor(ottable_acpp$sample))[c(1,11, 2:10)])
+
+
+
+dgenes_ot_plot_salm <- ottable_acpp %>% ggplot(aes(x=sample, y=count, fill=type)) + geom_bar(stat="identity",color="black", size=0.4)+
+  scale_fill_brewer(palette="Paired", name=NULL) + theme_classic()+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 9),
+        legend.position="top")+
+   xlab("") + ylab("nr. of sign. depleted transcripts") 
+  
+
+downreg_genes_upec <- lapply(all_res_tmm, function(x) rownames(x$table[x$table$logFC < -1 & x$table$FDR<0.001,]))
+upreg_genes_upec <- lapply(all_res_tmm, function(x) rownames(x$table[x$table$logFC > 1 & x$table$FDR<0.001,]))
+
+
+ottaable_upec <- as.data.frame(t(sapply(names(all_res_tmm), function(x){
+  namego <- gsub("_vs_ctrl", "", x)
+  startots_sample <- startot_upec %>% filter(grepl(paste0(namego, "$"), probe_id)) 
+  startots_ots_down <- startots_sample %>% filter(downregulated=="yes")
+  downreg_uniq <- unique(startots_ots_down$locus_tag)
+  c(length(downreg_genes_upec[[x]]), length(downreg_uniq))
+})))
+colnames(ottaable_upec) <- c("no off-target", "off-targets (0-3 mm)")
+ottaable_upec$"no off-target" <- ottaable_upec$"no off-target" - ottaable_upec$`off-targets (0-3 mm)`
+
+ottaable_upec$sample <- gsub("_vs_ctrl", "", rownames(ottaable_upec))
+ottaable_upec$sample <- gsub("acpPscr", "scr", ottaable_upec$sample)
+ottaable_upec <- ottaable_upec %>% pivot_longer(1:2, names_to = "type", values_to = "count")
+ottaable_upec$experiment <- "UPEC"
+
+ottaable_upec$sample <- factor(ottaable_upec$sample, levels=levels(factor(ottaable_upec$sample))[c(1,11, 2:10,12)])
+
+dgenes_ot_plot_upec <- ottaable_upec %>% ggplot(aes(x=sample, y=count, fill=type)) + geom_bar(stat="identity",color="black", size=0.4)+
+  scale_fill_brewer(palette="Paired", name=NULL) + theme_classic()+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 9),
+        legend.position="top")+
+   xlab("") + ylab("nr. of sign. depleted transcripts") 
+
+ggenes_plots <- ggarrange(dgenes_ot_plot_salm, dgenes_ot_plot_upec, ncol = 1)
+
+
+
+```
+
+```{r}
+
+```
+
+
+Plot for up/downreg genes:
+```{r}
+up_downreg_genes_acpP <- tibble(sample=factor(names(upreg_genes_acpP), levels=names(upreg_genes_acpP)), 
+                               "sign. enriched"=sapply(upreg_genes_acpP, length),
+                               "sign. depleted"=sapply(downreg_genes_acpP, length)) %>%
+  mutate(sample=gsub("_vs_ctrl|acpP_PNA_", "", sample)) %>% mutate(sample=gsub("acpP_scrambled", "scr", sample))%>%
+  mutate(sample=factor(sample, levels=sample))
+
+
+ugenes_ot_plot_salm <- up_downreg_genes_acpP %>% pivot_longer(2:3, names_to = "direction", values_to = "count") %>%
+  ggplot(aes(x=sample, y=count, fill=direction)) + 
+  geom_bar(stat="identity",color="black", size=0.4, position=position_dodge())+ theme_classic()+
+  scale_fill_manual(values = c("steelblue", "chocolate1"), name=NULL)+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 9),
+        legend.position="top")+
+   xlab("") + ylab("nr. of DE transcripts")
+
+
+# upec
+up_downreg_genes_upec <- tibble(sample=factor(names(upreg_genes_upec), levels=names(upreg_genes_upec)), 
+                               "sign. enriched"=sapply(upreg_genes_upec, length),
+                               "sign. depleted"=sapply(downreg_genes_upec, length)) %>%
+  mutate(sample=gsub("_vs_ctrl", "", sample)) %>% mutate(sample=gsub("acpPscr", "scr", sample))%>%
+  mutate(sample=factor(sample, levels=sample))
+
+
+ugenes_ot_plot_upec <- up_downreg_genes_upec %>% pivot_longer(2:3, names_to = "direction", values_to = "count") %>%
+  ggplot(aes(x=sample, y=count, fill=direction)) + 
+  geom_bar(stat="identity",color="black", size=0.4, position=position_dodge())+ theme_classic()+
+  scale_fill_manual(values = c("steelblue", "chocolate1"), name=NULL)+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 9),
+        legend.position="top")+
+   xlab("") + ylab("nr. of DE transcripts")
+
+svg("../analysis/barplots_degenes", height=10, width=10)
+ggarrange(ugenes_ot_plot_salm, dgenes_ot_plot_salm, ugenes_ot_plot_upec, 
+           dgenes_ot_plot_upec, labels = c("A", "B", "C", "D")) 
+dev.off()
+
+```
+create legend for fig. 2:
+```{r}
+col_fun = colorRamp2(c(0, 1.2), c("white", "black"))
+lgd = Legend(col_fun = col_fun,  at = c(0,0.4, 0.8, 1.2), border = "black")
+svg("../analysis/legend_fig2.svg")
+draw(lgd)
+dev.off()
+```
+
+
+Packages 
+used:
 ```{r}
 sessionInfo()
 ```
