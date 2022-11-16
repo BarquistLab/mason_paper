@@ -11,9 +11,11 @@
 
 ## Introduction
 
-This project directory contains the analysis of RNA-Seq results obtained after Peptide-PNA challenge of *Salmonella enterica* subsp. *enterica*  serovar Typhimurium str. SL1344 with different PNA sequences. The procedure of RNA-seq experiments can be found in the according methods section of the [manuscript](https://www.biorxiv.org/content/10.1101/2022.05.24.492283v1).  
+This project directory contains the analysis of RNA-Seq results obtained after Peptide-PNA challenge of *Salmonella enterica* subsp. *enterica*  serovar Typhimurium str. SL1344 with different PNA sequences. The procedure of RNA-seq experiments can be found in the according methods section of the [manuscript](https://www.biorxiv.org/content/10.1101/2022.05.24.492283v1). Briefly, *Salmonella* was challenged with a series of 2-mismatch PNAs and RNA-Sequening was performed after 15 min challenge with 5 uM PNA: 
 
- 
+ ![workflow](/home/jj/Documents/mason_paper/analysis/workflow.png)
+
+
 
 ## Directory structure
 
