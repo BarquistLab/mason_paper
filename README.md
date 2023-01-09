@@ -2,7 +2,7 @@
 
 - Name of project: Design and off-target prediction for antisense oligomers targeting
   bacterial mRNAs with the MASON webserver
-- Paper link to biorxiv: https://www.biorxiv.org/content/10.1101/2022.05.24.492283v1
+- Paper link to biorxiv: https://www.biorxiv.org/content/10.1101/2022.05.24.492283
 - Data analysis: Jakob Jung
 - Experiments: Linda Popella, Phuong Thao Do, Barbara Plaschke
 - Supervision: Lars Barquist, Jörg Vogel
