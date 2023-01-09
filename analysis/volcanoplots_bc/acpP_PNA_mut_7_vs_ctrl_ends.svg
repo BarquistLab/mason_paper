@@ -10540,7 +10540,7 @@
   <path d="M 54.152344 33.957031 L 498.523438 33.957031 L 498.523438 450.847656 L 54.152344 450.847656 Z M 54.152344 33.957031 "/>
 </clipPath>
 </defs>
-<g id="surface2909">
+<g id="surface3117">
 <rect x="0" y="0" width="504" height="504" style="fill:rgb(100%,100%,100%);fill-opacity:1;stroke:none;"/>
 <rect x="0" y="0" width="504" height="504" style="fill:rgb(100%,100%,100%);fill-opacity:1;stroke:none;"/>
 <path style="fill:none;stroke-width:1.066978;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:1;stroke-miterlimit:10;" d="M 0 504 L 504 504 L 504 0 L 0 0 Z M 0 504 "/>
@@ -23827,6 +23827,7 @@
 <path style="fill:none;stroke-width:0.708661;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,54.509804%);stroke-opacity:1;stroke-miterlimit:10;" d="M 285.835938 447.851562 C 285.835938 452.589844 278.722656 452.589844 278.722656 447.851562 C 278.722656 443.109375 285.835938 443.109375 285.835938 447.851562 "/>
 </g>
 <path style="fill-rule:nonzero;fill:rgb(0%,0%,54.509804%);fill-opacity:1;stroke-width:0.708661;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,54.509804%);stroke-opacity:1;stroke-miterlimit:10;" d="M 253.863281 331.515625 C 253.863281 336.257812 246.753906 336.257812 246.753906 331.515625 C 246.753906 326.777344 253.863281 326.777344 253.863281 331.515625 "/>
+<path style="fill-rule:nonzero;fill:rgb(0%,0%,54.509804%);fill-opacity:1;stroke-width:0.708661;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,54.509804%);stroke-opacity:1;stroke-miterlimit:10;" d="M 236.152344 343.941406 C 236.152344 348.683594 229.042969 348.683594 229.042969 343.941406 C 229.042969 339.203125 236.152344 339.203125 236.152344 343.941406 "/>
 <g clip-path="url(#clip3421)" clip-rule="nonzero">
 <path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,54.509804%);fill-opacity:1;" d="M 275.777344 448.347656 C 275.777344 453.085938 268.667969 453.085938 268.667969 448.347656 C 268.667969 443.605469 275.777344 443.605469 275.777344 448.347656 "/>
 </g>

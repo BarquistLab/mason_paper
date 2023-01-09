@@ -489,7 +489,7 @@ phopqvolc <- c(phopqvolc, "phoP", "phoQ")
 # Off-target analysis:
 ```{r}
 off_targets <- read.delim("../data/offtargets_fulltranscripts_sorted_new.tab")
-startot <- off_targets %>% filter(locus_tag %in% rownames(y)) %>% filter(trans_coord %in% c(-20:3))
+startot <- off_targets %>% filter(locus_tag %in% rownames(y)) %>% filter(trans_coord %in% c(-20:5)) %>% filter(!grepl("_rev", probe_id))
 ```
 
 Investigation of off-target positions:
@@ -525,6 +525,7 @@ Now I adjust p-values (FDR), create volcano plots, histograms for the results (a
 list_ot_0 <- list()
 list_ot_1 <- list()
 list_ot_2 <- list()
+list_volc <- list()
 
 for (resname in names(res_acpP_mutants)){
   # adjust p-values FDR
@@ -616,8 +617,16 @@ for (resname in names(res_acpP_mutants)){
   write.csv(restab[order(restab$FDR),], dataname)
   #pval distributions:
   hist(restab$PValue, breaks=100, main=resname)
+  list_volc[[resname]] <- do_volcano(restab, targetgene = c("acpP","fabF"), #title=resname, 
+                   x_limit = 5, show_sig = T,# phopq = phopqvolc,
+                   y_limit = 25,
+                   alpha=0.001, pointsize = 3,
+                   off_target_list = OT)
 }
 
+svg("../analysis/volcs_salm_mutagens.svg", width = 18, height = 14)
+ggarrange(list_volc$acpP_scrambled_vs_ctrl, list_volc$acpP_vs_ctrl, list_volc$acpP_PNA_mut_1_vs_ctrl, list_volc$acpP_PNA_mut_2_vs_ctrl, list_volc$acpP_PNA_mut_3_vs_ctrl, list_volc$acpP_PNA_mut_4_vs_ctrl, list_volc$acpP_PNA_mut_5_vs_ctrl, list_volc$acpP_PNA_mut_6_vs_ctrl, list_volc$acpP_PNA_mut_7_vs_ctrl, list_volc$acpP_PNA_mut_8_vs_ctrl, list_volc$acpP_PNA_mut_9_vs_ctrl)
+dev.off()
 
 ```
 check for overlapping genes:
@@ -1426,8 +1435,7 @@ check mismatch PNAs for all sequences:
 ```{r}
 all_res <- append(res_acpP_mutants, res_mismatch_pnas)
 
-startot <- startot %>% filter(trans_coord %in% c(-20:3))   %>% 
-  mutate(probe_id=gsub("_rev","", probe_id)) %>%
+startot <- startot %>% filter(trans_coord %in% c(-20:5)) %>% filter(!grepl("_rev", probe_id)) %>%
   filter(!grepl("rpl32", probe_id)) 
 
 startot$logcpm <- unlist(sapply(1:dim(startot)[1], function(x){
@@ -1674,7 +1682,7 @@ melting:
 #  melting(sequence = x, nucleic.acid.conc = 0.000008, hybridisation.type = "rnarna", Na.conc = 0.1)$Results$`Melting temperature (C)`
 #})
 #write.csv(startot, "../data/salm_offtargets_w_tm.csv")
-startot <- read.csv("../data/salm_offtargets_w_tm.csv")[-1]
+startot <- read.csv("../data/salm_offtargets_w_tm.csv")[-1] 
 
 #add mfes:
 mfes_salm <- read.csv("../data/mfe_predictions/salm_mfe.tsv", sep = "\t", header = F, col.names = c("locus_tag", "mfe"))
@@ -1766,7 +1774,16 @@ dev.off()
 
 ```
 
-
+numbers for manscript:
+```{r}
+startot %>% filter(grepl("acpP", probe_id)) %>%
+  filter(longest_stretch>6) %>% 
+  filter (logcpm>5) %>% 
+  filter (mfe>(-10)) %>% 
+  filter (Tm>(20)) %>% 
+  filter(downregulated=="yes") %>%
+  dim
+```
 
 
 
@@ -1910,7 +1927,7 @@ all_res_tmm <- list(acpP_vs_ctrl = glmQLFTest(fit, contrast = con[,1]),
 #startot_upec <- read.delim("../../pna_rnaseq_experiments/upec_transcriptomics_03_21/data/off_targets_search/offtargets_fulltranscripts_sorted_new.tab")
 otherot <- read.delim("../../pna_rnaseq_experiments/upec_transcriptomics_03_21/data/off_targets_search/offtargets_fulltranscripts_sorted.tab")
 
-#startot_upec <- startot_upec %>% filter(trans_coord %in% c(-20:3)) %>% mutate(probe_id=gsub("_rev","", probe_id))
+#startot_upec <- startot_upec  %>% filter(trans_coord %in% c(-20:5)) %>% filter(!grepl("_rev", probe_id))
 
 startot_upec <- read.csv("../data/upec_offtargets_w_tm.csv")[-1] 
 
@@ -2058,7 +2075,7 @@ all_res <- all_res_tmm
 #off_targets <- read.delim("../../pna_rnaseq_experiments/upec_transcriptomics_03_21/data/off_targets_search/offtargets_fulltranscripts_sorted_new.tab")
 #startot_upec <- startot_upec %>% filter(locus_tag %in% rownames(y)) %>% filter(trans_coord %in% c(-20:-3))
 
-#startot_upec <- startot_upec %>% filter(trans_coord %in% c(-20:3)) %>% mutate(probe_id=gsub("_rev","", probe_id)) %>%
+#startot_upec <- startot_upec %>% filter(trans_coord %in% c(-20:5)) %>% filter(!grepl("_rev", probe_id)) %>%
 #  filter(!grepl("rpl32", probe_id))
 
 startot_upec$logcpm <- unlist(sapply(1:dim(startot_upec)[1], function(x){
@@ -2138,7 +2155,7 @@ startot_upec %>% unite(ui, c(gene_name,probe_id)) %>% distinct(ui, .keep_all = T
 melting:
 ```{r}
 #startot_upec$Tm <- sapply(startot_upec$binding_sequence, function(x) {
-#  melting(sequence = x, nucleic.acid.conc = 0.000008, hybridisation.type = "rnarna", Na.conc = 0.1)$Results$`Melting #temperature (C)`
+#  melting(sequence = x, nucleic.acid.conc = 0.000008, hybridisation.type = "rnarna", Na.conc = 0.1)$Results$`Melting temperature (C)`
 #})
 
 #write.csv(startot_upec, "../data/upec_offtargets_w_tm.csv")
@@ -2253,27 +2270,27 @@ perc <- data.frame(percentage = sapply(5:10, function(x){
 
 
 df_bin <- data.frame(above_7 = c(">= 7", "< 7"), 
-                     perc_down = c(sum(startot_upec$longest_stretch>=7 &
+                     perc_down = c(sum(na.omit(startot_upec$longest_stretch>=7 &
                                          startot_upec$downregulated=="yes" &
-                                         startot_upec$logcpm>5)/
-                                     sum(startot_upec$longest_stretch>=7 &
-                                         startot_upec$logcpm>5)*100,
-                                   sum(startot_upec$longest_stretch<7 &
+                                         startot_upec$logcpm>5))/
+                                     sum(na.omit(startot_upec$longest_stretch>=7 &
+                                         startot_upec$logcpm>5))*100,
+                                   sum(na.omit(startot_upec$longest_stretch<7 &
                                          startot_upec$downregulated=="yes" &
-                                         startot_upec$logcpm>5)/
-                                     sum(startot_upec$longest_stretch<7 &
-                                         startot_upec$logcpm>5)*100))
+                                         startot_upec$logcpm>5))/
+                                     sum(na.omit(startot_upec$longest_stretch<7 &
+                                         startot_upec$logcpm>5))*100))
 
-x_ph1 <- sum(startot_upec$longest_stretch>=7 & startot_upec$downregulated=="yes" &
-                                         startot_upec$logcpm>5)
-x_ph2 <- sum(startot_upec$longest_stretch<7 & startot_upec$downregulated=="yes" &
-                                         startot_upec$logcpm>5)
+x_ph1 <- sum(na.omit(startot_upec$longest_stretch>=7 & startot_upec$downregulated=="yes" &
+                                         startot_upec$logcpm>5))
+x_ph2 <- sum(na.omit(startot_upec$longest_stretch<7 & startot_upec$downregulated=="yes" &
+                                         startot_upec$logcpm>5))
 
-m_ph <- sum(startot_upec$downregulated=="yes" & startot_upec$logcpm>5)
-n_ph <- sum(startot_upec$downregulated=="no" & startot_upec$logcpm>5)
+m_ph <- sum(na.omit(startot_upec$downregulated=="yes" & startot_upec$logcpm>5))
+n_ph <- sum(na.omit(startot_upec$downregulated=="no" & startot_upec$logcpm>5))
 
-k_ph1  <- sum(startot_upec$longest_stretch>=7 & startot_upec$logcpm>5)
-k_ph2  <- sum(startot_upec$longest_stretch<7 & startot_upec$logcpm>5)
+k_ph1  <- sum(na.omit(startot_upec$longest_stretch>=7 & startot_upec$logcpm>5))
+k_ph2  <- sum(na.omit(startot_upec$longest_stretch<7 & startot_upec$logcpm>5))
 
 hypergeom_test_upec <- c(phyper(x_ph1,m_ph,n_ph,k_ph1, lower.tail = F), phyper(x_ph2,m_ph,n_ph,k_ph2, lower.tail = F))
 hypergeom_test <- c(phyper(30,40,476,190, lower.tail = F), phyper(10,40,476,326, lower.tail = F))
@@ -2299,8 +2316,8 @@ startot_upec_mm$central_mm <- sapply(startot_upec_mm$mismatch_positions, functio
 })
 
 perc <- data.frame(percentage = sapply(0.5:4.5, function(x){
-  sum(startot_upec_mm$central_mm== x & startot_upec_mm$downregulated=="yes" & startot_upec_mm$logcpm>5) / 
-    sum(startot_upec_mm$central_mm== x& startot_upec_mm$logcpm>5)
+  sum(na.omit(startot_upec_mm$central_mm== x & startot_upec_mm$downregulated=="yes" & startot_upec_mm$logcpm>5) )/ 
+    sum(na.omit(startot_upec_mm$central_mm== x& startot_upec_mm$logcpm>5))
 }), pos = 0.5:4.5)
 
 g_cent_mm <- perc %>% ggplot(aes(x=as.factor(pos), y=percentage*100)) + geom_point(size=4) + 
@@ -2425,9 +2442,9 @@ ugenes_ot_plot_upec <- up_downreg_genes_upec %>% pivot_longer(2:3, names_to = "d
         legend.position="top")+
    xlab("") + ylab("nr. of DE transcripts")
 
-svg("../analysis/barplots_degenes", height=10, width=10)
+svg("../analysis/barplots_degenes.svg", height=10, width=10)
 ggarrange(ugenes_ot_plot_salm, dgenes_ot_plot_salm, ugenes_ot_plot_upec, 
-           dgenes_ot_plot_upec, labels = c("A", "B", "C", "D")) 
+           dgenes_ot_plot_upec)#, labels = c("A", "B", "C", "D")) 
 dev.off()
 
 ```
