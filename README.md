@@ -1,4 +1,4 @@
-# RNA-seq analysis to Jung et al. 2022
+# RNA-seq analysis to Jung et al. 2023
 
 - Name of project: Design and off-target prediction for antisense oligomers targeting
   bacterial mRNAs with the MASON webserver
